@@ -103,7 +103,7 @@ var arrSort = arr1.concat(arr2);
 
 //console.log(mergeSort(arrBasic));
 
-console.log(quickSort(arrSort));
+//console.log(quickSort(arrSort));
 
 
 
