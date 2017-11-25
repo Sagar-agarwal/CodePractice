@@ -61,7 +61,9 @@ var arr2 = [2,4,6,6,8,8];
 var arrSort = arr1.concat(arr2);
 
 
-var myArr = new ArrayList;
-myArr.push(1);
 
-console.log("myArr: " + myArr.data);
+// @ Testing
+
+// var myArr = new ArrayList;
+
+// console.log("myArr: " + myArr.data);
