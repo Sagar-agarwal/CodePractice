@@ -4,7 +4,7 @@
 	var Greetr = function(firstName, lastName, language){
 
 		return new Greetr.init(firstName, lastName,language);
-	}
+	};
 
 	var supportedLangs = ['en', 'es'];
 
@@ -127,7 +127,7 @@
 
 		// Initial Language validator
 		self.validate();
-	}
+	};
 
 
 	Greetr.init.prototype = Greetr.prototype;
