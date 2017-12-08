@@ -1,13 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Form demo</title>
-
+    <title>Input demo</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
-<body>
 
+<body>
+    <div>
+        <h1>Register</h1>
+        <form action="register">
+            <div>
+                <label>
+                    First Name: 
+                    <input type="text" name="firstname" placeholder="First Name" autocomplete="off"></label>
+                <label>
+                    Last Name: 
+                    <input type="text" name="lastname" placeholder="Last Name" autocomplete="off"></label>
+            </div>
+            <div>
+                <label>
+                    Male
+                    <input type="radio" name="male"></label>
+                <label>
+                    Female
+                    <input type="radio" name="female"></label>
+                <label>
+                    Others
+                    <input type="radio" name="others"></label>
+            </div>
+            <div>
+                <label>
+                    Email: 
+                    <input type="email" name="email" placeholder="Email" required autocomplete="off"></label>
+                <label>
+                    Password: 
+                    <input type="password" name="password" placeholder="Password" required autocomplete="off" minlength="8"></label>
+            </div>
+            <div>
+                <label>
+                    Birthday:
+                    <input type="date" name="birthday">
+                </label>
+            </div>
+            <div>
+                <p>I agree to terms and conditions</p>
+                <input type="checkbox" name="terms"></input>
+            </div>
+            <div>
+                <input type="submit" required="true autocomplete="off"">
+            </div>
+        </form>    
+    </div>
 </body>
+    
+    
 </html>
