@@ -5,3 +5,5 @@
 // @ Font
 font-family: 'Open Sans', sans-serif;
 
+// @ Font-Awesome
+<script src="https://use.fontawesome.com/5b37bfdadd.js"></script>
