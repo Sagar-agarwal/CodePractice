@@ -1,0 +1,79 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: url(https://images.unsplash.com/photo-1481278403982-f2d9f387cdcc?auto=format&fit=crop&w=1950&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);
+    background-size: cover;
+    padding-top: 50px;
+    background-position: center;
+}
+
+.container-fluid{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
+.navbar-custom {
+    background-color: transparent;
+}
+
+.nav.navbar-nav>li>a {
+    color: darkgrey;
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+.nav.navbar-nav>li>a:hover {
+    background-color: transparent;
+    color: #353535;
+    border-bottom: 1px solid darkgrey;
+}
+
+.navbar-header>a {
+    color: darkgrey;
+    font-family: 'Pangolin', cursive;
+    font-size: 1.4em;
+    font-weight: 600;
+}
+.navbar-header>a:hover {
+    color: #353535;
+}
+
+hr {
+    /* border: 0.5px solid #B0BEC5; */
+    color: rgb(177,177,177);
+    border-top: 1px solid rgb(177,177,177);
+    border-bottom: 1px solid rgba(177,177,177, 0.4));
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.container-fluid .landing-banner {
+    text-align: center;
+    padding-top: 3%;
+/*     padding-bottom: 25%; */
+
+    color: darkgrey;
+}
+
+div.landing-banner > h1 {
+    font-family: 'Pangolin', cursive;
+    font-size:4em;
+    text-shadow: 0px 4px 8px rgb(200,200,200),
+                0px 8px 16px rgba(200,200,200, 0.5),
+                0px 12px 20px rgba(200,200,200, 0.1);
+}
+
+div.landing-banner > h2 {
+    font-family: 'Indie Flower', cursive;
+}
+
+button.button-banner-escape {
+    background-color: transparent;
+    border: 1px solid lightgrey;
+    color: grey;
+    font-family: 'Indie Flower', cursive;
+    font-weight: 600;
+}
