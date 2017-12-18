@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Image Gallery</title>
+    <!--   FONTS   -->
+    <!--
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i" rel="stylesheet">
+                            -->
+    <!--   Custom CSS   -->
+    <link rel="stylesheet" href="imageGallery.css">
+    <script language="JavaScript" type="text/javascript" src="./resource/jquery-3.2.1.js"></script>
+    <!--   Bootstrap   -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!--   Font-Awesome   -->
+    <script src="https://use.fontawesome.com/5b37bfdadd.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-fixed-top navbar-custom">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="#" class="navbar-brand">
+                    <i class="fa fa-picture-o fa-1x "></i>
+                    Imaginarium</a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <!-- <span class="sr-only">Toggle navigation</span> -->
+                        <span class="fa fa-bars fa-1x" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a class="hover-orange" href="#">About</a></li>
+                        <li><a class="hover-orange" href="#">Contact</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right ">
+                        <li><a class="hover-orange" href="#">Login</a></li>
+                        <li><a class="hover-orange" href="#">Sign-up</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="jumbotron jumbotron-custom">
+                    <h1><span class="fa fa-camera-retro fa-1x" aria-hidden="true"></span>  Images Tell No Tales</h1>
+                <p>Spicy jalapeno bacon ipsum dolor amet jowl turkey ball tip chuck fatback ground round venison short loin pork belly tail meatball bresaola ham hock spare ribs. T-bone bresaola biltong doner. Flank venison burgdoggen, shank drumstick bresaola frankfurter chicken capicola. Chicken shank corned beef picanha leberkas tail fatback kevin jerky kielbasa pork belly tongue bresaola. Andouille frankfurter rump filet mignon corned beef.</p>
+                <input type="button" class="btn btn-danger" value="Spicy !!">
+            </div>
+        </div>
+        <!--    images    -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 col-xs-12">
+                    <div class="thumbnail"><img src="https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1950&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt=""></div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-xs-12">
+                    <div class="thumbnail"><img src="https://images.unsplash.com/photo-1512318601939-07bf29f1b74e?auto=format&fit=crop&w=1950&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt=""></div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-xs-12">
+                    <div class="thumbnail"><img src="https://images.unsplash.com/photo-1487611459768-bd414656ea10?auto=format&fit=crop&w=1950&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt=""></div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-xs-12">
+                    <div class="thumbnail"><img src="https://images.unsplash.com/photo-1468103933896-2c34a78104c2?auto=format&fit=crop&w=1950&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt=""></div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-xs-12">
+                    <div class="thumbnail"><img src="https://images.unsplash.com/photo-1505572931516-e375f1a14d6b?auto=format&fit=crop&w=1950&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt=""></div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-xs-12">
+                    <div class="thumbnail"><img src="https://images.unsplash.com/reserve/B6PfiQ8QoSzmsZYOCkSB__DSC0530-1.jpg?auto=format&fit=crop&w=1947&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt=""></div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-xs-12">
+                    <div class="thumbnail"><img src="https://images.unsplash.com/photo-1483524091138-eef1bc4cbe54?auto=format&fit=crop&w=1950&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt=""></div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-xs-12">
+                    <div class="thumbnail"><img src="https://images.unsplash.com/photo-1475518845976-0fd87b7e4e5d?auto=format&fit=crop&w=1950&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt=""></div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-xs-12">
+                    <div class="thumbnail"><img src="https://images.unsplash.com/photo-1487750022055-974f66325e0f?auto=format&fit=crop&w=1950&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt=""></div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-xs-12">
+                    <div class="thumbnail"><img src="https://images.unsplash.com/photo-1510279770292-4b34de9f5c23?auto=format&fit=crop&w=1950&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
