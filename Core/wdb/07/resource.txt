@@ -7,3 +7,8 @@ font-family: 'Open Sans', sans-serif;
 
 // @ Font-Awesome
 <script src="https://use.fontawesome.com/5b37bfdadd.js"></script>
+
+
+// @ WanderLust > Landing-Page
+Light GrayBlue : #B0BEC5; (nav, )
+super grayBlue: #ECEFF1; (landing button)
