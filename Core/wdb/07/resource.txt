@@ -10,5 +10,9 @@ font-family: 'Open Sans', sans-serif;
 
 
 // @ WanderLust > Landing-Page
-Light GrayBlue : #B0BEC5; (nav, )
+Light GrayBlue : #B0BEC5; (nav, landing banner hr, )
 super grayBlue: #ECEFF1; (landing button)
+
+@ FONTS
+font-family: 'Pangolin', cursive;
+font-family: 'Indie Flower', cursive;
