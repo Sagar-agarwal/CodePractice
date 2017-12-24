@@ -1,0 +1,12 @@
+.win {
+    color: green;
+}
+
+p {
+    padding: 2px;
+}
+
+div>input {
+    margin: 5px;
+}
+
