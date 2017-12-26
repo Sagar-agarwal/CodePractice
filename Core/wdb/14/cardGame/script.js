@@ -1,7 +1,7 @@
 (function() {
     var clickedColor = '';
     var color = generateColor();
-    color.pop();
+    /*color.pop();*/
     
     var pickedColor = color[Math.floor((Math.random()*6))];    
 
