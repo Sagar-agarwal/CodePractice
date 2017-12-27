@@ -61,7 +61,6 @@
     }
 
     play.addEventListener('click', function(){
-        console.log("play clicked");
         headerColor.style.background = "#3b5998";
         color = generateColor();
         color.pop();
