@@ -63,7 +63,6 @@
     play.addEventListener('click', function(){
         headerColor.style.background = "#3b5998";
         color = generateColor();
-        color.pop();
         pickedColor = color[Math.floor(Math.random()*6)];
         gameOn_cards();
     });
