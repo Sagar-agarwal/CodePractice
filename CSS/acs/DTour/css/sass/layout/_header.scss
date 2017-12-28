@@ -1,0 +1,29 @@
+.header {
+    
+    background-image: -webkit-linear-gradient(top left, rgba($lightGreen, 0.8), rgba($darkGreen, 0.8)),
+    url(../img/hero.jpg);
+    background-image: -o-linear-gradient(top left, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)),
+    url(../img/hero.jpg);
+    background-image: linear-gradient(to bottom right, rgba($lightGreen, 0.8), rgba($darkGreen, 0.8)), /* some comment */
+    url(../img/hero.jpg);
+
+    height: 90vh;
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &__logo {
+        height: 3.5rem;
+    }
+}
+
+
+
+

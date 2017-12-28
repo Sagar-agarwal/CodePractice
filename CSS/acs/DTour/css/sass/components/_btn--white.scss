@@ -1,0 +1,19 @@
+
+.btn--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+    
+    &-animation {
+    animation-name: headingWhiteBtn;
+    animation-delay: 1.5s;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: backwards;
+    }
+
+
+    &::after {
+        background-color: $color-white;
+    }
+}
+
