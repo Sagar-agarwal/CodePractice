@@ -1,0 +1,14 @@
+{
+  "name": "dtour",
+  "version": "1.0.0",
+  "description": "dtour package",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass" : "node-sass css/sass/main.scss css/style.css -w" 
+  },
+  "author": "Sagar",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.7.2"
+  }
+}
