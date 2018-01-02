@@ -208,13 +208,32 @@ body {
       box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.4);
       z-index: 20;
       transform: translateY(-0.5rem);
-      transform: scale(1.5);
+      transform: scale(1.3);
       -webkit-filter: none;
       -moz-filter: none;
       -ms-filter: none;
       filter: none; }
   .composition:hover .composition__photo:not(:hover) {
     transform: scale(0.9); }
+
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.7);
+  height: 35rem;
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: all .3s; }
+  .feature-box:hover {
+    transform: translateY(-3rem) scale(1.1); }
+  .feature-box__icon {
+    font-size: 6rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    background-image: linear-gradient(to right, #7ed56f, #28b485);
+    -webkit-background-clip: text;
+    color: transparent; }
 
 .heading-box {
   position: absolute;
@@ -249,7 +268,7 @@ body {
     float: left;
     /* background-color: red;  for testing*/ }
     .row [class^="col-"]:not(:last-child) {
-      margin-right: 6rem; }
+      margin-right: 8rem; }
   .row::after {
     content: "";
     display: table;
@@ -257,22 +276,35 @@ body {
   .row .col-1-of-1 {
     width: 100%; }
   .row .col-1-of-2 {
-    width: calc((100% - 6rem) / 2); }
+    width: calc((100% - 8rem) / 2); }
   .row .col-1-of-3 {
-    width: calc((100% - (6rem * 2)) / 3); }
+    width: calc((100% - (8rem * 2)) / 3); }
   .row .col-2-of-3 {
-    width: calc(((100% - (6rem * 2)) / 3) * 2 + 6rem); }
+    width: calc(((100% - (8rem * 2)) / 3) * 2 + 8rem); }
   .row .col-1-of-4 {
-    width: calc((100% - 6rem*3) / 4); }
+    width: calc((100% - 8rem*3) / 4); }
   .row .col-2-of-4 {
-    width: calc((100% - 6rem) / 2); }
+    width: calc((100% - 8rem) / 2); }
   .row .col-3-of-4 {
-    width: calc(((100% - 6rem*3) / 4)*3 + 6rem*2); }
+    width: calc(((100% - 8rem*3) / 4)*3 + 8rem*2); }
 
 .section-about {
   background-color: #f7f7f7;
   padding: 25rem 0;
   margin-top: -20vh; }
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  margin-top: -15vh;
+  /*
+clip-path: polygon(0 20vh, 100% 0, 100% 80vh, 0 100%);
+*/
+  transform: skewY(-7deg); }
+  .section-features > * {
+    transform: skewY(7deg); }
 
 /*  --- R E S O U R C E S --- */
 /*
