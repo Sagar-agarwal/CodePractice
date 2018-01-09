@@ -54,6 +54,7 @@
         background-blend-mode: color;
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        
 
         &--1 {
             background-image: $color-card-1-back, url(../img/nat-5.jpg);
