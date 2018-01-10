@@ -84,11 +84,17 @@ body {
   background-image: linear-gradient(to right, #7ed56f, #28b485);
   display: inline-block;
   -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
   color: transparent;
   letter-spacing: .2rem;
   transition: all .2s;
   /*     text-shadow: .2rem .5rem .3rem rgba($color-black, 0.2); */ }
   .heading-secondary:hover {
+    -webkit-text-shadow: 0.2rem 0.5rem 0.7rem rgba(0, 0, 0, 0.2);
+    -moz-text-shadow: 0.2rem 0.5rem 0.7rem rgba(0, 0, 0, 0.2);
+    -ms-text-shadow: 0.2rem 0.5rem 0.7rem rgba(0, 0, 0, 0.2);
+    -o-text-shadow: 0.2rem 0.5rem 0.7rem rgba(0, 0, 0, 0.2);
     text-shadow: 0.2rem 0.5rem 0.7rem rgba(0, 0, 0, 0.2);
     transform: translateY(-0.1rem); }
 
@@ -103,25 +109,29 @@ body {
     margin-bottom: 3rem; }
 
 .u-center-text {
-  text-align: center; }
+  text-align: center !important; }
 
 .u-margin-bottom-med {
-  margin-bottom: 8rem; }
+  margin-bottom: 8rem !important; }
 
 .u-margin-bottom-sm {
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem !important; }
 
 .u-margin-top-mid {
-  margin-bottom: 8rem; }
+  margin-bottom: 8rem !important; }
 
-.btn:link, .btn:visited {
+.u-padding-left-sm {
+  padding-left: 2rem !important; }
+
+.btn, .btn:link, .btn:visited {
   text-decoration: none;
   text-transform: uppercase;
   padding: 1.5rem 4rem;
   display: inline-block;
   border-radius: 10rem;
   transition: all 0.2s;
-  position: relative; }
+  position: relative;
+  border: none; }
 
 .btn:hover {
   transform: translateY(-0.3rem);
@@ -131,7 +141,8 @@ body {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0; }
 
-.btn:active {
+.btn:active, .btn:focus {
+  outline: none;
   transform: translateY(-0.1rem);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
@@ -405,6 +416,77 @@ body {
     height: 100%;
     object-fit: cover; }
 
+.form {
+  padding: 4rem 2rem; }
+  .form__group:not(:last-child) {
+    margin-bottom: 2rem; }
+  .form__input {
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    font-family: inherit;
+    color: inherit;
+    border-bottom: 3px solid transparent;
+    width: 90%;
+    display: block;
+    transition: all .5s ease; }
+    .form__input:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+      border-bottom: 3px solid #7ed56f; }
+    .form__input:focus:invalid {
+      border-bottom: 3px solid #ff7730; }
+    .form__input::-webkit-input-placeholder {
+      color: #999; }
+  .form__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: .7rem;
+    display: block;
+    transition: all .3s ease; }
+  .form__input:placeholder-shown + .form__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4.5rem);
+    font-size: 1.5rem; }
+  .form__radio-input {
+    display: none; }
+  .form__radio-group {
+    width: 49%;
+    display: inline-block; }
+  .form__radio-label {
+    font-size: 1.6rem;
+    cursor: pointer;
+    position: relative;
+    padding-left: 3.5rem; }
+  .form__radio-button {
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid #55c57a;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: -0.5rem; }
+    .form__radio-button::after {
+      content: "";
+      display: block;
+      height: 1.5rem;
+      width: 1.5rem;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #55c57a;
+      opacity: 0;
+      transition: opacity .2s; }
+  .form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+    opacity: 1; }
+
 .heading-box {
   position: absolute;
   top: 40%;
@@ -459,6 +541,19 @@ body {
   .row .col-3-of-4 {
     width: calc(((100% - 8rem*3) / 4)*3 + 8rem*2); }
 
+.book {
+  -webkit-background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
+  -moz-background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
+  -ms-background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
+  -o-background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
+  background-size: 100%;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  height: 50rem; }
+  .book__form {
+    margin: 3rem; }
+
 .section-about {
   background-color: #f7f7f7;
   padding: 25rem 0;
@@ -486,6 +581,10 @@ clip-path: polygon(0 20vh, 100% 0, 100% 80vh, 0 100%);
   position: relative;
   padding: 15rem 0;
   /* background-color: $color-grey-light-1; */ }
+
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, #7ed56f, #55c57a); }
 
 /*  --- R E S O U R C E S --- */
 /*

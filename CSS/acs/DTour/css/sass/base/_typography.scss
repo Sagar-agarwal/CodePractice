@@ -55,6 +55,9 @@ body {
     background-image: linear-gradient(to right, $lightGreen, $darkGreen);
     display: inline-block;
     -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+
     color: transparent;
     letter-spacing: .2rem;
     transition: all .2s;
@@ -62,6 +65,10 @@ body {
 
 
     &:hover {
+        -webkit-text-shadow: .2rem .5rem .7rem rgba($color-black, 0.2);
+        -moz-text-shadow: .2rem .5rem .7rem rgba($color-black, 0.2);
+        -ms-text-shadow: .2rem .5rem .7rem rgba($color-black, 0.2);
+        -o-text-shadow: .2rem .5rem .7rem rgba($color-black, 0.2);
         text-shadow: .2rem .5rem .7rem rgba($color-black, 0.2);
         transform: translateY(-0.1rem);
     }
