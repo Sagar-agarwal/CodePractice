@@ -1,4 +1,5 @@
-<div id="userDetail">
+<div>
+    <a href="#/main">Back to search</a>
         <div>
             <h3>{{gitUser.name}}</h3>
             <h3>{{gitUser.login}}</h3>
@@ -21,7 +22,7 @@
             </thead>
             <tbody>
                 <tr ng-repeat="repo in repos | orderBy:repoSortOrder">
-                    <td>{{repo.name}}</td>
+                    <td><a href="#!/repo/{{gitUser.login}}/{{repo.name}}" >{{repo.name}}</a></td>
                     <td>{{repo.stargazers_count | number}}</td>
                     <td>{{repo.language}}</td>
                 </tr>

@@ -4,30 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Angular: Get started</title>
-
-    
     <!--  ANGULARJS CDN-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js"></script>
-    
-    <script src="app.js"></script>
-    
-    <script src="github.js"></script>
-
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-route.js"></script>
+    <!-- ANGULAR Main-->
+    <script src="/src/angularjs/app.js"></script>
+    <!-- ANGULAR custom SERVICES-->
+    <script src="/src/angularjs/services/github.js"></script>
+    <!-- ANGULAR Controller's-->
+    <script src="/src/angularjs/controller/mainController.js"></script>
+    <script src="/src/angularjs/controller/userController.js"></script>
+    <script src="/src/angularjs/controller/repoController.js"></script>
+    <script src="/src/js/script.js"></script>
+    <link rel="stylesheet" href="/src/css/style.css">
 </head>
 
-<body ng-controller="MainController">
-    <h1>{{message}}</h1> {{countdown}}
-    <form name="searchUser">
-        <input type="search" placeholder="username to find" ng-model="username">
-        <input type="submit" value="search" ng-click="search(username)">
-    </form>
-    
-    <div ng-include="'userDetail.html'" ng-show="gitUser">
-        
-    </div>
-
+<body>
+    <h1>GitHub Viewer App</h1>
+    <div ng-view></div>
 </body>
 
 </html>
