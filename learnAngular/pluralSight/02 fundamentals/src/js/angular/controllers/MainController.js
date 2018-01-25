@@ -1,8 +1,8 @@
 (function (){
 
-    var app = angular.module("app");
+    var eventsApp = angular.module("eventsApp");
 
-    app.controller("MainController", ["$scope", function ($scope){
+    eventsApp.controller("MainController", ["$scope", function ($scope){
         $scope.message = "hello World!";
     }]);
 
