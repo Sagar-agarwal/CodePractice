@@ -22,9 +22,13 @@
     <script src="/src/libs/jQuery/jquery-3.3.1.min.js"></script>
     <script src="/src/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
 
     <script src="/src/js/script.js"></script>
+    <link rel="stylesheet" href="/src/css/app.css">
     <link rel="stylesheet" href="/src/css/style.css">
+    
 </head>
 
 <body>
@@ -46,10 +50,10 @@
 
     <div ng-controller="EventController" class="container">
         <div class="container-fluid">
-            <div class="row">
-                <div class="span1">
-                    <img ng-src="{{event.imageUrl}}" alt="{{event.name}}">
-                    <h2>{{event.name}}</h2>
+            <div class="row event">
+                <div class="span1 event__box">
+                    <img class="event__img" ng-src="{{event.imageUrl}}" alt="{{event.name}}">
+                    <h2 class="event__heading">{{event.name}}</h2>
                 </div>    
             </div>
 
@@ -73,13 +77,29 @@
 
             <div>
                 <h3>Sessions:</h3>
-                <ul style="list-decoration:none">
-                    <li  ng-repeat=" session in event.sessions">
+                <ul class="thumbnails">
+                    <li  ng-repeat=" session in event.sessions" class="sessions__item">
                         <div class="row session">
+                            <div class="span0 well votingWidget">
+                            <div class="vottingButton">
+                                <i class="icon-chevron-up icon-white"></i>
+                            </div>
+                            <div class="badge badge-inverse">
+                                <div class="vottingButton">
+                                    <i class="icon-chevron-down"></i>
+                                </div>
+                            </div>
+                        </div>
                             <div class="well span9">
                                <h4 class="well-title">
                                    {{session.name}}
-                               </h4> 
+                               </h4>
+                               <h6>
+                                <span>Duration: {{session.duration}}</span>
+                                <br/>
+                                <span>Level: {{session.level}}</span>
+                                <p>{{session.abstract}}</p>
+                               </h6> 
                             </div>
                         </div>
                     </li>
