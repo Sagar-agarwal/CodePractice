@@ -11,7 +11,10 @@
     <script src="src\libs\bootstrap\js\bootstrap.js"></script>
     <!-- angularjs -->
     <script src="src\libs\angular\angular.js"></script>
+    <script src="src\libs\angular\angular-route.min.js"></script>
+    <!-- AngularJS CONTROLLERS -->
     <script src="src\angular\app.js"></script>
+    <script src="src\angular\controllers\MainController.js"></script>
     <!-- Custom JS -->
     <script src="src/js/script.js"></script>
     <!-- Custom CSS -->
@@ -19,10 +22,24 @@
 </head>
 
 <body>
-    <div ng-controller="MainController">
-        <h2>{{message}}</h2>
+    <div class="container-fluid">
+        <nav class="navbar navbar-default">
+            <div class="navbar-brand">Angular</div>
+            <div class="navbar navbar-right">LA</div>
+        </nav>
     </div>
-
+    <div class="container">
+        <div ng-controller="MainController">
+            <h2>{{message}} {{name}} !</h2>
+            <label for="twitterHandle">Enter your twitter handel?</label>
+            <input type="text" for="twitterHandle" ng-model="twitterHandleName">
+            <div class="alert alert-danger" ng-if="twitterHandleName.length < twitterHandleMinChar">
+                <p>Handle name should greater than 3 characters</p>
+            </div>
+            <hr>
+            <h1>twitter.com/{{ toLowerCase(twitterHandleName) }}</h1>
+        </div>
+    </div>
 </body>
 
 </html>
