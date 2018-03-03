@@ -1,7 +1,7 @@
 myApp = angular.module('myApp');
 
-myApp.controller('MainController', ['$scope', '$http', '$timeout', '$filter', '$location', '$log',
-    function ($scope, $http, $timeout, $filter, $location, $log){
+myApp.controller('MainController', [ 'nameService','$scope', '$http', '$timeout', '$filter', '$location', '$log',
+    function ( nameService, $scope, $http, $timeout, $filter, $location, $log){
         $scope.message = "Hello";
         $scope.name = 'Tony';
         $scope.twitterHandleName = '';
@@ -11,10 +11,4 @@ myApp.controller('MainController', ['$scope', '$http', '$timeout', '$filter', '$
             return $filter('lowercase')(someString);
         }
 
-        $log.info($location.path());
-
-
-        
-
-
-    }]);
+        }]);
