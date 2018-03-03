@@ -8,10 +8,24 @@
     @ ng-cloak      Hides the binded elements until data is available for display
 
 @ event based
-    @ ng-click      Watched the click event
+    @ ng-click      Watch the click event
 
 */
 
 
-var myApp = angular.module('myApp', []);
+var myApp = angular.module('myApp', ['ngRoute']);
+
+myApp.config(function ($routeProvider){
+
+    $routeProvider
+    .when('/', {
+        templateUrl: 'src/angular/views/viewMain.html',
+        controller: 'ViewMainController'
+    })
+    .when('/mainApp', {
+        templateUrl: 'src/angular/views/mainAppView.html',
+        controller: 'MainAppViewController'
+    });
+});
+
 
