@@ -1,11 +1,10 @@
 body {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
-    font-size: 1.6rem;
+    //font-size: 1.6rem;
     line-height: 1.7;
     color: #777777;
-    padding: 2rem;
-    box-sizing: border-box;
+    
 }
 
 .heading-primary {
@@ -26,6 +25,11 @@ body {
         animation-delay: 1s;
         animation-fill-mode: backwards;
 
+        @include respond(phone){
+            font-size: 5rem;
+            letter-spacing: 1rem;
+        }
+
         /* 
         Short-hand > animation: moveInBottom 1s ease-out;
 
@@ -44,6 +48,10 @@ body {
         animation-duration: 1s;
         animation-delay: 1s;
         animation-fill-mode: backwards;
+
+        @include respond(phone){
+            letter-spacing: .5rem;
+        }
     }    
 }
 
