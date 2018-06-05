@@ -40,7 +40,6 @@
             <label for="twitterHandle">Enter your twitter handel?</label>
             <input type="text" for="twitterHandle" ng-model="twitterHandleName">
             <div class="alert alert-danger" ng-if="twitterHandleName.length < twitterHandleMinChar">
-                <p>Handle name should greater than 3 characters</p>
             </div>
             <hr>
             <h3>twitter.com/{{ toLowerCase(twitterHandleName) }}</h3>
