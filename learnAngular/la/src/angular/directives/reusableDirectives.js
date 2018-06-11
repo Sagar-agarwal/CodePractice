@@ -1,3 +1,15 @@
+/*
+    ****    SCOPE overide symbols  ****
+
+    @ text [interpolation - one way binding of text]
+    = two way binding
+    & allowing access to functions
+
+*/
+
+
+
+
 myApp = angular.module('myApp');
 
 myApp.directive('twittResults', function (){
