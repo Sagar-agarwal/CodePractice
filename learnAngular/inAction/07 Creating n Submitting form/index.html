@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+
+    <!-- StyleSheets here -->
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- Scripts here here -->
+    <script type="text/javascript" src="libs/angular/angular.js"></script>
+    <script type="text/javascript" src="libs/jquery/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+    <!-- Angular App -->
+    <script type="text/javascript" src="angular/index.js"></script>
+
+    <!-- Angular Factories -->
+    <script type="text/javascript" src="angular/factories/factories.js"></script>
+
+    <!-- Angular Services -->
+    <script type="text/javascript" src="angular/services/services.js"></script>
+
+    <!-- Angular Controllers-->
+    <script type="text/javascript" src="angular/controllers/MainController.js"></script>
+
+    
+
+
+    <!-- CUSTOM SCRIPTS -->
+    <script type="text/javascript" src="js/main.js"></script>
+
+
+    <title>Form Documentation</title>
+</head>
+<h2 class="text-center">Angular Form Documentation</h2>
+<body ng-controller="MainController">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            
+            <!-- ng-model -->
+            <div class="panel panel-primary">
+                <div class="panel-heading"><h5>ng-model</h5></div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div>
+                            <h3>ng-model</h3>
+                            <p>It stores the form field and bind it to the controller scope</p>
+                            <input type="text" ng-model="form.carType"/>
+                            <input type="checkbox" ng-model="form.hasTurbo"/>
+                            <br>
+                            <p>{{form}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ng-disabled -->
+            <div class="panel panel-primary">
+                <div class="panel-heading"><h5>ng-disabled</h5></div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div>
+                            <h3>ng-disabled</h3>
+                            <p>Disabled the form field if expression is true</p>
+                            <input type="text" ng-model="disabledForm.name" ng-disabled="disabledForm.disableName"/>
+                            <input type="checkbox" ng-model="disabledForm.disableName"/>
+                            <br>
+                            <p>{{disabledForm}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ng-submit -->
+            <div class="panel panel-primary">
+                <div class="panel-heading"><h5>ng-submit</h5></div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div>
+                            <h3>ng-submit</h3>
+                            <p>Submits the form calling function in scope</p>
+                            <form ng-submit="submitFunc();">
+                                <label for="submitName">Name:</label>
+                                <input type="text" id="submitName" ng-model="submitForm.id" /><br>
+                                <label for="hasID">has ID:</label>
+                                <input type="checkbox" id="hasID" ng-model="submitForm.hasId"/><br>
+                                
+                                <input type="submit" value="submit form" class="btn btn-primary">
+                                <div class="alert alert-danger" ng-show="submitForm.error != undefined">{{submitForm.error}}</div>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
