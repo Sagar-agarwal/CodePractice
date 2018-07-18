@@ -96,6 +96,115 @@
                 </div>
             </div>
 
+            <!-- Checkbox -->
+            <div class="panel panel-primary">
+                <div class="panel-heading"><h5>Checkboxs</h5></div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div>
+                            <h3>Checkboxs</h3>
+                            <p>The various ways to define the value returned when the checkbox is checked or not</p>
+                            <label for="cb1">True / False: </label>
+                            <input type="checkbox" id="cb1" ng-model="checkbox.cb1" />
+                            <br>
+                            <label for="cb2">Y / N: </label>
+                            <input type="checkbox" id="cb2" ng-model="checkbox.cb2" ng-true-value="'Y'" ng-false-value="'N'"/>
+                            <br>
+                            <label for="cb3">Going / Not Going: </label>
+                            <input type="checkbox" id="cb3" ng-model="checkbox.cb3" ng-true-value="'Going'" ng-false-value="'Not Going'"/>
+                            <br>
+                            {{checkbox}}
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ng-options -->
+            <div class="panel panel-primary">
+                <div class="panel-heading"><h5>Options</h5></div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div>
+                            <h3>Options</h3>
+                            <p>Loads options in a drop down sourced by JSON Array</p>
+                            <label for="manual">Manual dropdown: </label>
+                            <select name="" id="manual"
+                                            ng-model="dropdown.manual">
+                                <option value="1">This is One</option>
+                                <option value="2">This is Two</option>
+                                <option value="3">This is Three</option>
+                                <option value="4">This is Four</option>
+                            </select>
+                            <br>
+                            {{dropdown.manual}}
+                            
+                            <br>
+                            <label for="fromArray">Array Dropdown: </label>
+                            <select name="" id="fromArray"
+                                            ng-model="dropdown.fromArray"
+                                            ng-options="item as item.name for item in dropdownArray">
+                            </select>
+                            <br>
+                            {{dropdown.fromArray}}
+                            <br>
+                            <label for="singleValueFromArray">Single value Array Dropdown: </label>
+                            <select name="" id="singleValueFromArray"
+                                            ng-model="dropdown.singleValueFromArray"
+                                            ng-options="item.value as item.name for item in dropdownArray">
+                            </select>
+                            <br>
+                            {{dropdown.singleValueFromArray}}
+                            <br>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Select default option -->
+            <div class="panel panel-primary">
+                <div class="panel-heading"><h5>Default selection in Dropdown</h5></div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div>
+                            <h3>Dropdown - Selecting default option</h3>
+                            <p>Selecting the default options for different types of dropdown</p>
+                            <label for="manualSelected">manualSelected dropdown: </label>
+                            <select name="" id="manualSelected"
+                                            ng-model="default.manual">
+                                <option value="1">This is One</option>
+                                <option value="2">This is Two</option>
+                                <option value="3">This is Three</option>
+                                <option value="4">This is Four</option>
+                            </select>
+                            <br>
+                            {{default.manual}}
+                            
+                            <br>
+                            <label for="fromArraySelected">Array Dropdown: </label>
+                            <select name="" id="fromArraySelected"
+                                            ng-model="default.fromArray"
+                                            ng-options="item as item.name for item in dropdownArray">
+                            </select>
+                            <br>
+                            {{default.fromArray}}
+                            <br>
+                            <label for="singleValueFromArraySelected">Single value Array Dropdown: </label>
+                            <select name="" id="singleValueFromArraySelected"
+                                            ng-model="default.singleValueFromArray"
+                                            ng-options="item.value as item.name for item in dropdownArray">
+                            </select>
+                            <br>
+                            {{default.singleValueFromArray}}
+                            <br>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Code above here -->
         </div>
     </div>
 </body>
