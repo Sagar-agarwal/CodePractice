@@ -13,7 +13,8 @@ var fetchNotes = () => {
 };
 
 var writeNotes = (notes) => {
-    fs.writeFileSync('notes-data.json', notes);
+    var notesJSON = JSON.stringify(notes);
+    fs.writeFileSync('notes-data.json', notesJSON);
 };
 
 // Exposed functions
@@ -27,8 +28,7 @@ var addNote = function (title, body){
     var duplicateNotes = notes.filter((note) => note.title === title);
     if (duplicateNotes.length === 0){
         notes.push(note)
-        var notesJSON = JSON.stringify(notes);
-        writeNotes(notesJSON);
+        writeNotes(notes);
         return console.log(JSON.stringify(note));
     }
     else{
@@ -44,7 +44,12 @@ var readNote = function (title){
     console.log('reading note: ' + title);
 };
 var removeNote = function (title){
-    console.log('Removing note: ' + title);
+    var notes = fetchNotes();
+    var updatedNotes = notes.filter((note) => note.title !== title);
+    writeNotes(updatedNotes);
+
+   var msg = notes.length !== updatedNotes.length ? 'Note removed' : 'Note does not exist';
+   return console.log(msg);
 };
 
 module.exports = {
