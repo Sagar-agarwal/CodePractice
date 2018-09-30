@@ -3,22 +3,36 @@ console.log('starting notes.js');
 //  Node Require
 var fs = require('fs');
 
+// Internal functions
+var fetchNotes = () => {
+    try {
+     return JSON.parse(fs.readFileSync('notes-data.json'));
+    } catch (err) {
+        return [];
+    }
+};
+
+var writeNotes = (notes) => {
+    fs.writeFileSync('notes-data.json', notes);
+};
+
+// Exposed functions
 var addNote = function (title, body){
-    var notes = [];
+    var notes = fetchNotes();
     note = {
         title: title,
         body: body
     };
 
-    try {
-        var notes = JSON.parse(fs.readFileSync('notes-data.json'));
-    } catch (err) { }
-
     var duplicateNotes = notes.filter((note) => note.title === title);
     if (duplicateNotes.length === 0){
         notes.push(note)
         var notesJSON = JSON.stringify(notes);
-        fs.writeFileSync('notes-data.json', notesJSON);
+        writeNotes(notesJSON);
+        return console.log(JSON.stringify(note));
+    }
+    else{
+        return console.log('Note with same title already exist, try different title');
     }
 };
 
