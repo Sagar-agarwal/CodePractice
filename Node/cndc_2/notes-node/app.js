@@ -1,4 +1,3 @@
-console.log('Starting app.js');
 
 // Node Modules
 const fs = require('fs');

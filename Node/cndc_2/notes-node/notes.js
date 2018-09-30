@@ -1,4 +1,3 @@
-console.log('starting notes.js');
 
 //  Node Require
 var fs = require('fs');
@@ -15,6 +14,15 @@ var fetchNotes = () => {
 var writeNotes = (notes) => {
     var notesJSON = JSON.stringify(notes);
     fs.writeFileSync('notes-data.json', notesJSON);
+};
+
+var notesTemplate = (notes) => {
+    var msg = '';
+    notes.forEach(note => {
+       msg +=  "\n----------------\nTitle: " + note.title + "\n" + "body : " + note.body + "\n";
+    });
+
+    return msg;
 };
 
 // Exposed functions
@@ -37,15 +45,15 @@ var addNote = function (title, body){
 };
 
 var getAll = function (){
-    console.log('getting all notes');
+    var notes = notesTemplate(fetchNotes());
+    return console.log('\n----------------\n All Notes' + notes);
 };
 
 var readNote = function (title){
     var notes = fetchNotes();
     var requestedNote = notes.filter((note) => note.title === title);
-    console.log(requestedNote);
     if (requestedNote.length === 1){
-        var noteMsg = "\nNote found\n----------------\nTitle: " + requestedNote[0].title + "\n" + "body : " + requestedNote[0].body + "\n";
+        var noteMsg = "\nNote found" + notesTemplate(requestedNote);
     }
     
     var msg = requestedNote.length === 1 ? noteMsg : 'Note not found';
