@@ -41,8 +41,17 @@ var getAll = function (){
 };
 
 var readNote = function (title){
-    console.log('reading note: ' + title);
+    var notes = fetchNotes();
+    var requestedNote = notes.filter((note) => note.title === title);
+    console.log(requestedNote);
+    if (requestedNote.length === 1){
+        var noteMsg = "\nNote found\n----------------\nTitle: " + requestedNote[0].title + "\n" + "body : " + requestedNote[0].body + "\n";
+    }
+    
+    var msg = requestedNote.length === 1 ? noteMsg : 'Note not found';
+    return console.log(msg);
 };
+
 var removeNote = function (title){
     var notes = fetchNotes();
     var updatedNotes = notes.filter((note) => note.title !== title);
