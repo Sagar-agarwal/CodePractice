@@ -6,6 +6,8 @@ setTimeout(() => {
 
 setTimeout(() => {
     console.log('This is second timeOut');
-}, 0);
+}, 1000);
 
 console.log('Finishing up');
+
+// Call stack and event loop fundamentals complete
