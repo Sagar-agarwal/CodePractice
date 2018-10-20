@@ -1,4 +1,4 @@
-
+someObj.js
 Core/wdb/07/resource/
 Core/wdb/07/resource.txt
 Core/wdb/07/resource/
@@ -19,3 +19,4 @@ learnAngular/la/src/libs/
 tools/chromeDev/mastering-chrome-devtools/
 material/mdc/material-components-web-codelabs/
 Node/cndc_2/notes-node/node_modules/
+Node/cndc_2/wApp/node_modules/
