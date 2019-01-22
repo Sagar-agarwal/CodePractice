@@ -1,15 +1,3 @@
-function Building (floors){
-    this.what = 'building';
-    this.floors = floors;
-    this.func = function (){
-                    return 'this method';
-                    };
-};
+import { Stack } from './modules/stack.js';
 
-Building.prototype = {
-    countFloor: function (){
-        return this.floors*5;
-    },
-};
-
-var myHouse = new Building(3);
+var n = new Stack();
