@@ -1,3 +1,3 @@
-import { Stack } from './modules/stack.js';
+import { Stack } from './modules/stack.js'
 
-var n = new Stack();
+var n = new Stack()
