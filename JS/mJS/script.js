@@ -1,9 +1,5 @@
+// WINDOW Method
 
-
-let val;
-
-const today = new Date();
-
-val = today;
+let val = window.navigator;
 
 console.log(val);
