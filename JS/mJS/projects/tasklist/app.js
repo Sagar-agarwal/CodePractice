@@ -1,32 +1,42 @@
-// document.querySelector('.clear-tasks').addEventListener('click', function(e){
-//   console.log('Hello World');
-//   e.preventDefault();
-// });
+const form = document.querySelector('form');
+const taskInput = document.getElementById('task');
 
-document.querySelector('.clear-tasks').addEventListener('click', onClick);
+//Clear input value
+taskInput.value = '';
 
-function onClick (e) {
-  let val = e;
-
-  // val = e.target;
-  // val = e.target.id;
-  // val = e.target.className;
-  // val = e.target.classList;
-
-  // e.target.innerText = 'Hello';
-
-  // Event Type
-  val = e.type;
-
-  // Time Stamp
-  val = e.timeStamp;
-
-  // Coord event relative to window
-  val = e.clientY;
-
-  // Coor relative to element itself
-  val = e.offsetY;
+form.addEventListener('submit', runEvent);
 
 
-  console.log(val);
+// Event Listener
+function runEvent (e) {
+  console.log(`Event type: ${e.type}`);
+  console.log(e.target.value);
+
+  // console.log(taskInput.value);
+  // e.preventDefault();
 };
+
+// Event: KeyDown 
+//taskInput.addEventListener('keydown', runEvent);
+
+// Event keyup
+//taskInput.addEventListener('keyup', runEvent);
+
+// Event keypress
+// taskInput.addEventListener('keypress', runEvent);
+
+// Event focus
+// taskInput.addEventListener('focus', runEvent);
+
+// Event Blur
+// taskInput.addEventListener('blur', runEvent);
+
+// Event Cut
+taskInput.addEventListener('cut', runEvent);
+//Event paste
+taskInput.addEventListener('paste', runEvent);
+// Event Copy
+taskInput.addEventListener('copy', runEvent);
+
+// Event input
+taskInput.addEventListener('input', runEvent);
