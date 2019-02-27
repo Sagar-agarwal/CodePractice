@@ -1,42 +1,43 @@
-const form = document.querySelector('form');
-const taskInput = document.getElementById('task');
+// Event bubbling
 
-//Clear input value
-taskInput.value = '';
+/*
+document.querySelector('.card-title').addEventListener('click', 
+  function (){
+    console.log('cart title');
+});
 
-form.addEventListener('submit', runEvent);
+document.querySelector('.card-content').addEventListener('click', 
+  function (){
+    console.log('card content');
+  }
+);
 
+document.querySelector('.card').addEventListener('click', 
+  function (){
+    console.log('card');
+  }
+);
 
-// Event Listener
-function runEvent (e) {
-  console.log(`Event type: ${e.type}`);
-  console.log(e.target.value);
+document.querySelector('.col').addEventListener('click', 
+  function (){
+    console.log('col');
+  }
+);
 
-  // console.log(taskInput.value);
-  // e.preventDefault();
-};
+*/
 
-// Event: KeyDown 
-//taskInput.addEventListener('keydown', runEvent);
+//Event Delegation
 
-// Event keyup
-//taskInput.addEventListener('keyup', runEvent);
+// const deleteItem = document.querySelector('.delete-item');
+// deleteItem.addEventListener('click', deleteItemFunc);
 
-// Event keypress
-// taskInput.addEventListener('keypress', runEvent);
+document.querySelector('body').addEventListener('click', deleteItemFunc)
 
-// Event focus
-// taskInput.addEventListener('focus', runEvent);
+function deleteItemFunc (e){
+  
 
-// Event Blur
-// taskInput.addEventListener('blur', runEvent);
-
-// Event Cut
-taskInput.addEventListener('cut', runEvent);
-//Event paste
-taskInput.addEventListener('paste', runEvent);
-// Event Copy
-taskInput.addEventListener('copy', runEvent);
-
-// Event input
-taskInput.addEventListener('input', runEvent);
+  if (e.target.parentElement.classList.contains('delete-item')) {
+    e.target.parentElement.parentElement.remove();
+    console.log('delete item');
+  }
+}; 
