@@ -1,7 +1,17 @@
-const calc = document.querySelector('#calculate').addEventListener('click', runCalculations);
+const calc = document.querySelector('#calculate').addEventListener('click', function (e){
+    //hide results section
+    document.querySelector('#results').style.display = 'none';
+
+    // Display loading animation
+    document.querySelector('#loading').style.display = 'block';
+
+    setTimeout(runCalculations, 1500);
+
+    e.preventDefault();
+});
 
 // Calculations event function
-function runCalculations (e){
+function runCalculations (){
     const amount = document.querySelector('#amount');
     const interest = document.querySelector('#interest');
     const years = document.querySelector('#years');
@@ -19,16 +29,16 @@ function runCalculations (e){
     const monthly = (principal * x * calculatedInterest) / (x-1);
 
     if (isFinite(monthly)) {
-        monthlyPayment.value = monthly.toFloat(2);
-        totalPayment.value = (monthly * calculatedPayments).toFloat(2);
-        totalInterest.value = ((monthly * calculatedPayments)-principal).toFloat(2); 
+        monthlyPayment.value = monthly.toFixed(2);
+        totalPayment.value = (monthly * calculatedPayments).toFixed(2);
+        totalInterest.value = ((monthly * calculatedPayments)-principal).toFixed(2);
+
+        document.querySelector('#loading').style.display = 'none';
+        document.querySelector('#results').style.display = 'block';
     }
     else {
         showError();
     }
-
-
-    e.preventDefault();
 };
 
 // Error function
@@ -45,5 +55,6 @@ function showError (){
 
     card.insertBefore(errorDiv, heading);
 
+    // Clear error message after 3 seconds
     setTimeout(() => document.querySelector('.alert').remove(), 3000);
 };
