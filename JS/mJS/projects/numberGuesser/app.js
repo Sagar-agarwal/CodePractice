@@ -31,9 +31,18 @@ function checkNumber (e) {
     else {
         if (guessNum === winningNum) {
             showInGameMessage(`${guessNum} is Correct, YOU WON!!!`, clrGreen);
+            guessInput.disabled = true;
         }
         else {
-            showInGameMessage(`Incorrect, TRY AGAIN!!`, clrRed);
+            attempts -= 1;
+            if (attempts === 0) {
+                guessInput.disabled = true;
+                showInGameMessage(`--- GAME OVER ---`);
+            }
+            else {
+                showInGameMessage(`Incorrect, TRY AGAIN!! , attempts left ${attempts}`, clrRed);
+            }
+            
         }
     }
 };
@@ -47,4 +56,5 @@ function showInGameMessage (msg, color){
     message.textContent = msg,
     message.style.color = color;
     guessInput.style.borderColor = color;
+
 };
