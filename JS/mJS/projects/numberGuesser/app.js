@@ -1,10 +1,12 @@
 // Code variables
 let min = 1,
     max = 10,
-    winningNum = 2,
+    winningNum = getRandomNum(min, max),
     attempts = 3,
     clrGreen = 'green',
     clrRed = 'red';
+
+    
 
 // Dom variables
 const   minUI = document.querySelector('.min-num'),
@@ -12,7 +14,13 @@ const   minUI = document.querySelector('.min-num'),
         game = document.querySelector('#game'),
         guessBtn = document.querySelector('#guess-btn'),
         guessInput = document.querySelector('#guess-input'),
-        message = document.querySelector('.message');
+        message = document.querySelector('.message'),
+
+        // Sounds constants
+        wrongMoveSound = "wrong-move",
+        winSound = "win",
+        gameOverSound = "gameOver",
+        reloadSound = "reloadSound";
 
 
 // Set onLoad UI Elements
@@ -21,6 +29,16 @@ maxUI.textContent = max;
 
 // Guess button listener
 guessBtn.addEventListener('click', checkNumber);
+
+// page load event
+window.addEventListener('load', () => setTimeout(() => createjs.Sound.play(reloadSound), 100));
+
+// Play Again - Game reset event listener
+game.addEventListener('mousedown', (e) => {
+    if (e.target.classList.contains('play-again')){
+        window.location.reload();
+    }
+});
 
 function checkNumber (e) {
     let guessNum = parseInt(guessInput.value);
@@ -31,16 +49,19 @@ function checkNumber (e) {
     else {
         if (guessNum === winningNum) {
             showInGameMessage(`${guessNum} is Correct, YOU WON!!!`, clrGreen);
-            guessInput.disabled = true;
+            createjs.Sound.play(winSound);
+            playAgain();
         }
         else {
             attempts -= 1;
             if (attempts === 0) {
-                guessInput.disabled = true;
                 showInGameMessage(`--- GAME OVER ---`);
+                createjs.Sound.play(gameOverSound);
+                playAgain();
             }
             else {
                 showInGameMessage(`Incorrect, TRY AGAIN!! , attempts left ${attempts}`, clrRed);
+                createjs.Sound.play(wrongMoveSound);
             }
             
         }
@@ -58,3 +79,22 @@ function showInGameMessage (msg, color){
     guessInput.style.borderColor = color;
 
 };
+
+function playAgain () {
+    guessInput.disabled = true;
+    guessBtn.value = 'Play Again';
+    guessBtn.className += 'play-again';
+};
+
+function getRandomNum (min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+};
+
+// SoundJS audio loads
+function loadSound (){
+     createjs.Sound.registerSound("assets/audio/wrong-move.wav", wrongMoveSound);
+     createjs.Sound.registerSound("assets/audio/win.wav", winSound);
+     createjs.Sound.registerSound("assets/audio/lose.wav", gameOverSound);
+     createjs.Sound.registerSound("assets/audio/reload.wav", reloadSound);
+}; 
+
