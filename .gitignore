@@ -1,4 +1,5 @@
 **/node_modules/
+**/keys.js
 someObj.js
 Core/wdb/07/resource/
 Core/wdb/07/resource.txt
