@@ -16,7 +16,7 @@ re = /d!$/i; // ($) Must ends with
 re = /^hello$/i; // (^ $) must begin and end with hello
 re = /^h.llo/i; // (.) single wild character
 re = /h*llo/i; // (*) Wild card for 0 or more character
-
+2;
 re = /gra?e?y/i; // (?) optional character
 re = /gra?e?\?/i; // (\) Escape Character - before the character to escape
 
@@ -37,8 +37,26 @@ re = /Hel{2,}o/i; // ({min,}) Must match atleast as mentioned number of char - a
 // Parenthesis - () - Grouping
 re = /([0-9]x){3}/i; // (()) groups a combination to be processed together
 
+// Shorthand Character classes
+re = /\w/; // (\w) Word characters - alphanumeric or _
+re = /\w+/; // (\w+) One or more Word characters - alphanumeric or _
+re = /\W/; // (\W) Non work characters - anything but alphanumeric or _
+re = /\d/; // (\d) Any digit 1 time
+re = /\d+/; // (\d+) Any digit 1 or more times
+re = /\D/; // (\D) Any non digit char
+re = /\s/; // (\s) White space
+re = /\S/; // (\S) White space
+re = /hell\b/i; // (\b) word boundary
+
+// Assertions
+re = /x(?=y)/; // Match only if x is followed by y
+re = /x(?!y)/; // Match only if x is followed by anything but y
+
+// Practice
+re = /(<[A-Za-z0-9]{3,4}>)*/g;
+
 // Match string
-const str = "hello World! gray 5x8x5x";
+const str = "<foo> <bar> new </bar> </foo>";
 
 // Results
 const result = re.exec(str);
