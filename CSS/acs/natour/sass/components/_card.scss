@@ -3,7 +3,7 @@
     -moz-perspective: 150rem;
     height: 50rem;
     position: relative;
-    
+
 
     &__side {
         position: absolute;
@@ -17,7 +17,7 @@
         backface-visibility: hidden;
         -moz-backface-visibility: hidden;
         -webkit-backface-visibility: hidden;
-    
+
         &--front {
             background-color: $color-white;
         }
@@ -28,9 +28,11 @@
             &-1 {
                 background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
             }
+
             &-2 {
                 background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
             }
+
             &-3 {
                 background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
             }
