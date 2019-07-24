@@ -12,12 +12,27 @@ myApp.config(function($routeProvider) {
         });
 });
 
+myApp.service("nameService", function() {
+    var self = this;
+
+    this.name = "John Dow";
+    this.nameLength = function() {
+        return self.name.length;
+    };
+});
+
 myApp.controller("MainController", [
     "$scope",
     "$log",
     "$routeParams",
-    function($scope, $log, $routeParams) {
-        $scope.pageName = "first page";
+    "nameService",
+    function($scope, $log, $routeParams, nameService) {
+        $scope.name = nameService.name;
+
+        $scope.$watch("name", function() {
+            nameService.name = $scope.name;
+            $log.log($scope.name);
+        });
     }
 ]);
 
@@ -25,7 +40,8 @@ myApp.controller("SecondController", [
     "$scope",
     "$log",
     "$routeParams",
-    function($scope, $log, $routeParams) {
-        $scope.pageName = $routeParams.num;
+    "nameService",
+    function($scope, $log, $routeParams, nameService) {
+        $scope.name = nameService.name;
     }
 ]);
