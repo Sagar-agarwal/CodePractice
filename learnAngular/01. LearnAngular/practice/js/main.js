@@ -45,3 +45,11 @@ myApp.controller("SecondController", [
         $scope.name = nameService.name;
     }
 ]);
+
+myApp.directive('searchResults', function (){
+    return {
+        restrict: 'AECM',
+        templateUrl: './../src/directives/searchResults/searchResult.template.html',
+        replace: true
+    }
+});
