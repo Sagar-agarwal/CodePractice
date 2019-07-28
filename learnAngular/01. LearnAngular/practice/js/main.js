@@ -16,6 +16,8 @@ myApp.service("nameService", function() {
     var self = this;
 
     this.name = "John Dow";
+    this.address = "111, North Avenue, NY, 123";
+
     this.nameLength = function() {
         return self.name.length;
     };
@@ -27,11 +29,31 @@ myApp.controller("MainController", [
     "$routeParams",
     "nameService",
     function($scope, $log, $routeParams, nameService) {
-        $scope.name = nameService.name;
+        $scope.example = "this is test";
+        $scope.persons = [
+            {
+                name: "Jon Dow",
+                address: "11, NY, 23"
+            },
+            {
+                name: "Jon Dow",
+                address: "11, NY, 23"
+            },
+            {
+                name: "Jon Dow",
+                address: "11, NY, 23"
+            },
+            {
+                name: "Jon Dow",
+                address: "11, NY, 23"
+            }
+        ];
+
+        // $scope.person.name = nameService.name;
+        // $scope.person.address = nameService.address;
 
         $scope.$watch("name", function() {
             nameService.name = $scope.name;
-            $log.log($scope.name);
         });
     }
 ]);
@@ -50,6 +72,23 @@ myApp.directive('searchResults', function (){
     return {
         restrict: 'AECM',
         templateUrl: './../src/directives/searchResults/searchResult.template.html',
-        replace: true
+        replace: true,
+        scope: {
+            personsObj: "=",
+            example: "@"
+        },
+        compile: function (elem, attrs){
+            console.log("elem: " + elem);
+            console.log(`att: ${attrs}`);
+
+            return {
+                pre: function (scope, ele, attrs){
+                    console.log(`Pre: scope: ${scope} ele: ${JSON.stringify(ele)} attrs: ${JSON.stringify(attrs)}`);
+                },
+                post: function (scope, ele, attrs){
+                    console.log(`Post: scope: ${scope} ele: ${ele} attrs: ${attrs}`);
+                }
+            }
+        },
     }
 });
