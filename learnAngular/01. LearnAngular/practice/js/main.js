@@ -68,6 +68,7 @@ myApp.controller("SecondController", [
     }
 ]);
 
+<<<<<<< Updated upstream
 myApp.directive('searchResults', function (){
     return {
         restrict: 'AECM',
@@ -91,4 +92,14 @@ myApp.directive('searchResults', function (){
             }
         },
     }
+=======
+myApp.directive("searchResult", function() {
+    return {
+        template: `<a class="list-group-item" href="#">
+                        <h3 class="list-group-item-heading">Jon</h3>
+                        <p class="list-group-item-text">Address here</p>
+                    </a>`,
+        replace: true
+    };
+>>>>>>> Stashed changes
 });
