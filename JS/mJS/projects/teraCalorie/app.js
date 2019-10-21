@@ -46,7 +46,13 @@ const ItemCtrl = (function () {
 // UI Controller
 const UICtrl = (function () {
     const UISelectors = {
-        itemList: '#item-list'
+        itemList: '#item-list',
+        addBtn: '.add-btn',
+        deleteBtn: '.delete-btn',
+        updateBtn: '.update-btn',
+        backBtn: '.back-btn',
+        itemNameInput: '#item-name',
+        itemCaloriesInputs: '#item-calories'
     };
 
 
@@ -62,6 +68,17 @@ const UICtrl = (function () {
             });
 
             document.querySelector(UISelectors.itemList).innerHTML = html;
+        },
+        
+        getUISelectors: function (){
+            return UISelectors;
+        },
+
+        getItemInput: function (){
+            return {
+                name: document.querySelector(UISelectors.itemNameInput).value,
+                calories: document.querySelector(UISelectors.itemCaloriesInput).value
+            }
         }
     };
 })();
@@ -69,11 +86,25 @@ const UICtrl = (function () {
 // App Controller
 const App = (function (ItemCtrl, UICtrl) {
 
+    const loadEventListeners = function (){
+        const UISelectors = UICtrl.getUISelectors();
+
+        document.querySelector(UISelectors.addBtn).addEventListener('click', itemAddSubmit);
+    };
+
+    const itemAddSubmit = function (e){
+        const input = UICtrl.getItemInput();
+        console.log(input);
+        e.preventDefault();
+    };
+
     return {
         init: function () {
             const items = ItemCtrl.getItems();
 
             UICtrl.populateItemList(items);
+
+            loadEventListeners();
         }
     };
 
