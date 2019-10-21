@@ -35,15 +35,35 @@ const ItemCtrl = (function () {
     return {
         logData: function () {
             return data;
+        },
+        getItems: function (){
+            return data.items;
         }
-
     };
 
 })();
 
 // UI Controller
 const UICtrl = (function () {
-    return {};
+    const UISelectors = {
+        itemList: '#item-list'
+    };
+
+
+    return {
+        populateItemList: function (items){
+            let html = '';
+
+            items.forEach(function (item){
+                html += `<li class="collection-item" id="item-${item.id}">
+                <strong>${item.name}: </strong><em>${item.calories} calories</em>
+                <a href="#" class="secondary-content"><i class="fa fa-pencil"></i></a>
+            </li>`;
+            });
+
+            document.querySelector(UISelectors.itemList).innerHTML = html;
+        }
+    };
 })();
 
 // App Controller
@@ -51,7 +71,9 @@ const App = (function (ItemCtrl, UICtrl) {
 
     return {
         init: function () {
+            const items = ItemCtrl.getItems();
 
+            UICtrl.populateItemList(items);
         }
     };
 
