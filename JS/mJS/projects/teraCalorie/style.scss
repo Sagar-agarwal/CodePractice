@@ -1,0 +1,31 @@
+/* VARIABLES */
+// Colors
+$color-indigo: #283593;
+$color-red: #c62828;
+$color-orange:#d84315;
+$color-gray: #424242;
+$color-blue: #1565c0;
+$color-green: #558b2f;
+
+// Body
+*, html, body {
+    font-family: 'Lato', sans-serif !important;
+}
+
+.fa { font-family: 'FontAwesome' !important; }
+
+// Components
+
+input[type=text]:not(.browser-default):focus:not([readonly]) {
+    border-bottom: 1px solid $color-indigo;
+    -webkit-box-shadow: 0 1px 0 0 $color-indigo;
+    box-shadow: 0 1px 0 0 $color-indigo;
+}
+
+// NAV
+
+.brand-logo {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
