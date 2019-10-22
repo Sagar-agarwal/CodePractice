@@ -16,10 +16,12 @@ $color-green: #558b2f;
 
 // Components
 
-input[type=text]:not(.browser-default):focus:not([readonly]) {
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=number]:not(.browser-default):focus:not([readonly]) {
     border-bottom: 1px solid $color-indigo;
     -webkit-box-shadow: 0 1px 0 0 $color-indigo;
     box-shadow: 0 1px 0 0 $color-indigo;
+    background-color: white !important;
 }
 
 // NAV
