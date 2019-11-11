@@ -47,10 +47,9 @@ const StoreCtrl = (function () {
 })();
 
 // Item Controller
-const ItemCtrl = (function () {
-
+const ItemCtrl = (function() {
     // Item Constructor
-    const Item = function (id, name, calories) {
+    const Item = function(id, name, calories) {
         this.id = id;
         this.name = name;
         this.calories = calories - 0;
@@ -58,16 +57,37 @@ const ItemCtrl = (function () {
 
     // Data structure
     const data = {
+<<<<<<< Updated upstream
         items: [],
+=======
+        items: [
+            {
+                id: 0,
+                name: "Steak dinner",
+                calories: 1234
+            },
+            {
+                id: 1,
+                name: "Oat meal",
+                calories: 400
+            },
+            {
+                id: 2,
+                name: "cookie",
+                calories: 100
+            }
+        ],
+>>>>>>> Stashed changes
         currentItem: null,
         totalCalories: 0
     };
 
     return {
-        logData: function () {
+        logData: function() {
             return data;
         },
 
+<<<<<<< Updated upstream
         addItem: function (name, calories) {
             var ID = 0;
             var item = {};
@@ -135,14 +155,30 @@ const ItemCtrl = (function () {
 
         getItems: function () {
             return StoreCtrl.getAllItemsFromStore();
+=======
+        getItems: function() {
+            return data.items;
+        },
+
+        addItem: function(name, calories) {
+            var ID = 0;
+            if (data.items.length > 0) {
+                ID = data.items[data.items.length - 1].id + 1;
+            }
+            calories = calories - 0;
+            var newItem = new Item(ID, name, calories);
+            data.items.push(newItem);
+
+            return newItem;
+>>>>>>> Stashed changes
         }
     };
-
 })();
 
 // UI Controller
-const UICtrl = (function () {
+const UICtrl = (function() {
     const UISelectors = {
+<<<<<<< Updated upstream
         itemList: '#item-list',
         addBtn: '.add-btn',
         deleteBtn: '.delete-btn',
@@ -152,14 +188,29 @@ const UICtrl = (function () {
         itemNameInput: '#item-name',
         itemCaloriesInput: '#item-calories',
         totalCalories: '.total-calories'
+=======
+        itemList: "#item-list",
+        addBtn: ".add-btn",
+        deleteBtn: ".delete-btn",
+        updateBtn: ".update-btn",
+        backBtn: ".back-btn",
+        itemNameInput: "#item-name",
+        itemCaloriesInput: "#item-calories"
+>>>>>>> Stashed changes
     };
 
-
     return {
+<<<<<<< Updated upstream
         populateItemList: function (items) {
             let html = '';
 
             items.forEach(function (item) {
+=======
+        populateItemList: function(items) {
+            let html = "";
+
+            items.forEach(function(item) {
+>>>>>>> Stashed changes
                 html += `<li class="collection-item" id="item-${item.id}">
                 <strong>${item.name}: </strong><em>${item.calories} calories</em>
                 <a href="#" class="secondary-content"><i class="fa fa-pencil edit-list"></i></a>
@@ -169,6 +220,7 @@ const UICtrl = (function () {
             document.querySelector(UISelectors.itemList).innerHTML = html;
         },
 
+<<<<<<< Updated upstream
         getUISelectors: function () {
             return UISelectors;
         },
@@ -230,15 +282,23 @@ const UICtrl = (function () {
         },
 
         getItemInput: function () {
+=======
+        getUISelectors: function() {
+            return UISelectors;
+        },
+
+        getItemInput: function() {
+>>>>>>> Stashed changes
             return {
                 name: document.querySelector(UISelectors.itemNameInput).value,
                 calories: document.querySelector(UISelectors.itemCaloriesInput).value
-            }
+            };
         }
     };
 })();
 
 // App Controller
+<<<<<<< Updated upstream
 const App = (function (ItemCtrl, UICtrl) {
 
     const loadEventListeners = function () {
@@ -299,14 +359,34 @@ const App = (function (ItemCtrl, UICtrl) {
 
     const deleteItem = function (e) {
         ItemCtrl.deleteItem();
+=======
+const App = (function(ItemCtrl, UICtrl) {
+    const loadEventListeners = function() {
+        const UISelectors = UICtrl.getUISelectors();
+
+        document.querySelector(UISelectors.addBtn).addEventListener("click", itemAddSubmit);
+    };
+
+    const itemAddSubmit = function(e) {
+        const input = UICtrl.getItemInput();
+
+        if (input.name !== "" && input.calories !== "") {
+            const item = ItemCtrl.addItem(input.name, input.calories);
+        }
+>>>>>>> Stashed changes
 
         e.preventDefault();
     };
 
     return {
+<<<<<<< Updated upstream
         init: function () {
             const items = StoreCtrl.getAllItemsFromStore();
             ItemCtrl.initItemsOnLoad(items);
+=======
+        init: function() {
+            const items = ItemCtrl.getItems();
+>>>>>>> Stashed changes
 
             if (items.length === 0) {
                 UICtrl.hideItemList();
@@ -320,7 +400,6 @@ const App = (function (ItemCtrl, UICtrl) {
             loadEventListeners();
         }
     };
-
 })(ItemCtrl, UICtrl);
 
 App.init();
