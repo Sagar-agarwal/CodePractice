@@ -1,35 +1,23 @@
-const request = require('request');
-const yargs = require('yargs');
+const geocode = require('./utils/geocode')
+const forecast = require('./utils/forecast')
 
-// To include your Google API access key, swap this code with your key
-var someObj = require('./../../../someObj.js');
-var key = '&key=' + someObj.keys.mapKey + '';
+const address = process.argv[2]
 
-// yargs options
-const argv = yargs
-    .options({
-        a: {
-            demand: true,
-            alias: 'address',
-            describe: 'Address to fetch weather for',
-            string: true
+if (!address) {
+    console.log('Please provide an address')
+} else {
+    geocode(address, (error, data) => {
+        if (error) {
+            return console.log(error)
         }
+
+        forecast(data.latitude, data.longitude, (error, forecastData) => {
+            if (error) {
+                return console.log(error)
+            }
+
+            console.log(data.location)
+            console.log(forecastData)
+        })
     })
-    .help().alias('help', 'h')
-    .argv;
-
-    var address = encodeURIComponent(argv.a);
-    console.log('address: ' + address);
-
-request({
-    url: `https://maps.googleapis.com/maps/api/geocode/json?address=${address}${key}`,
-    json: true
-}, (error, response, body) => {
-    console.log(body);
-    var formattedAddress = body.results[0].formatted_address;
-    var location = body.results[0].geometry.location;
-
-    console.log(`Address: ${formattedAddress}`);
-    console.log('location> Lat: ', location.lat,  ' Lon: ', location.lng);
-    //console.log(JSON.stringify(location, undefined, 4));
-});
+}
