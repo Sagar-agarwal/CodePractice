@@ -3,22 +3,31 @@ const {
   app,
   BrowserWindow,
   Tray,
-  Menu
+  Menu,
+  MenuItem
 } = electron;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win, tray;
 
-let trayMenu = Menu.buildFromTemplate([
-  {label: 'item 1'},
-  {role: 'quit'}
+let trayMenu = Menu.buildFromTemplate([{
+    label: 'item 1'
+  },
+  {
+    role: 'quit'
+  }
 ]);
 
-let contextMenu = Menu.buildFromTemplate([
-  {label: 'item 1'},
-  {role: 'editMenu'}
+let contextMenu = Menu.buildFromTemplate([{
+    label: 'item 1'
+  },
+  {
+    role: 'editMenu'
+  }
 ]);
+
+let mainMenu = new Menu.buildFromTemplate(require('./menuTemplate'));
 
 function createTray() {
   tray = new Tray('iceTemplate@2x.png');
@@ -49,6 +58,9 @@ function createWindow() {
 
   // and load the index.html of the app.
   win.loadFile('index.html')
+
+  // Add Application Menu
+  Menu.setApplicationMenu(mainMenu);
 
   // Open the DevTools.
   //win.webContents.openDevTools()
