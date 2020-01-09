@@ -6,7 +6,7 @@
     <title>Weather</title>
     <link rel="icon" href="/img/weather.png">
     <link rel="stylesheet" href="/css/styles.css">
-    <script src="/js/app.js"></script>
+    <script src="/js/script.js"></script>
 </head>
 
 <body>
@@ -14,7 +14,13 @@
         {{>header}}
 
         <p>Use this site to get your weather!</p>
+
+        <input type="text" value="" placeholder="Your location here.." id="location-input">
+        <button type="submit" onclick="submit()">Submit</button>
+
+        <div id="weather-details"></div>
     </div>
+
 
     {{>footer}}
 </body>

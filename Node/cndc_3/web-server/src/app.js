@@ -51,12 +51,20 @@ app.get("/weather", (req, res) => {
 
     geocode(req.query.address, (err, answer) => {
         if (err) {
-            res.send({
+            return res.send({
                 error: err
             });
-        } else {
-            res.send(answer);
         }
+
+        forecast(answer.latitude, answer.longitude, (err, forecastData) => {
+            if (err) {
+                return res.send(err);
+            }
+            res.send({
+                Location: answer.location,
+                forecast: forecastData
+            });
+        });
     });
 });
 
