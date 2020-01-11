@@ -13,3 +13,5 @@ function submit() {
         });
     });
 }
+
+// Can also do with event listeners
