@@ -1,12 +1,8 @@
 const request = require("request");
+const keys = require("../utils/keys"); // rename the "sample_keys_file.js" to "keys.js"
 
 const forecast = (latitude, longitude, callback) => {
-    const url =
-        "https://api.darksky.net/forecast/d8fde73fa4bae0d505a5d42362d25475/" +
-        latitude +
-        "," +
-        longitude +
-        "?units=auto";
+    const url = `https://api.darksky.net/forecast/${keys.forecastToken}/${latitude},${longitude}?units=auto`;
 
     request({ url, json: true }, (error, { body }) => {
         if (error) {
