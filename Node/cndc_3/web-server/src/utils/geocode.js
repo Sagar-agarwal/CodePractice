@@ -1,5 +1,5 @@
 const request = require("request");
-const keys = require("../utils/keys"); // rename the "sample_keys_file.js" to "keys.js"
+const keys = require("../utils/sample_keys_file"); // rename the "sample_keys_file.js" to "keys.js"
 
 const geocode = (address, callback) => {
     const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json?access_token=${keys.geoCodeToken}&limit=1`;

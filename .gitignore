@@ -1,4 +1,5 @@
 **/node_modules/
+**/db/
 **/keys.js
 someObj.js
 Core/wdb/07/resource/
