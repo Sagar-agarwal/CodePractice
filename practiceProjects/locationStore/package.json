@@ -1,21 +1,21 @@
 {
-  "name": "location-store",
-  "version": "1.0.0",
-  "description": "stores location related data in MongoDB database",
-  "main": "",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start-dev": "nodemon .src/app.js"
-  },
-  "author": "Sagar Agarwal",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1",
-    "hbs": "^4.1.0",
-    "mongodb": "^3.5.1",
-    "request": "^2.88.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.2"
-  }
+    "name": "location-store",
+    "version": "1.0.0",
+    "description": "stores location related data in MongoDB database",
+    "main": "",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start-dev": "nodemon ./src/app.js -e js,hbs,css"
+    },
+    "author": "Sagar Agarwal",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1",
+        "hbs": "^4.1.0",
+        "mongodb": "^3.5.1",
+        "request": "^2.88.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.2"
+    }
 }
