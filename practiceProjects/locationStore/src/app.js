@@ -20,7 +20,7 @@ hbs.registerPartials(path.join(__dirname, "./views/partials"));
 hbs.registerHelper("getCurrentYear", () => new Date().getFullYear());
 
 // App Routes
-app.get("/", (req, res) => res.render("index.hbs"));
+app.get("", (req, res) => res.render("index.hbs"));
 app.get("/about", (req, res) => res.render("about.hbs"));
 
 // App launcher
