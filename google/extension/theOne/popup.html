@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>TheOne</title>
+
+        <link
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            rel="stylesheet"
+            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+            crossorigin="anonymous"
+        />
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+
+        <style>
+            html,
+            body {
+                font-family: "Roboto", sans-serif;
+                font-size: 14px;
+                margin: 0;
+                padding: 0;
+                min-height: 180px;
+                width: 384px;
+            }
+
+            h1 {
+                font-family: "Helvetica Neue", Helvetica, sans-serif;
+                font-size: 22px;
+                font-weight: 400;
+                margin: auto 0;
+                color: brown;
+            }
+            a:link,
+            a:visited {
+                color: black;
+                text-decoration: none;
+                outline: none;
+            }
+
+            img {
+                width: 30px;
+            }
+
+            .modal-header {
+                align-items: center;
+                border-bottom: 0.5px solid #dadada;
+            }
+
+            .modal-content {
+                padding: 0 22px;
+            }
+
+            .modal-icons {
+                height: 50px;
+                width: 100%;
+                border-top: 0.5px solid #dadada;
+            }
+
+            .modal-header_logo {
+            }
+            .modal-header_logo-icon {
+                vertical-align: bottom;
+                margin-right: 12px;
+            }
+            .modal-header_logo-version {
+                color: #444;
+                font-size: 18px;
+            }
+
+            .flex-container {
+                display: flex;
+                justify-content: space-between;
+                padding: 10px 22px;
+            }
+
+            .flex {
+                opacity: 0.5;
+                width: 120px;
+                transition: opacity 0.2s ease-in-out;
+            }
+
+            .flex:hover {
+                opacity: 1;
+            }
+
+            .flex .fa {
+                font-size: 40px;
+                color: brown;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="modal">
+            <div class="modal-header">
+                <h1 class="modal-header_logo">
+                    <img class="modal-header_logo-icon" />
+                    TheOne
+                    <span class="modal-header_logo-version"> (1.0.0)</span>
+                </h1>
+            </div>
+            <div class="modal-content">
+                <p>An Example Chrome Extension</p>
+            </div>
+            <div class="modal-icons">
+                <div class="flex-container">
+                    <div class="flex">
+                        <a href="#" target="_blank">
+                            <i class="fa fa-globe"></i>
+                        </a>
+                    </div>
+                    <div class="flex">
+                        <a href="#" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </div>
+                    <div class="flex">
+                        <a href="#" target="_blank">
+                            <i class="fa fa-youtube"></i>
+                        </a>
+                    </div>
+                    <div class="flex">
+                        <a href="#" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="popup.js"></script>
+    </body>
+</html>
