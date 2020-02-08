@@ -1,50 +1,66 @@
-// onLoad
-$(function() {
-    var budge = getData();
-    if (budge) {
-        $("#total").text(budge.amount);
-        $("#limit").text(budge.limit);
-    }
+// Declaring DOM Elements
+var spendAmount = document.querySelector("#spend-amount");
+var total = document.querySelector("#total");
+var limit = document.querySelector("#limit");
+var amount = document.querySelector("#amount");
 
-    $("#spend-amount").click(function() {
-        var newAmount = $("#amount").val();
-        $("#total").text();
-        $("#amount").val("");
-        // e.preventDefault();
-    });
-});
+// Attaching listeners
+document.addEventListener(
+    "DOMContentLoaded",
+    (extensionLoaded = () => {
+        var data = getData();
+        setTotalAmount(data.totalAmount);
+        setLimit(data.limit);
+    })
+);
+spendAmount.addEventListener(
+    "click",
+    (spendAmountClicked = () => {
+        var data = getData();
 
-// Storage functions
+        var amount = document.querySelector("#amount");
+        data.totalAmount = data.totalAmount + (amount.value - 0);
+        setTotalAmount(data.totalAmount);
+        setData(data);
+        clearSpendField();
+    })
+);
 
-setLimit = limit => {};
+// Utility functions
 
-addAmount = amount => {
-    var budge = getData();
-    if (budge) {
-        budge.amount = budge.amount + (amount - 0);
-    } else {
-        budge = {};
-        budge.amount = amount - 0;
-    }
-    setData(budge);
-    return JSON.stringify(budge.amount);
+setTotalAmount = totalAmount => {
+    total.innerText = totalAmount + " ";
+};
+setLimit = limitAmount => {
+    limit.textContent = limitAmount;
+};
+clearSpendField = () => {
+    amount.value = "";
 };
 
+// Storage API
+storageKey = "budge";
+setData = data => {
+    chrome.storage.sync.set({ budge: JSON.stringify(data) });
+};
 getData = () => {
-    var budge = chrome.storage.sync.get(["budge"], budge => {
-        if (budge) {
-            return JSON.parse(budge);
-        }
-        return "undefined";
-    });
+    data = checkIfDataExist(storageKey);
+    if (data) {
+        return JSON.parse(data);
+    } else {
+        data = {
+            totalAmount: 0,
+            limit: "NA",
+            dataExists: true
+        };
+        return data;
+    }
 };
 
-setData = value => {
-    var data = JSON.stringify(value);
-    chrome.storage.sync.set(
-        {
-            budge: data
-        },
-        () => {}
-    );
+checkIfDataExist = key => {
+    chrome.storage.sync.get([key], function(obj) {
+        if (obj[key].dataExists) {
+            return JSON.parse(data);
+        } else return false;
+    });
 };
