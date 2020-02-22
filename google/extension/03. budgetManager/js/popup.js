@@ -4,11 +4,13 @@ var total = document.querySelector("#total");
 var limit = document.querySelector("#limit");
 var amount = document.querySelector("#amount");
 
+/*
+var data = getData();
+
 // Attaching listeners
 document.addEventListener(
     "DOMContentLoaded",
     (extensionLoaded = () => {
-        var data = getData();
         setTotalAmount(data.totalAmount);
         setLimit(data.limit);
     })
@@ -16,8 +18,6 @@ document.addEventListener(
 spendAmount.addEventListener(
     "click",
     (spendAmountClicked = () => {
-        var data = getData();
-
         var amount = document.querySelector("#amount");
         data.totalAmount = data.totalAmount + (amount.value - 0);
         setTotalAmount(data.totalAmount);
@@ -41,26 +41,27 @@ clearSpendField = () => {
 // Storage API
 storageKey = "budge";
 setData = data => {
-    chrome.storage.sync.set({ budge: JSON.stringify(data) });
+    chrome.storage.sync.set({ budge: data });
 };
+
 getData = () => {
-    data = checkIfDataExist(storageKey);
     if (data) {
-        return JSON.parse(data);
-    } else {
-        data = {
-            totalAmount: 0,
-            limit: "NA",
-            dataExists: true
-        };
         return data;
+    } else {
+        checkIfDataExist(storageKey);
     }
 };
 
 checkIfDataExist = key => {
     chrome.storage.sync.get([key], function(obj) {
-        if (obj[key].dataExists) {
-            return JSON.parse(data);
-        } else return false;
+        console.log(obj[key]);
+        if (obj[key]) {
+            data = JSON.parse(obj[key]);
+            console.log(data);
+            return data;
+        } else {
+            return { totalAmount: 0, limit: 0 };
+        }
     });
 };
+*/
