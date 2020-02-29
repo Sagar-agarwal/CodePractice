@@ -10,7 +10,8 @@ class App extends Component {
                 age: 28
             }
         ],
-        other: "some text here"
+        other: "some text here",
+        showDiv: false
     };
 
     switchNameHandler = () => {
@@ -35,6 +36,12 @@ class App extends Component {
         });
     };
 
+    toggleHandler = () => {
+        this.setState({
+            showDiv: !this.state.showDiv
+        });
+    };
+
     render() {
         const buttonStyle = {
             backgroundColor: "white",
@@ -49,17 +56,19 @@ class App extends Component {
         return (
             <div className="App">
                 <h1> Hi, This is React app </h1> <p> Yup, a working REACT app </p>
-                <button style={buttonStyle} onClick={this.switchNameHandler}>
+                <button style={buttonStyle} onClick={this.toggleHandler}>
                     Switch
                 </button>
-                <Person
-                    name={this.state.person[0].name}
-                    age={this.state.person[0].age}
-                    click={this.switchNameHandler}
-                    change={this.nameChangeHandler}
-                >
-                    {this.state.other}
-                </Person>
+                {this.state.showDiv ? (
+                    <Person
+                        name={this.state.person[0].name}
+                        age={this.state.person[0].age}
+                        click={this.switchNameHandler}
+                        change={this.nameChangeHandler}
+                    >
+                        {this.state.other}
+                    </Person>
+                ) : null}
             </div>
         );
     }
