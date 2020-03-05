@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Radium from "radium";
 import "./App.css";
 import Person from "./Person/Person";
 
@@ -58,20 +59,25 @@ class App extends Component {
     };
 
     render() {
-        const buttonStyle = {
-            backgroundColor: "white",
-            padding: "1rem 4rem",
-            border: "1px solid gray",
-            marginBottom: "10px",
-            boxShadow: "0 2px 3px #eee",
-            fontSize: "1.5rem",
-            fontWeight: "600"
+        const headingStyle = {
+            color: "black",
+            ":hover": {
+                color: "gray"
+            }
         };
+
+        const buttonStyle = ["button"];
+        if (this.state.persons.length > 2) {
+            buttonStyle.push("green");
+        }
+        if (this.state.persons.length <= 2) {
+            buttonStyle.push("red");
+        }
 
         return (
             <div className="App">
-                <h1> Hi, This is React app </h1> <p> Yup, a working REACT app </p>
-                <button style={buttonStyle} onClick={this.togglePersonsDisplayHandler}>
+                <h1 style={headingStyle}> Hi, This is React app </h1> <p> Yup, a working REACT app </p>
+                <button className={buttonStyle.join(" ")} onClick={this.togglePersonsDisplayHandler}>
                     Switch
                 </button>
                 {this.state.showPersons ? (
@@ -96,4 +102,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default Radium(App);
