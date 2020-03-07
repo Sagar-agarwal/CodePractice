@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import classes from "./App.css";
-import ErrorBoundary from "./ErrorBoundary/ErrorBoundary";
-import Person from "./Person/Person";
+import Person from "../Components/Persons/Person/Person";
 
 class App extends Component {
     state = {
@@ -45,6 +44,7 @@ class App extends Component {
 
         this.setState({ persons: persons });
     };
+
     deletePerson = personIndex => {
         let persons = [...this.state.persons];
         persons.splice(personIndex, 1);
