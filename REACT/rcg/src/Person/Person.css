@@ -10,3 +10,9 @@
 .Person:last-child {
     margin-bottom: 0.1rem;
 }
+
+@media (min-width: 500px) {
+    .Person {
+        width: 450px;
+    }
+}

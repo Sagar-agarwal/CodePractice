@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import classes from "./App.css";
 import Person from "./Person/Person";
 
-console.log(`classes`);
-
 class App extends Component {
     state = {
         persons: [
@@ -60,22 +58,16 @@ class App extends Component {
     };
 
     render() {
-        const headingStyle = {
-            color: "black"
-        };
-
-        const buttonStyle = [classes.button];
-        if (this.state.persons.length > 2) {
-            buttonStyle.push(classes.green);
-        }
-        if (this.state.persons.length <= 2) {
-            buttonStyle.push(classes.red);
+        // When Person Components are displayed
+        let buttonRed = "";
+        if (this.state.showPersons) {
+            buttonRed = classes.red;
         }
 
         return (
             <div className={classes.App}>
-                <h1 style={headingStyle}> Hi, This is React app </h1> <p> Yup, a working REACT app </p>
-                <button className={buttonStyle.join(" ")} onClick={this.togglePersonsDisplayHandler}>
+                <h1 className={classes.heading}> Hi, This is React app </h1> <p> Yup, a working REACT app </p>
+                <button className={buttonRed} onClick={this.togglePersonsDisplayHandler}>
                     Switch
                 </button>
                 {this.state.showPersons ? (

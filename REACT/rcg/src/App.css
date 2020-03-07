@@ -2,7 +2,7 @@
     text-align: center;
 }
 
-.button {
+.App button {
     padding: 1rem 2rem;
     border: 1px solid gray;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
@@ -11,10 +11,18 @@
     font-weight: 600;
 }
 
-.red {
+.App button:hover {
+    opacity: 0.8;
+}
+
+button.red {
     background-color: red;
 }
 
-.green {
+button.green {
     background-color: green;
+}
+
+.heading {
+    color: "black";
 }
