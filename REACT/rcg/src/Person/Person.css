@@ -5,4 +5,8 @@
     box-shadow: 0 2px 3px #ccc;
     padding: 16px;
     text-align: center;
+    margin-bottom: 1rem;
+}
+.Person:last-child {
+    margin-bottom: 0.1rem;
 }

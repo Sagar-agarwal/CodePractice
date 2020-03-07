@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import "./App.css";
+import classes from "./App.css";
 import Person from "./Person/Person";
+
+console.log(`classes`);
 
 class App extends Component {
     state = {
@@ -62,16 +64,16 @@ class App extends Component {
             color: "black"
         };
 
-        const buttonStyle = ["button"];
+        const buttonStyle = [classes.button];
         if (this.state.persons.length > 2) {
-            buttonStyle.push("green");
+            buttonStyle.push(classes.green);
         }
         if (this.state.persons.length <= 2) {
-            buttonStyle.push("red");
+            buttonStyle.push(classes.red);
         }
 
         return (
-            <div className="App">
+            <div className={classes.App}>
                 <h1 style={headingStyle}> Hi, This is React app </h1> <p> Yup, a working REACT app </p>
                 <button className={buttonStyle.join(" ")} onClick={this.togglePersonsDisplayHandler}>
                     Switch
