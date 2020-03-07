@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Radium from "radium";
 import "./App.css";
 import Person from "./Person/Person";
 
@@ -60,10 +59,7 @@ class App extends Component {
 
     render() {
         const headingStyle = {
-            color: "black",
-            ":hover": {
-                color: "gray"
-            }
+            color: "black"
         };
 
         const buttonStyle = ["button"];
@@ -102,4 +98,4 @@ class App extends Component {
     }
 }
 
-export default Radium(App);
+export default App;
