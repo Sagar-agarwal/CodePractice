@@ -18,6 +18,7 @@ function primeNumber (start, end){
     var counter = 2;
     while (primeArr.length > counter){
         primeArr = primeArr.filter(function (num, index, primeArr){
+            if(num == primeArr[counter]) return true;
             return num % primeArr[counter] != 0;
         }, this);
         counter++;
