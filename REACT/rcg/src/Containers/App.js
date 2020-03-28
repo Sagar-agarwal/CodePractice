@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import classes from "./App.css";
-import Person from "../Components/Persons/Person/Person";
+import Cockpit from "../Components/Cockpit/Cockpit";
+import Persons from "../Components/Persons/Persons";
 
 //
 class App extends Component {
@@ -59,34 +60,15 @@ class App extends Component {
     };
 
     render() {
-        // When Person Components are displayed
-        let buttonRed = "";
-        if (this.state.showPersons) {
-            buttonRed = classes.red;
-        }
-
         return (
             <div className={classes.App}>
-                <h1 className={classes.heading}> Hi, This is React app </h1> <p> Yup, a working REACT app </p>
-                <button className={buttonRed} onClick={this.togglePersonsDisplayHandler}>
-                    Switch
-                </button>
+                <Cockpit clicked={this.togglePersonsDisplayHandler} classes={this.classes} state={this.state} />
                 {this.state.showPersons ? (
-                    <div>
-                        {this.state.persons.map((person, index) => {
-                            return (
-                                <Person
-                                    name={person.name}
-                                    age={person.age}
-                                    click={() => this.deletePerson(index)}
-                                    key={person.id}
-                                    changed={event => {
-                                        this.nameChangeHandler(event, person.id);
-                                    }}
-                                ></Person>
-                            );
-                        })}
-                    </div>
+                    <Persons
+                        clicked={this.deletePerson}
+                        changed={this.nameChangeHandler}
+                        persons={this.state.persons}
+                    />
                 ) : null}
             </div>
         );
