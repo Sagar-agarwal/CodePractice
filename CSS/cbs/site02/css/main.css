@@ -1,0 +1,40 @@
+body {
+  background-color: #ddd;
+  padding-top: 2rem; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Fjalla One", Helvetica, sans-serif; }
+
+.btn.btn-card {
+  border-radius: 100%;
+  background-color: #ddd;
+  border: 5px solid white;
+  height: 4rem;
+  width: 4rem;
+  color: white;
+  font-size: 2rem;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2rem;
+  transform: translateY(50%);
+  transition: all 0.4s ease-in-out; }
+  .btn.btn-card:active, .btn.btn-card:visited {
+    background-color: #61cf94; }
+  .btn.btn-card:hover {
+    background-color: #61cf94; }
+  .btn.btn-card > i {
+    text-align: center; }
+
+.navbar.bg-dark {
+  background-color: blue !important; }
+
+.card {
+  border-radius: 0;
+  padding: 0.5rem;
+  text-align: center; }
