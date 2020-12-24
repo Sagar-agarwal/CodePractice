@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: lightgray;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    background-color: rgb(255, 73, 103);
+    padding: 30px;
+    margin: 30px;
+    color: white;
+    font-size: 40px;
+    flex: 1;
+}
+
+.i1 {
+}
+.i2 {
+    height: 200px;
+}
+.i3 {
+}
+.i4 {
+    align-self: flex-end;
+}
+.i5 {
+    align-self: flex-start;
+}
