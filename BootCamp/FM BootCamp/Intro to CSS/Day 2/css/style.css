@@ -1,28 +1,19 @@
-/* Utility Classes */
-.float-left {
-	float: left;
-	clear: both;
-	margin: 0 1rem 1rem 0;
+ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	/* border: 1px solid red; */
+	flex-flow: row wrap;
+	justify-content: space-around;
 }
 
-.float-right {
-	float: right;
-}
+li {
+	flex-basis: 8%;
+	border: 2px solid seagreen;
 
-.inline-block {
-	display: inline-block;
-}
-
-/* Semantics Defaults */
-article {
-	width: 30rem;
-	border: 1px solid gray;
-	margin: 0 auto;
-	padding: 2rem 1rem;
-}
-
-.p-float:after {
-	display: table;
-	content: "";
-	clear: both;
+	border-radius: 5px;
+	background-color: lightseagreen;
+	text-align: center;
+	padding: 0.5rem 1rem;
 }
