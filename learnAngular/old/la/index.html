@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Learning angular</title>
+    <!-- jQuery -->
+    <script src="src\libs\jQuery\jquery-3.2.1.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="src\libs\bootstrap\css\bootstrap.css">
+    <script src="src\libs\bootstrap\js\bootstrap.js"></script>
+    <!-- angularjs -->
+    <script src="src\libs\angular\angular.js"></script>
+    <script src="src\libs\angular\angular-route.min.js"></script>
+    <!-- AngularJS CONTROLLERS -->
+    <script src="src\angular\app.js"></script>
+    <script src="src\angular\controllers\MainController.js"></script>
+    <script src="src\angular\controllers\ViewMainController.js"></script>
+    <script src="src\angular\controllers\MainAppViewController.js"></script>
+    <!-- AngularJS SERVICES -->
+    <script src="src\angular\services\nameService.js"></script>
+    <!-- AngularJS DIRECTIVES -->
+    <script src="src\angular\directives\reusableDirectives.js"></script>
+    <!-- Custom JS -->
+    <script src="src/js/script.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-default">
+            <div class="navbar-brand">Angular</div>
+            <div class="navbar navbar-right">LA</div>
+        </nav>
+    </div>
+    <div class="container">
+        <div ng-controller="MainController">
+            <h2>{{message}} {{name}} !</h2>
+            <label for="twitterHandle">Enter your twitter handel?</label>
+            <input type="text" for="twitterHandle" ng-model="twitterHandleName">
+            <div class="alert alert-danger" ng-if="twitterHandleName.length < twitterHandleMinChar">
+            </div>
+            <hr>
+            <h3>twitter.com/{{ toLowerCase(twitterHandleName) }}</h3>
+
+        </div>
+        <div ng-view></div>
+    </div>
+</body>
+
+</html>

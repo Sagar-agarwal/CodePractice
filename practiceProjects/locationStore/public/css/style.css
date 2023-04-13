@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.nav {
+}
+
+.nav-section {
+    list-style-type: none;
+    width: 50%;
+}
+
+.nav-item {
+    list-style-type: none;
+}
+
+.nav-item-link {
+    text-decoration: none;
+}

@@ -1,0 +1,29 @@
+**/node_modules/
+**/db/
+**/keys.js
+someObj.js
+Core/wdb/07/resource/
+Core/wdb/07/resource.txt
+Core/wdb/07/resource/
+Core/wdb/14/cardGame/resources/
+/resources/
+Core/wdb/15/resources/
+Core/wdb/17/resources/
+Core/wdb/17/index.html
+Core/wdb/17/index.html
+Core/wdb/17/script.js
+Core/wdb/17/style.css
+CSS/acs/DTour/img/
+CSS/acs/DTour/node_modules/
+**/site02/img/
+learnAngular/pluralSight/02 fundamentals/projectFiles/
+learnAngular/pluralSight/02 fundamentals/node_modules/
+BoilerPlate_setUp/
+learnAngular/la/src/libs/
+tools/chromeDev/mastering-chrome-devtools/
+material/mdc/material-components-web-codelabs/
+Node/cndc_2/notes-node/node_modules/
+Node/cndc_2/wApp/node_modules/
+JS/fmDS_algo/node_modules/
+Node/FM_introToNode/gitRepoClone
+

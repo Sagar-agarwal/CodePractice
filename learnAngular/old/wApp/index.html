@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app='myApp'>
+    <head>
+        <title>AngularJS Weather Forecast SPA</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta charset="UTF-8">
+
+        <!-- load bootstrap and fontawesome via CDN -->
+        <style>
+            html, body, input, select, textarea
+            {
+                font-size: 1.05em !important;
+            }
+            .city-name{
+                color: orangered;
+            }
+        </style>
+        
+    <!-- jQuery -->
+    <script src="src\libs\jQuery\jquery-3.2.1.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="src\libs\bootstrap\css\bootstrap.css">
+    <script src="src\libs\bootstrap\js\bootstrap.js"></script>
+    <!-- angularjs -->
+    <script src="src\libs\angular\angular.js"></script>
+    <script src="src\libs\angular\angular-route.min.js"></script>
+    <script src="src\libs\angular\angular-resource.min.js"></script>
+    <!-- AngularJS CONTROLLERS -->
+    <script src="src\angular\app.js"></script>
+    <script src="src\angular\controllers\MainController.js"></script>
+    <script src="src\angular\controllers\CityWeatherData.js"></script>
+        
+    <!-- AngularJS SERVICES -->
+    <script src="src\angular\services\forecastService.js"></script>
+    <!-- AngularJS DIRECTIVES -->
+    
+    <!-- Custom JS -->
+    <script src="src/js/script.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="src/css/style.css">
+    </head>
+    <body >
+
+        <header>
+			<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/">AngularJS Weather</a>
+				</div>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+				</ul>
+			</div>
+			</nav>
+		</header>
+
+        <div class="container" ng-view>
+            
+
+		</div>
+
+    </body>
+</html>

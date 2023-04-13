@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+
+    <!-- StyleSheets here -->
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- Scripts here here -->
+    <script type="text/javascript" src="libs/angular/angular.js"></script>
+    <script type="text/javascript" src="libs/jquery/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+    <!-- Angular Controllers-->
+    <script type="text/javascript" src="angular/index.js"></script>
+    <script type="text/javascript" src="angular/controllers/MainController.js"></script>
+
+
+    <!-- CUSTOM SCRIPTS -->
+    <script type="text/javascript" src="js/main.js"></script>
+
+
+    <title></title>
+</head>
+
+<body ng-controller="MainController">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+
+            <!-- section goes here -->
+            <!-- ng-click -->
+            <div class="container">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4>ng-click</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-1">
+                            <div>
+                                <h2 class="comp-heading">ng-click</h2>
+                                <span class="comp-des">ng-click triggers when we click some object with button</span>
+                                <div class="comp-features">
+                                    <input type="button" value="click me!" ng-click="showAlert('ng-click')" class="btn btn-primary">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ng-dblclick -->
+            <div class="container">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4>ng-dblclick</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-1">
+                            <div>
+                                <h2 class="comp-heading">ng-dblclick</h2>
+                                <span class="comp-des">ng-dblclick is triggers when some content is dblclickd</span>
+                                <div class="comp-features">
+                                    <input type="button" value="click me" ng-dblclick="showAlert('ng-dblclick')" class="btn btn-primary">
+                                    <select name="ng-dblclick-select" ng-dblclick="showAlert('ng-dblclick from dropdown')" class="form-control">
+                                        <option value="1">option 1</option>
+                                        <option value="2">option 2</option>
+                                        <option value="3">option 3</option>
+                                        <option value="4">option 4</option>
+                                        <option value="5">option 5</option>
+                                    </select>
+
+                                    <input type="text" class="form-control" ng-dblclick="showAlert('ng-dblclick')">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ng-change -->
+            <div class="container">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4>ng-change</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-1">
+                            <div>
+                                <h2 class="comp-heading">ng-change</h2>
+                                <span class="comp-des">ng-change is triggers when input field is changed or option is changed in dropdown</span>
+                                <div class="comp-features">
+                                    <select name="ng-change-select" ng-model='valueToStore_change' ng-change="showAlert('ng-change')" class="form-control">
+                                        <option value="1">option 1</option>
+                                        <option value="2">option 2</option>
+                                        <option value="3">option 3</option>
+                                        <option value="4">option 4</option>
+                                        <option value="5">option 5</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ng-focus -->
+            <div class="container">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4>ng-focus</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-1">
+                            <div>
+                                <h2 class="comp-heading">ng-focus</h2>
+                                <span class="comp-des">ng-focus is triggers when any elem is focusd using tab key or mouse click</span>
+                                <div class="comp-features">
+                                    <p>{{focusObj.dropdown}}</p>
+                                    <select name="ng-focus-select" ng-model='valueToStore_focus' ng-focus="markFocus('dropdown')" class="form-control">
+                                        <option value="1">option 1</option>
+                                        <option value="2">option 2</option>
+                                        <option value="3">option 3</option>
+                                        <option value="4">option 4</option>
+                                        <option value="5">option 5</option>
+                                    </select>
+                                    <p>{{focusObj.input}}</p>
+                                    <input type="text" ng-focus="markFocus('input')" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ng-blur -->
+            <div class="container">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4>ng-blur</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-1">
+                            <div>
+                                <h2 class="comp-heading">ng-blur</h2>
+                                <span class="comp-des">ng-blur is triggers when any elem is focusd using tab key or mouse click</span>
+                                <div class="comp-features">
+
+                                    <select name="ng-blur-select" ng-blur="showAlert('ng-blur from dropdown')" class="form-control">
+                                        <option value="1">option 1</option>
+                                        <option value="2">option 2</option>
+                                        <option value="3">option 3</option>
+                                        <option value="4">option 4</option>
+                                        <option value="5">option 5</option>
+                                    </select>
+
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ng-cut -->
+            <div class="container">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4>ng-cut</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-1">
+                            <div>
+                                <h2 class="comp-heading">ng-cut</h2>
+                                <span class="comp-des">ng-cut is triggers when some content is cut</span>
+                                <div class="comp-features">
+
+                                    <select name="ng-cut-select" ng-cut="showAlert('ng-cut from dropdown')" class="form-control">
+                                        <option value="1">option 1</option>
+                                        <option value="2">option 2</option>
+                                        <option value="3">option 3</option>
+                                        <option value="4">option 4</option>
+                                        <option value="5">option 5</option>
+                                    </select>
+
+                                    <input type="text" class="form-control" ng-cut="showAlert('ng-cut')">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ng-paste -->
+            <div class="container">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4>ng-paste</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-1">
+                            <div>
+                                <h2 class="comp-heading">ng-paste</h2>
+                                <span class="comp-des">ng-paste is triggers when some content is pasted</span>
+                                <div class="comp-features">
+
+                                    <select name="ng-paste-select" ng-paste="showAlert('ng-paste from dropdown')" class="form-control">
+                                        <option value="1">option 1</option>
+                                        <option value="2">option 2</option>
+                                        <option value="3">option 3</option>
+                                        <option value="4">option 4</option>
+                                        <option value="5">option 5</option>
+                                    </select>
+
+                                    <input type="text" class="form-control" ng-paste="showAlert('ng-paste')">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Keyboard events -->
+            <div class="container">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4>ng-keydown: Keyboard event</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-1">
+                            <div>
+                                <h2 class="comp-heading">ng-keydown</h2>
+                                <span class="comp-des">ng-keypress, ng-keydown & ng-keyup</span>
+                                <ul>
+                                    <li>
+                                        <h4>ng-key</h4>
+                                    </li>
+                                    <li>
+                                        <h4>ng-key</h4>
+                                    </li>
+                                    <li>
+                                        <h4>ng-key</h4>
+                                    </li>
+                                </ul>
+                                <input type="text" name=""
+                                    class="form-control"
+                                    ng-keyup="showAlert('ng-keyUP')"
+                                    ng-keydown="showAlert('ng-keyDOWN')"
+                                    ng-keypress="showAlert('ng-keyPRESS')"   
+                                >
+                                
+                                
+                                <div class="comp-features">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Mouse events -->
+             <div class="container">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h4>ng-mouse*: Mouse event</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-1">
+                                <div>
+                                    <h2 class="comp-heading">ng-mouse*</h2>
+                                    <span class="comp-des">ng-mousedown, ng-mouseup, ng-mouseenter, ng-mouseleave, ng-mousemove & ng-mouseover</span>
+                                    <p>
+                                        remember, remember, mouseevents in december
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <span class="label label-success" ng-mousedown="mouse.down = mouse.down + 1">
+                                        Mouse down {{mouse.down}} times
+                                    </span>
+                                </div>
+                                <div class="col-md-2">
+                                    <span class="label label-default" ng-mouseup="mouse.up = mouse.up + 1">
+                                        Mouse up {{mouse.up}} times
+                                    </span>
+                                </div>
+                                <div class="col-md-2">
+                                    <span class="label label-info" ng-mouseenter="mouse.enter = mouse.enter + 1">
+                                        Mouse enter {{mouse.enter}} times
+                                    </span>
+                                </div>
+                                <div class="col-md-2">
+                                    <span class="label label-warning" ng-mouseleave="mouse.leave = mouse.leave + 1">
+                                        Mouse leave {{mouse.leave}} times
+                                    </span>
+                                </div>
+                                <div class="col-md-2">
+                                    <span class="label label-danger" ng-mousemove="mouse.move = mouse.move + 1">
+                                        Mouse move {{mouse.move}} times
+                                    </span>
+                                </div>
+                                <div class="col-md-2">
+                                    <span class="label label-success" ng-mouseover="mouse.over = mouse.over + 1">
+                                        Mouse over {{mouse.over}} times
+                                    </span>
+                                </div>
+                            </div>     
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>

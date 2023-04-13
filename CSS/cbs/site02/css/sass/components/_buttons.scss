@@ -1,0 +1,31 @@
+.btn {
+}
+
+.btn.btn-card {
+    border-radius: 100%;
+    background-color: #ddd;
+    border: 5px solid white;
+    height: 4rem;
+    width: 4rem;
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2rem;
+    transform: translateY(50%);
+    transition: all 0.4s ease-in-out;
+
+    &:active,
+    &:visited {
+        background-color: #61cf94;
+    }
+
+    &:hover {
+        background-color: #61cf94;
+    }
+
+    & > i {
+        text-align: center;
+    }
+}

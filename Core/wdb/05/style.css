@@ -1,0 +1,57 @@
+/* 
+Element  level
+ */
+
+body {
+    background-color: #F5F5F5;
+}
+
+div {
+    border: .1px solid red;
+}
+
+body div {
+    background-color: #c0c0c0; 
+}
+
+div h1 {
+    background-color: #b0b0b0;
+}
+
+li {
+    color: green;
+}
+
+
+/* 
+ID level
+ */
+
+#hex {
+    color: #04A9B4;
+}
+
+#rgb {
+    color: rgb(22, 59, 204);
+}
+
+#alpha {
+    color: rgba(22, 59, 204, 1);
+}
+
+#alpha1 {
+    color: rgba(22, 59, 204, 0);
+}
+
+#alpha2 {
+    color: rgba(22, 59, 204, .4);
+}
+
+#alpha3 {
+    color: rgba(22, 59, 204, .8);
+}
+
+
+/* 
+class level
+ */

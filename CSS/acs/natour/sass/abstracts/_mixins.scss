@@ -1,0 +1,23 @@
+/* SASS:Mixin */
+
+@mixin ele ($element) {
+    &__#{$element} {
+        @content;
+    }
+}
+
+@mixin mod ($modifier) {
+    &--#{$modifier} {
+        @content;
+    }
+}
+
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+
+}

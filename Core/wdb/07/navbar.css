@@ -1,0 +1,17 @@
+/* 
+
+        I D    B a s e d
+
+ */
+
+ #login-span{
+    padding-top: 0.4em;
+    color: lightgray;
+    }    
+
+li>a:hover {
+    color: #ec670f;
+    border-bottom: 2px solid #ec670f;
+     font-size: 0.98em; 
+}
+

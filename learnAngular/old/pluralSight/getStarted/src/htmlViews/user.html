@@ -1,0 +1,31 @@
+<div>
+    <a href="#/main">Back to search</a>
+        <div>
+            <h3>{{gitUser.name}}</h3>
+            <h3>{{gitUser.login}}</h3>
+            <h3>{{gitUser.location}}</h3>
+            <img ng-src={{gitUser.avatar_url}}" alt="Git user {{gitUser.name}}">
+        </div >
+        <h3>Order</h3>
+        <select ng-model='repoSortOrder'>
+            <option value="+name">Name</option>
+            <option value="-stargazers_count">Stars</option>
+            <option value="+language">Language</option>
+        </select>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Stars</th>
+                    <th>Language</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="repo in repos | orderBy:repoSortOrder">
+                    <td><a href="#!/repo/{{gitUser.login}}/{{repo.name}}" >{{repo.name}}</a></td>
+                    <td>{{repo.stargazers_count | number}}</td>
+                    <td>{{repo.language}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>

@@ -1,0 +1,9 @@
+<div>
+    <h1>{{gitUserRepo.name}} Collaborators</h1>
+</div>
+
+
+<div ng-repeat="contributor in gitUserRepo.contributors">
+    <img ng-src="{{contributor.avatar_url}}" alt="{{contributor.login}}">
+    <h3>{{contributor.login}}</h3>
+</div>

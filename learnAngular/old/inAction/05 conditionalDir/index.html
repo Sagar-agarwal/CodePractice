@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+
+    <!-- StyleSheets here -->
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- Scripts here here -->
+    <script type="text/javascript" src="libs/angular/angular.js"></script>
+    <script type="text/javascript" src="libs/jquery/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+    <!-- Angular Controllers-->
+    <script type="text/javascript" src="angular/index.js"></script>
+    <script type="text/javascript" src="angular/controllers/MainController.js"></script>
+
+
+    <!-- CUSTOM SCRIPTS -->
+    <script type="text/javascript" src="js/main.js"></script>
+
+
+    <title></title>
+</head>
+
+<body ng-controller="MainController">
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+
+            <!-- ng-if Condition -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4>
+                        ng-if
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div>
+                                <h3>ng-if</h3>
+                                <p>HTML block is displayed when expression condition is true</p>
+                                <div>
+                                    <input type="checkbox" name="" id="" ng-model="isCheckboxChecked">
+                                    <span ng-if="isCheckboxChecked"> checkbox is checked</span>
+                                    <span ng-if="!isCheckboxChecked"> checkbox is not checked</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- ng-hide Condition -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4>
+                        ng-hide
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div>
+                                <h3>ng-hide</h3>
+                                <p>HTML block is displayed when expression condition is true</p>
+                                <div>
+                                    <input type="checkbox" name="" id="" ng-model="canHide">
+                                    <span ng-hide="canHide" class="btn btn-primary"> unchecked - true</span>
+                                    <span ng-hide="!canHide" class="btn btn-success"> checked - false</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <!-- show Condition -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4>
+                        ng-show
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div>
+                                <h3>show</h3>
+                                <p>HTML block is displayed when expression condition is true</p>
+                                <div>
+                                    <input type="checkbox" name="" id="" ng-model="canShow">
+                                    <span ng-show="canShow" class="btn btn-primary"> unchecked - true</span>
+                                    <span ng-show="!canShow" class="btn btn-success"> checked - false</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <!-- class Condition -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4>
+                        ng-class
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div>
+                                <h3>ng-class</h3>
+                                <p>addin conditional based classes</p>
+                                <div>
+                                    
+                                    <input type="radio" name="styleClass" ng-model="btnClass" value="primary">
+                                    <input type="radio" name="styleClass" ng-model="btnClass" value="success">
+                                    <input type="radio" name="styleClass" ng-model="btnClass" value="info">
+                                    <input type="radio" name="styleClass" ng-model="btnClass" value="danger">
+                                    <input type="radio" name="styleClass" ng-model="btnClass" value="warning">
+                                    <input type="radio" name="styleClass" ng-model="btnClass" value="default">
+                                    <input type="button" value="{{btnClass}}" class="btn btn-{{btnClass}}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>

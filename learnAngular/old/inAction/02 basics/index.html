@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+
+    <!-- StyleSheets here -->
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- Scripts here here -->
+    <script type="text/javascript" src="libs/angular/angular.js"></script>
+    <script type="text/javascript" src="libs/jquery/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+    <!-- Angular Controllers-->
+    <script type="text/javascript" src="angular/index.js"></script>
+
+
+    <!-- CUSTOM SCRIPTS -->
+    <script type="text/javascript" src="js/main.js"></script>
+
+
+    <title></title>
+</head>
+
+<body>
+    <div class="">
+        <div class="container" ng-controller="ConTop">
+            <h2>{{some}}</h2>
+        </div>
+        <div class="container" ng-controller="ConBot">
+            <table class="table table-striped">
+                
+                    <th>#index</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                
+                <tbody class="">
+                    <tr ng-repeat="u in userArr">
+                        <td>{{$index + 1}}</td>
+                        <td>{{u.user}}</td>
+                        <td>{{u.surname}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    app.controller('ConTop', function ($scope) {
+        $scope.some = 'This is top text';
+    });
+
+    app.controller('ConBot', function ($scope) {
+        $scope.some = 'This is bottom text';
+
+        var users = [{
+                user: '1',
+                surname: '11'
+            },
+            {
+                user: '2',
+                surname: '21'
+            },
+            {
+                user: '3',
+                surname: '31'
+            },
+            {
+                user: '4',
+                surname: '41'
+            }
+        ];
+
+        $scope.userArr = users;
+    });
+</script>
+
+
+</html>

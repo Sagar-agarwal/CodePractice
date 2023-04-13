@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="eventsApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS Fundamentals</title>
+    <!--  ANGULARJS CDN-->
+    <script src="/src/libs/angular/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-route.js"></script>
+    <!-- ANGULAR Main-->
+    <script src="/src/js/angular/app.js"></script>
+    <!-- ANGULAR custom SERVICES-->
+    
+    <!-- ANGULAR Controller's-->
+    <script src="/src/js/angular/controllers/MainController.js"></script>
+    <script src="/src/js/angular/controllers/EventController.js"></script>
+    
+    
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/src/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="/src/libs/jQuery/jquery-3.3.1.min.js"></script>
+    <script src="/src/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+
+    <script src="/src/js/script.js"></script>
+    <link rel="stylesheet" href="/src/css/app.css">
+    <link rel="stylesheet" href="/src/css/style.css">
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="navbar-brand">AF</div>
+        <ul class="nav navbar-nav">
+            <li><a href="#" >Item link</a></li>
+            <li><a href="#" >Item link</a></li>
+            <li><a href="#" >Item link</a></li>
+            <li><a href="#" >Item link</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">r-item1</a></li>
+            <li><a href="#">r-item2</a></li>
+            <li><a href="#">r-item3</a></li>
+        </ul>
+    </nav>
+
+    <div ng-controller="EventController" class="container">
+        <div class="container-fluid">
+            <div class="row event">
+                <div class="span1 event__box">
+                    <img class="event__img" ng-src="{{event.imageUrl}}" alt="{{event.name}}">
+                    <h2 class="event__heading">{{event.name}}</h2>
+                </div>    
+            </div>
+
+            <div class="row">
+                <div class="span2">
+                    <div>Date:<strong> {{event.date}} </strong></div>
+                    <div>Time:<strong> {{event.time}} </strong></div>
+                </div>
+                <div class="span3">
+                    <div>
+                        <address>
+                            <strong>Address:</strong><br/>
+                            {{event.location.address}}<br/>
+                            {{event.location.city}}, {{event.location.province}}
+                        </address>
+                    </div>
+                </div>
+            </div>
+            
+            <hr/>
+
+            <div>
+                <h3>Sessions:</h3>
+                <ul class="thumbnails">
+                    <li  ng-repeat=" session in event.sessions" class="sessions__item">
+                        <div class="row session">
+                            <div class="span0 well votingWidget">
+                            <div class="vottingButton">
+                                <i class="icon-chevron-up icon-white"></i>
+                            </div>
+                            <div class="badge badge-inverse">
+                                <div class="vottingButton">
+                                    <i class="icon-chevron-down"></i>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="well span9">
+                               <h4 class="well-title">
+                                   {{session.name}}
+                               </h4>
+                               <h6>
+                                <span>Duration: {{session.duration}}</span>
+                                <br/>
+                                <span>Level: {{session.level}}</span>
+                                <p>{{session.abstract}}</p>
+                               </h6> 
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    
+</body>
+
+</html>

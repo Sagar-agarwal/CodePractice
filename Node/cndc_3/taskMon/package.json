@@ -1,0 +1,19 @@
+{
+    "name": "taskMon",
+    "version": "1.0.0",
+    "description": "",
+    "main": "",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "app": "nodemon mongodb.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "mongodb": "^3.5.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.2"
+    }
+}

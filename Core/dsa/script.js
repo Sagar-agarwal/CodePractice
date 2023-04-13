@@ -1,24 +1,30 @@
-(function(global){
-    "use strict";
+function primeNumber (start, end){
+    if (end < 3){
+        return [1, 2];
+    }
 
-    var Script = function () {
-        return new Script.init();
-    };
+    if (end < 4){
+        return [1, 2, 3];
+    }
 
-    Script.prototype = {
-        
-        someFunction : function (value) {
-        // body...
-        return console.log(value);
-        },    
-    };
+    var primeArr = [2, 3];
 
-    Script.init = function () {
-        // body...
-    };
+    for(var i = 4; i < end; i++){
+        if (i % 2 !== 0 && i % 3 !== 0){
+            primeArr.push(i);
+        }
+    }
 
-    Script.prototype = Script.init.prototype = Script;   
+    var counter = 2;
+    while (primeArr.length > counter){
+        primeArr = primeArr.filter(function (num, index, primeArr){
+            if(num == primeArr[counter]) return true;
+            return num % primeArr[counter] != 0;
+        }, this);
+        counter++;
+    }
+    
+    return primeArr.join(',');
+};
 
-    global.Script = global.$ = Script;
-
-}(window));
+primeNumber(1, 100);

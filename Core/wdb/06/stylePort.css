@@ -1,0 +1,40 @@
+body {
+    font-size: 10px;
+}
+
+header {
+    margin: 0px;
+}
+header h3 {
+    font-family: 'Indie Flower', cursive;
+    font-size: 3em;
+    font-weight: 400;
+    color: rgb(17,17,17);
+
+    margin-left:1.6%;
+    margin-right: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+    width: 30%;
+    border-bottom: 2px solid #dedede;
+
+}
+header h3:hover {
+    border-bottom: 2px solid #ff3333;
+    color: rgba(17,17,17, .8)
+}
+
+.top {
+    padding: 10px;
+
+}
+
+ img {
+    width: 30%;
+    /*  height: 100%
+    */
+    float: left;
+    margin: 1.66%;
+
+ }

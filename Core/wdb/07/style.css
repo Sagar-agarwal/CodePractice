@@ -1,0 +1,58 @@
+/* 
+
+        C L A S S    B A S E D
+
+ */
+
+.main {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.jumbotron {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.margin-bottom-half-em {
+    margin-bottom: 0.5em;
+}
+
+.header-form {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.col-auto  .form-check-input-custom {
+    padding-left: 0em;
+}
+
+
+/* 
+
+        I D    B A S E D
+
+ */
+
+#header {
+    /* border-color: ; */
+    border-bottom: 1px solid rgb(186, 186, 186);
+    margin-top: 0.5em;
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.06),
+    0 3px 0 0 rgba(0, 0, 0, 0.06),
+    0 1px 0 0 rgba(0, 0, 0, 0.08);
+}
+
+
+
+/* 
+
+        E L E M E N T    B A S E D
+
+ */
+
+div.sign-up-form {
+    padding: 30px;
+    margin-bottom: 10px;
+    border-radius: .3rem;
+    border: 1px solid rgb(186, 186, 186);
+}

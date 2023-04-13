@@ -1,0 +1,16 @@
+{
+  "name": "angular-fundamentals",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": { },
+  "devDependencies": {
+    "node-sass": "7.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile:sass": "node-sass src/css/sass/main.scss src/css/style.css -w"
+  },
+  "author": "Sagar Agarwal <agarwal.sagar@outlook.com>",
+  "license": "MIT"
+}
