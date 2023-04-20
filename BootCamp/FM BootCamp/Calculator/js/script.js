@@ -32,6 +32,10 @@ const back = () => {
 
 const equalsTo = () => {
 	let value = 0;
+	if (previousOperator === "") {
+		// need two numbers to perform math
+		return;
+	}
 	switch (previousOperator) {
 		case "+":
 			value = add();
@@ -94,10 +98,6 @@ const handleSymbol = (value) => {
 	// logValues("symbol");
 };
 
-(() => {
-	document.querySelector(".calc-buttons").addEventListener("click", (e) => buttonClicked(e.target.innerText));
-})();
-
 const logValues = (op) => {
 	console.log(`
     ------- ${op} ------
@@ -108,3 +108,7 @@ const logValues = (op) => {
     
     `);
 };
+
+(() => {
+	document.querySelector(".calc-buttons").addEventListener("click", (e) => buttonClicked(e.target.innerText));
+})();
