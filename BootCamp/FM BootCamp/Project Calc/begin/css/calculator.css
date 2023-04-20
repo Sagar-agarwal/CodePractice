@@ -1,13 +1,124 @@
 html {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	font-size: 10px;
 }
-*, *:before, *:after {
-    box-sizing: inherit;
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
 }
 body {
-  padding: 0;
-  margin: 0;
+	padding: 0;
+	margin: 0;
+	font-family: "Roboto Mono", monospace;
+
+	--color-black: #000000;
+	--color-white: #ffffff;
+	--color-grey-light: #ebebeb;
+	--color-grey: #d8d9db;
+	--color-grey-dark: #bbbcbe;
+	--color-orange: #df974c;
+	--color-orange-light: #dfb07e;
+	--color-orange-dark: #dd8d37;
 }
 .wrapper {
-    width: 400px;
+	margin: 5rem 0;
+	width: 40rem;
+	display: flex;
+	margin: 0 auto;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.typography {
+	font-size: 5rem;
+}
+.screen {
+	height: 8rem;
+	background-color: var(--color-black);
+	color: var(--color-white);
+	display: flex;
+	justify-content: end;
+	align-items: center;
+}
+.output {
+}
+
+.calc-buttons {
+	display: flex;
+	flex-direction: row;
+}
+.col {
+	display: flex;
+	flex-direction: column;
+}
+.row {
+	display: flex;
+}
+.nums {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 3;
+	background-color: var(--color-grey);
+}
+.nums .box {
+	border: 1px solid var(--color-black);
+}
+.nums .box:hover {
+	background-color: var(--color-grey-light);
+	box-shadow: inset 0 0 10px var(--color-grey-dark);
+	transition: all 0.3s ease-in-out;
+}
+.math {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	background-color: var(--color-orange);
+}
+.math .box {
+	border: 1px solid var(--color-orange-dark);
+	color: var(--color-white);
+}
+.math .box:first-child {
+	border-top: 1px solid var(--color-black);
+}
+.math .box:hover {
+	background-color: var(--color-orange-light);
+	box-shadow: inset 0 0 10px var(--color-orange);
+	transition: all 0.4s ease-in-out;
+}
+
+.nums-top {
+	display: flex;
+}
+.nums-mid {
+}
+.nums-bottom {
+}
+
+.reset {
+}
+.back {
+}
+
+.box {
+	border: 1px solid red;
+	display: flex;
+	justify-content: center;
+	height: 10rem;
+	padding: 1.5rem 0;
+	flex-basis: 100%;
+}
+.box-1 {
+	flex-basis: 33.3%;
+	/* flex-grow: 1; */
+}
+.box-2 {
+	flex-basis: 66.8%;
+	/* flex-grow: 2; */
+}
+.box-3 {
+	flex-basis: 100%;
+	/* flex-grow: 3; */
 }

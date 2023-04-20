@@ -16,7 +16,7 @@ img {
 
 blockquote {
 	background-color: #ededed;
-	font-style: Georgia, "Times New Roman", Times, Serif;
+	font-family: Georgia, "Times New Roman", serif;
 	font-size: 2rem;
 	font-style: italic;
 	text-align: center;
@@ -28,7 +28,7 @@ blockquote > cite {
 li {
 	text-decoration: none;
 }
-a {
+li a {
 	font-size: 1rem;
 	text-decoration: none;
 	color: blue;
