@@ -7,3 +7,9 @@ body {
 h1 {
 	font-size: 4rem;
 }
+
+.red-square {
+	width: 100px;
+	height: 100px;
+	background-color: crimson;
+}
