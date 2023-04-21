@@ -2,22 +2,34 @@ let data = "";
 let imgURLs = [];
 let index = 0;
 
+const updateDisabledAttribute = () => {
+	console.log(`Index: ${index}`);
+	if (index === 0) {
+		console.log(`enable back disabled`);
+		document.querySelector(".back").setAttribute("disabled", "");
+	} else {
+		document.querySelector(".back").removeAttribute("disabled");
+	}
+	if (index === 9) {
+		document.querySelector(".next").setAttribute("disabled", "");
+	} else {
+		document.querySelector(".next").removeAttribute("disabled");
+	}
+};
+
 const next = document.querySelector(".next").addEventListener("click", (e) => {
 	// debugger;
-	if (index < 10) {
+	if (index < 9) {
 		index++;
 		updateImageSrc();
-	} else {
-		return;
 	}
+
 	e.preventDefault();
 });
 const back = document.querySelector(".back").addEventListener("click", (e) => {
 	if (index > 0) {
 		index--;
 		updateImageSrc();
-	} else {
-		return;
 	}
 	e.preventDefault();
 });
@@ -31,9 +43,7 @@ const getCats = () => {
 	})
 		.then((res) => res.json())
 		.then((resData) => {
-			init(resData);
-			data = resData;
-			return data;
+			parseDataForImageURLS(resData);
 		})
 		.catch((err) => err);
 };
@@ -51,10 +61,11 @@ const init = (data) => {
 const updateImageSrc = () => {
 	const img = document.querySelector("#image");
 	img.src = imgURLs[index];
+	updateDisabledAttribute();
 };
 
 (() => {
-	// getCats();
+	getCats();
 
-	init(sampleInput);
+	// init(sampleInput);
 })();

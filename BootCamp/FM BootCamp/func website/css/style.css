@@ -1,7 +1,50 @@
+* {
+	box-sizing: border-box;
+}
 html {
 	font-size: 10px;
 }
 
+.wrapper {
+	display: flex;
+	align-self: center;
+	flex-direction: column;
+	margin-top: 5rem;
+}
+
+.image-section,
+.button-section {
+	display: flex;
+	align-self: center;
+}
+.image-section {
+	margin: 1rem;
+}
 #image {
 	max-height: 40rem;
+}
+
+.button-section {
+	margin: 2rem;
+}
+.next,
+.back {
+	padding: 1rem 2.5rem;
+	margin: 1rem 2rem;
+	font-weight: bold;
+	letter-spacing: 3px;
+	color: white;
+	border-radius: 2px;
+	border: 1px solid white;
+}
+.back {
+	background-color: crimson;
+}
+
+.next {
+	background-color: indigo;
+}
+
+button[disabled] {
+	background-color: lightgray;
 }
