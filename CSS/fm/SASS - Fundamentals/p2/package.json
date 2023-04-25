@@ -1,0 +1,21 @@
+{
+	"name": "p2",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"compile:sass": "node-sass -w ./css/sass/main.scss ./css/style.css",
+		"sass": "sass ./css/sass/main.scss ./css/style.css",
+		"stylelint": "stylelint -w **/*.{css,scss}"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"eslint": "^8.39.0",
+		"node-sass": "^8.0.0",
+		"sass": "^1.62.0",
+		"stylelint": "^15.6.0",
+		"stylelint-config-standard-scss": "^8.0.0"
+	}
+}
