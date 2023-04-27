@@ -1,0 +1,38 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+@import '../abstracts/functions';
+
+.btn-section {
+	& label {
+		margin-left: 1rem;
+	}
+}
+.btn {
+	margin: 1rem 0.5rem;
+	padding: 0.5rem 1.5rem;
+	display: inline-block;
+	border: 1px solid transparent;
+	white-space: nowrap;
+	vertical-align: middle;
+	border-radius: 2px;
+	user-select: none;
+	transition: box-shadow 0.3s;
+
+	&:hover:not(:disabled) {
+		box-shadow: 0 2px 4px lighten($color-black, 20%);
+	}
+	&:disabled {
+		opacity: 0.65;
+		box-shadow: none;
+	}
+}
+
+.theme-1 {
+	@include theme(#399, 100deg);
+}
+.theme-2 {
+	@include theme(#689, $darkenpct: 10%);
+}
+.theme-3 {
+	@include theme($color-orange);
+}

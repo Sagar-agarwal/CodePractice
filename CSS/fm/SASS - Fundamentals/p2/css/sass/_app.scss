@@ -1,0 +1,41 @@
+.container {
+	max-width: 600px;
+	width: 100%;
+	margin: auto;
+	background: #eee;
+
+	.sidebar,
+	.main {
+		padding: 10px;
+	}
+
+	.sidebar {
+		width: 200px;
+	}
+
+	.main {
+		min-height: 100vh;
+	}
+
+	&.right-nav {
+		.sidebar {
+			float: right;
+		}
+
+		.main {
+			margin-right: 220px;
+			border-right: 2px solid #333;
+		}
+	}
+
+	&.left-nav {
+		.sidebar {
+			float: left;
+		}
+
+		.main {
+			margin-left: 220px;
+			border-left: 2px solid #333;
+		}
+	}
+}
