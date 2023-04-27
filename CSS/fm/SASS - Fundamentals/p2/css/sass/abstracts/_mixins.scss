@@ -48,3 +48,35 @@
 		@content;
 	}
 }
+
+@mixin btn-base($bg, $darken: 20%) {
+	background-color: darken($bg, $darken);
+	border-color: darken(darken($bg, $darken), 20%);
+	&:hover {
+		background-color: adjust-color(adjust-color($bg, $saturation: 20%), $lightness: 10%);
+	}
+}
+
+@mixin theme($color, $rotate: 120deg, $darkenpct: 20%) {
+	$primary-color: $color;
+	$secondary-color: adjust-color($color, $hue: -$rotate);
+	$other-color: adjust-color($color, $hue: $rotate);
+	$other2-color: adjust-color($color, $hue: 180deg);
+
+	& .btn {
+		color: white;
+
+		&.btn-primary {
+			@include btn-base($primary-color, 0);
+		}
+		&.btn-secondary {
+			@include btn-base($secondary-color);
+		}
+		&.btn-other {
+			@include btn-base($other-color);
+		}
+		&.btn-other2 {
+			@include btn-base($other2-color);
+		}
+	}
+}

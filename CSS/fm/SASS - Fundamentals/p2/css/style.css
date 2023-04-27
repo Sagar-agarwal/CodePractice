@@ -1,6 +1,9 @@
 /*
 * Input range variables
 */
+/*
+* Input range variables
+*/
 body {
   font-size: 10px; }
 
@@ -14,12 +17,15 @@ label {
 /*
 * Input range variables
 */
-.btn-section {
-  margin: 2rem 4rem; }
-  .btn-section label {
-    margin-left: 1rem; }
+/*
+* Input range variables
+*/
+.btn-section label {
+  margin-left: 1rem; }
 
 .btn {
+  margin: 1rem 0.5rem;
+  padding: 0.5rem 1.5rem;
   display: inline-block;
   border: 1px solid transparent;
   white-space: nowrap;
@@ -32,20 +38,75 @@ label {
   .btn:disabled {
     opacity: 0.65;
     box-shadow: none; }
-  .btn.btn-yellow {
-    background-color: #990; }
-  .btn.btn-blue {
-    background-color: #33a; }
-  .btn.btn-green {
-    background-color: #3c3; }
-  .btn.btn-purple {
-    background-color: #939; }
-  .btn.btn-pink {
-    background-color: #c69; }
-  .btn.btn-orange {
-    background-color: #f93; }
-  .btn.btn-brown {
-    background-color: #952; }
+
+.theme-1 .btn {
+  color: white; }
+  .theme-1 .btn.btn-primary {
+    background-color: #339999;
+    border-color: #1a4d4d; }
+    .theme-1 .btn.btn-primary:hover {
+      background-color: #26d9d9; }
+  .theme-1 .btn.btn-secondary {
+    background-color: #3c4d1a;
+    border-color: black; }
+    .theme-1 .btn.btn-secondary:hover {
+      background-color: #9dd926; }
+  .theme-1 .btn.btn-other {
+    background-color: #3c1a4d;
+    border-color: black; }
+    .theme-1 .btn.btn-other:hover {
+      background-color: #9d26d9; }
+  .theme-1 .btn.btn-other2 {
+    background-color: #4d1a1a;
+    border-color: black; }
+    .theme-1 .btn.btn-other2:hover {
+      background-color: #d92626; }
+
+.theme-2 .btn {
+  color: white; }
+  .theme-2 .btn.btn-primary {
+    background-color: #668899;
+    border-color: #3d525c; }
+    .theme-2 .btn.btn-primary:hover {
+      background-color: #70a7c2; }
+  .theme-2 .btn.btn-secondary {
+    background-color: #525c3d;
+    border-color: #1b1f14; }
+    .theme-2 .btn.btn-secondary:hover {
+      background-color: #a7c270; }
+  .theme-2 .btn.btn-other {
+    background-color: #5c3d52;
+    border-color: #1f141b; }
+    .theme-2 .btn.btn-other:hover {
+      background-color: #c270a7; }
+  .theme-2 .btn.btn-other2 {
+    background-color: #5c473d;
+    border-color: #1f1814; }
+    .theme-2 .btn.btn-other2:hover {
+      background-color: #c28b70; }
+
+.theme-3 .btn {
+  color: white; }
+  .theme-3 .btn.btn-primary {
+    background-color: #ff9933;
+    border-color: #cc6600; }
+    .theme-3 .btn.btn-primary:hover {
+      background-color: #ffb366; }
+  .theme-3 .btn.btn-secondary {
+    background-color: #6600cc;
+    border-color: #330066; }
+    .theme-3 .btn.btn-secondary:hover {
+      background-color: #b366ff; }
+  .theme-3 .btn.btn-other {
+    background-color: #00cc66;
+    border-color: #006633; }
+    .theme-3 .btn.btn-other:hover {
+      background-color: #66ffb3; }
+  .theme-3 .btn.btn-other2 {
+    background-color: #0066cc;
+    border-color: #003366; }
+    .theme-3 .btn.btn-other2:hover {
+      background-color: #66b3ff; }
 
 /*
 * Input range variables
@@ -127,9 +188,6 @@ input[type='range'] {
 /*
 * Input range variables
 */
-body {
-  background-color: #fff; }
-
 .container {
   max-width: 600px;
   width: 100%;

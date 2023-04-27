@@ -1,14 +1,15 @@
 @import '../abstracts/variables';
 @import '../abstracts/mixins';
+@import '../abstracts/functions';
 
 .btn-section {
-	margin: 2rem 4rem;
-
 	& label {
 		margin-left: 1rem;
 	}
 }
 .btn {
+	margin: 1rem 0.5rem;
+	padding: 0.5rem 1.5rem;
 	display: inline-block;
 	border: 1px solid transparent;
 	white-space: nowrap;
@@ -24,26 +25,14 @@
 		opacity: 0.65;
 		box-shadow: none;
 	}
+}
 
-	&.btn-yellow {
-		@include btn-color($color-yellow);
-	}
-	&.btn-blue {
-		@include btn-color($color-blue);
-	}
-	&.btn-green {
-		@include btn-color($color-green);
-	}
-	&.btn-purple {
-		@include btn-color($color-purple);
-	}
-	&.btn-pink {
-		@include btn-color($color-pink);
-	}
-	&.btn-orange {
-		@include btn-color($color-orange);
-	}
-	&.btn-brown {
-		@include btn-color($color-brown);
-	}
+.theme-1 {
+	@include theme(#399, 100deg);
+}
+.theme-2 {
+	@include theme(#689, $darkenpct: 10%);
+}
+.theme-3 {
+	@include theme($color-orange);
 }
