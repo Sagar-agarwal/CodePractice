@@ -1,0 +1,50 @@
+@mixin btn-color($color) {
+	background-color: $color;
+}
+
+@mixin input-range-focus-sudo($color: null) {
+	&::-webkit-slider-runnable-track {
+		background: $color;
+	}
+
+	&::-ms-fill-lower {
+		background: $color;
+	}
+
+	&::-ms-fill-upper {
+		background: $color;
+	}
+}
+
+@mixin vendor-track-defaults() {
+	width: 100%;
+	height: 8.4px;
+	cursor: pointer;
+	@content;
+}
+
+@mixin slider-thumb() {
+	&::-webkit-slider-thumb {
+		@content;
+		-webkit-appearance: none;
+		margin-top: -14px;
+	}
+	&::-moz-range-thumb {
+		@content;
+	}
+	&::-ms-thumb {
+		@content;
+	}
+}
+
+@mixin ms-fill-lower-upper($lower-color: null, $upper-color: null) {
+	&::-ms-fill-upper {
+		background: $upper-color;
+		@content;
+	}
+
+	&::-ms-fill-lower {
+		background: $lower-color;
+		@content;
+	}
+}

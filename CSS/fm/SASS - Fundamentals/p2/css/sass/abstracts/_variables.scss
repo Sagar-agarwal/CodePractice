@@ -4,9 +4,27 @@ $color-orange-light: #ff9c80;
 $color-white: #fff;
 $color-black: #111;
 $color-grey: #333;
-$color-pink-pri: #b3005e;
-$color-pink-pri-light: #e8a0bf;
-$color-pink-sec: #ff5f9e;
-$color-pink-sec-light: #f7c8e0;
-$color-pink: #c46;
 $color-beige: beige;
+$color-hopbush: #c69 !default;
+$color-venus: #998099 !default;
+$color-patina: #699 !default;
+$color-nebula: #d2e1dd !default;
+$color-yellow: #990;
+$color-blue: #33a;
+$color-green: #3c3;
+$color-purple: #939;
+$color-pink: $color-hopbush;
+$color-orange: #f93;
+$color-brown: #952;
+
+/*
+* Input range variables
+*/
+$color-blue-pri: #2a6495;
+$color-blue-light: #3071a9;
+$color-blue-dark: #367ebd;
+
+$btn-disabled-opacity: 0.5 !default;
+
+$range-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+$border-small-black: 0.2px solid #010101;

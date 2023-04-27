@@ -1,28 +1,134 @@
+/*
+* Input range variables
+*/
 body {
   font-size: 10px; }
 
 h1 {
-  color: #b3005e;
+  color: #c69;
   font-size: 3rem; }
 
 label {
   font-size: 1rem; }
 
-.btn {
-  padding: 0.2rem 1rem;
-  border-radius: 2px;
-  border: 1px solid #c46; }
-  .btn:disabled {
-    opacity: 0.5; }
-  .btn-primary {
-    background-color: #b3005e;
-    color: #fff; }
-  .btn-secondary {
-    background-color: #ff5f9e;
-    color: #111; }
+/*
+* Input range variables
+*/
+.btn-section {
+  margin: 2rem 4rem; }
+  .btn-section label {
+    margin-left: 1rem; }
 
+.btn {
+  display: inline-block;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  vertical-align: middle;
+  border-radius: 2px;
+  user-select: none;
+  transition: box-shadow 0.3s; }
+  .btn:hover:not(:disabled) {
+    box-shadow: 0 2px 4px #444444; }
+  .btn:disabled {
+    opacity: 0.65;
+    box-shadow: none; }
+  .btn.btn-yellow {
+    background-color: #990; }
+  .btn.btn-blue {
+    background-color: #33a; }
+  .btn.btn-green {
+    background-color: #3c3; }
+  .btn.btn-purple {
+    background-color: #939; }
+  .btn.btn-pink {
+    background-color: #c69; }
+  .btn.btn-orange {
+    background-color: #f93; }
+  .btn.btn-brown {
+    background-color: #952; }
+
+/*
+* Input range variables
+*/
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 18px 0;
+  width: 100%; }
+  input[type='range']:focus {
+    outline: none; }
+    input[type='range']:focus::-webkit-slider-runnable-track {
+      background: #367ebd; }
+    input[type='range']:focus::-ms-fill-lower {
+      background: #367ebd; }
+    input[type='range']:focus::-ms-fill-upper {
+      background: #367ebd; }
+  input[type='range']::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #3071a9;
+    border-radius: 1.3px;
+    border: 0.2px solid #010101; }
+  input[type='range']::-moz-range-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #3071a9;
+    border-radius: 1.3px;
+    border: 0.2px solid #010101; }
+  input[type='range']::-ms-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    border-width: 16px 0;
+    color: transparent; }
+  input[type='range']::-webkit-slider-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -14px; }
+  input[type='range']::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer; }
+  input[type='range']::-ms-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer; }
+  input[type='range']::-ms-fill-upper {
+    background: #3071a9;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; }
+  input[type='range']::-ms-fill-lower {
+    background: #2a6495;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; }
+
+/*
+* Input range variables
+*/
 body {
-  background-color: beige; }
+  background-color: #fff; }
 
 .container {
   max-width: 600px;

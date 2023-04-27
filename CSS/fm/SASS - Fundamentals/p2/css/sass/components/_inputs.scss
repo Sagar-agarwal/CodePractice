@@ -1,0 +1,54 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+input[type='range'] {
+	-webkit-appearance: none;
+	appearance: none;
+	margin: 18px 0;
+	width: 100%;
+
+	&:focus {
+		outline: none;
+		@include input-range-focus-sudo($color-blue-dark);
+	}
+
+	&::-webkit-slider-runnable-track {
+		@include vendor-track-defaults();
+		box-shadow: $range-shadow;
+		background: #3071a9;
+		border-radius: 1.3px;
+		border: $border-small-black;
+	}
+
+	&::-moz-range-track {
+		@include vendor-track-defaults();
+		box-shadow: $range-shadow;
+		background: #3071a9;
+		border-radius: 1.3px;
+		border: $border-small-black;
+	}
+
+	&::-ms-track {
+		@include vendor-track-defaults();
+		background: transparent;
+		border-color: transparent;
+		border-width: 16px 0;
+		color: transparent;
+	}
+
+	@include slider-thumb() {
+		box-shadow: $range-shadow;
+		border: 1px solid #000000;
+		height: 36px;
+		width: 16px;
+		border-radius: 3px;
+		background: #ffffff;
+		cursor: pointer;
+	}
+
+	@include ms-fill-lower-upper($upper-color: $color-blue-light, $lower-color: $color-blue-pri) {
+		border: $border-small-black;
+		border-radius: 2.6px;
+		box-shadow: $range-shadow;
+	}
+}

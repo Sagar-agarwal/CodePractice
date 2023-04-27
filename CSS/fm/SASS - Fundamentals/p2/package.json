@@ -7,7 +7,7 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"compile:sass": "node-sass -w ./css/sass/main.scss ./css/style.css",
 		"sass": "sass ./css/sass/main.scss ./css/style.css",
-		"stylelint": "stylelint -w **/*.{css,scss}"
+		"stylelint": "stylelint **/*.{css,scss}"
 	},
 	"author": "",
 	"license": "ISC",

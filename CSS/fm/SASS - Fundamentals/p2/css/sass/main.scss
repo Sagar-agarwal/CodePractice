@@ -1,6 +1,6 @@
-@import './abstracts/functions';
-@import './abstracts/mixins';
 @import './abstracts/variables';
+@import './abstracts/mixins';
+@import './abstracts/functions';
 
 @import './base/reset';
 @import './base/animations';
@@ -10,6 +10,7 @@
 @import './components/buttons';
 @import './components/cards';
 @import './components/form';
+@import './components/inputs';
 
 @import './layout/footer';
 @import './layout/header';
@@ -24,4 +25,4 @@
 
 @import './vendors/icons';
 
-@import './_app';
+@import './app';
