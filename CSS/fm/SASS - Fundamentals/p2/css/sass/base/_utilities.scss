@@ -1,0 +1,23 @@
+@import '../abstracts/variables';
+
+$increment: 0.5rem;
+$directions: (
+	't': 'top',
+	'r': 'right',
+	'b': 'bottom',
+	'l': 'left',
+);
+$box-sizing: (
+	'm': 'margin',
+	'p': 'padding',
+);
+
+@each $sizing-short, $sizing-long in $box-sizing {
+	@each $dir-short, $dir-long in $directions {
+		@for $i from 1 through 10 {
+			.#{$sizing-short}-#{$dir-short}-#{$i} {
+				#{$sizing-long}-#{$dir-long}: #{($i * 0.5)}rem;
+			}
+		}
+	}
+}

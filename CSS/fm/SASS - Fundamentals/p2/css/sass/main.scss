@@ -2,11 +2,6 @@
 @import './abstracts/mixins';
 @import './abstracts/functions';
 
-@import './base/reset';
-@import './base/animations';
-@import './base/typography';
-@import './base/utilities';
-
 @import './components/buttons';
 @import './components/cards';
 @import './components/form';
@@ -24,5 +19,10 @@
 @import './themes/pink';
 
 @import './vendors/icons';
+
+@import './base/reset';
+@import './base/animations';
+@import './base/typography';
+@import './base/utilities';
 
 @import './app';

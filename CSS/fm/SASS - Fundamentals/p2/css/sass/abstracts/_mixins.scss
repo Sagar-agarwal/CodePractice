@@ -2,6 +2,22 @@
 	background-color: $color;
 }
 
+@mixin btn-shape($value: 4rem, $rectangle: null, $circle: null, $square: null) {
+	& .btn {
+		@if $rectangle {
+			padding: ($value/2) $value;
+		}
+
+		@if $square {
+			padding: $value;
+		}
+
+		@if $circle {
+			border-radius: 50%;
+		}
+	}
+}
+
 @mixin input-range-focus-sudo($color: null) {
 	&::-webkit-slider-runnable-track {
 		background: $color;
@@ -50,8 +66,12 @@
 }
 
 @mixin btn-base($bg, $darken: 20%) {
+	/* Theme Color: #{$bg} */
 	background-color: darken($bg, $darken);
 	border-color: darken(darken($bg, $darken), 20%);
+	@if lightness($bg) < 70% {
+		color: white;
+	}
 	&:hover {
 		background-color: adjust-color(adjust-color($bg, $saturation: 20%), $lightness: 10%);
 	}
@@ -64,8 +84,6 @@
 	$other2-color: adjust-color($color, $hue: 180deg);
 
 	& .btn {
-		color: white;
-
 		&.btn-primary {
 			@include btn-base($primary-color, 0);
 		}

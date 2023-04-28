@@ -35,4 +35,5 @@
 }
 .theme-3 {
 	@include theme($color-orange);
+	@include btn-shape();
 }
