@@ -4,16 +4,28 @@
 /*
 * Input range variables
 */
+/* Source: https://css-tricks.com/snippets/sass/power-function/ */
+/*
+* Input range variables
+*/
+/* Source: https://css-tricks.com/snippets/sass/power-function/ */
 /*
 * Input range variables
 */
 /*
 * Input range variables
 */
+/* Source: https://css-tricks.com/snippets/sass/power-function/ */
+/*
+* Input range variables
+*/
+/* Source: https://css-tricks.com/snippets/sass/power-function/ */
 .btn-section label {
   margin-left: 1rem; }
 
 .btn {
+  font-weight: 600;
+  position: relative;
   margin: 1rem 0.5rem;
   padding: 0.5rem 1.5rem;
   display: inline-block;
@@ -23,16 +35,35 @@
   border-radius: 2px;
   user-select: none;
   transition: box-shadow 0.3s; }
+  .btn.btn--mode-primary {
+    background-color: #c69;
+    color: #fff; }
+  .btn.btn--mode-secondary {
+    background-color: #998099;
+    color: #111; }
+  .btn.btn--mode-max {
+    background-color: red;
+    color: #111; }
   .btn:hover:not(:disabled) {
     box-shadow: 0 2px 4px #444444; }
   .btn:disabled {
     opacity: 0.65;
     box-shadow: none; }
+    .btn:disabled .btn__price {
+      background-color: #757575; }
+  .btn__price {
+    padding: 3px 5px;
+    border-radius: 2px;
+    background-color: #080;
+    color: #fff; }
 
 .theme-1 .btn.btn-primary {
   /* Theme Color: #399 */
   background-color: #339999;
   border-color: #1a4d4d;
+  /* luminance(#399): 0.25848
+   * luminance(white): 1.00001
+   */
   color: white; }
   .theme-1 .btn.btn-primary:hover {
     background-color: #26d9d9; }
@@ -41,6 +72,9 @@
   /* Theme Color: #779933 */
   background-color: #3c4d1a;
   border-color: black;
+  /* luminance(#779933): 0.26983
+   * luminance(white): 1.00001
+   */
   color: white; }
   .theme-1 .btn.btn-secondary:hover {
     background-color: #9dd926; }
@@ -49,6 +83,9 @@
   /* Theme Color: #773399 */
   background-color: #3c1a4d;
   border-color: black;
+  /* luminance(#773399): 0.08761
+   * luminance(white): 1.00001
+   */
   color: white; }
   .theme-1 .btn.btn-other:hover {
     background-color: #9d26d9; }
@@ -57,6 +94,9 @@
   /* Theme Color: #993333 */
   background-color: #4d1a1a;
   border-color: black;
+  /* luminance(#993333): 0.09558
+   * luminance(white): 1.00001
+   */
   color: white; }
   .theme-1 .btn.btn-other2:hover {
     background-color: #d92626; }
@@ -65,6 +105,9 @@
   /* Theme Color: #689 */
   background-color: #668899;
   border-color: #3d525c;
+  /* luminance(#689): 0.22772
+   * luminance(white): 1.00001
+   */
   color: white; }
   .theme-2 .btn.btn-primary:hover {
     background-color: #70a7c2; }
@@ -73,6 +116,9 @@
   /* Theme Color: #889966 */
   background-color: #525c3d;
   border-color: #1b1f14;
+  /* luminance(#889966): 0.29001
+   * luminance(white): 1.00001
+   */
   color: white; }
   .theme-2 .btn.btn-secondary:hover {
     background-color: #a7c270; }
@@ -81,6 +127,9 @@
   /* Theme Color: #996688 */
   background-color: #5c3d52;
   border-color: #1f141b;
+  /* luminance(#996688): 0.18113
+   * luminance(white): 1.00001
+   */
   color: white; }
   .theme-2 .btn.btn-other:hover {
     background-color: #c270a7; }
@@ -89,6 +138,9 @@
   /* Theme Color: #997766 */
   background-color: #5c473d;
   border-color: #1f1814;
+  /* luminance(#997766): 0.20969
+   * luminance(white): 1.00001
+   */
   color: white; }
   .theme-2 .btn.btn-other2:hover {
     background-color: #c28b70; }
@@ -97,7 +149,10 @@
   /* Theme Color: #f93 */
   background-color: #ff9933;
   border-color: #cc6600;
-  color: white; }
+  /* luminance(#f93): 0.4431
+   * luminance(white): 1.00001
+   */
+  color: #333; }
   .theme-3 .btn.btn-primary:hover {
     background-color: #ffb366; }
 
@@ -105,6 +160,9 @@
   /* Theme Color: #9933ff */
   background-color: #6600cc;
   border-color: #330066;
+  /* luminance(#9933ff): 0.16523
+   * luminance(white): 1.00001
+   */
   color: white; }
   .theme-3 .btn.btn-secondary:hover {
     background-color: #b366ff; }
@@ -113,7 +171,10 @@
   /* Theme Color: #33ff99 */
   background-color: #00cc66;
   border-color: #006633;
-  color: white; }
+  /* luminance(#33ff99): 0.74573
+   * luminance(white): 1.00001
+   */
+  color: #333; }
   .theme-3 .btn.btn-other:hover {
     background-color: #66ffb3; }
 
@@ -121,13 +182,20 @@
   /* Theme Color: #3399ff */
   background-color: #0066cc;
   border-color: #003366;
-  color: white; }
+  /* luminance(#3399ff): 0.30767
+   * luminance(white): 1.00001
+   */
+  color: #333; }
   .theme-3 .btn.btn-other2:hover {
     background-color: #66b3ff; }
 
 /*
 * Input range variables
 */
+/*
+* Input range variables
+*/
+/* Source: https://css-tricks.com/snippets/sass/power-function/ */
 input[type='range'] {
   -webkit-appearance: none;
   appearance: none;

@@ -8,6 +8,8 @@
 	}
 }
 .btn {
+	font-weight: 600;
+	position: relative;
 	margin: 1rem 0.5rem;
 	padding: 0.5rem 1.5rem;
 	display: inline-block;
@@ -18,12 +20,35 @@
 	user-select: none;
 	transition: box-shadow 0.3s;
 
+	&.btn--mode-primary {
+		background-color: $color-hopbush;
+		color: $color-white;
+	}
+	&.btn--mode-secondary {
+		background-color: $color-venus;
+		color: $color-black;
+	}
+	&.btn--mode-max {
+		background-color: biggestColorChannelOnly($color-orange);
+		color: $color-black;
+	}
+
 	&:hover:not(:disabled) {
 		box-shadow: 0 2px 4px lighten($color-black, 20%);
 	}
 	&:disabled {
 		opacity: 0.65;
 		box-shadow: none;
+
+		.btn__price {
+			background-color: $color-grey-light;
+		}
+	}
+	&__price {
+		padding: 3px 5px;
+		border-radius: 2px;
+		background-color: $color-green-dark;
+		color: $color-white;
 	}
 }
 

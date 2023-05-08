@@ -1,3 +1,5 @@
+@import './functions';
+
 @mixin btn-color($color) {
 	background-color: $color;
 }
@@ -45,9 +47,11 @@
 		-webkit-appearance: none;
 		margin-top: -14px;
 	}
+
 	&::-moz-range-thumb {
 		@content;
 	}
+
 	&::-ms-thumb {
 		@content;
 	}
@@ -65,13 +69,39 @@
 	}
 }
 
+@function linearRGB($color) {
+	@if $color <=0.04045 {
+		@return $color / 12.92;
+	} @else if $color>=0.04045 {
+		@return pow((($color + 0.055)/1.055), 2.4);
+	}
+}
+
+@function luminance($color) {
+	$r: linearRGB(red($color) / 255);
+	$g: linearRGB(green($color) / 255);
+	$b: linearRGB(blue($color) / 255);
+
+	@return ($r * 0.2126 + $g * 0.7152 + $b * 0.0722);
+}
+
+$white-luminance: luminance(white);
+
 @mixin btn-base($bg, $darken: 20%) {
 	/* Theme Color: #{$bg} */
 	background-color: darken($bg, $darken);
 	border-color: darken(darken($bg, $darken), 20%);
-	@if lightness($bg) < 70% {
+
+	/* luminance(#{$bg}): #{luminance($bg)}
+   * luminance(white): #{luminance(white)}
+   */
+	@if abs(luminance($bg) - $white_luminance) >0.7 {
+		// @if lightness($bg) < 70 {
 		color: white;
+	} @else {
+		color: $color-grey;
 	}
+
 	&:hover {
 		background-color: adjust-color(adjust-color($bg, $saturation: 20%), $lightness: 10%);
 	}
@@ -87,12 +117,15 @@
 		&.btn-primary {
 			@include btn-base($primary-color, 0);
 		}
+
 		&.btn-secondary {
 			@include btn-base($secondary-color);
 		}
+
 		&.btn-other {
 			@include btn-base($other-color);
 		}
+
 		&.btn-other2 {
 			@include btn-base($other2-color);
 		}
