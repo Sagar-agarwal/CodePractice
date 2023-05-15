@@ -5,6 +5,7 @@
 /* --- VARIABLES --- */
 :root {
 	--height-header: 5.6rem;
+	--px-to-rem: 10px;
 
 	// Colors
 	/*Color mode HSL(hue, saturation, lightness)*/
@@ -16,6 +17,7 @@
 	--color-title: hsl(0, 0%, 12%);
 	--color-text: hsl(0, 0%, 50%);
 	--color-white: #fff;
+	--color-black: #040406;
 	--color-body: hsl(0, 0%, 96%);
 	--container-color: hsl(0, 0%, 100%);
 
