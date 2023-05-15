@@ -1,0 +1,47 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 10px; }
+
+p.para .external-link {
+  margin-left: 5rem;
+  font-size: 2rem; }
+  p.para .external-link:hover {
+    color: green;
+    position: relative; }
+    p.para .external-link:hover:before {
+      content: '';
+      position: absolute;
+      font-size: 1rem;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid orange;
+      border-right: 10px solid transparent;
+      border-left: 10px solid transparent;
+      left: 1.5rem;
+      top: 1.5rem; }
+    p.para .external-link:hover:after {
+      content: attr(href);
+      position: absolute;
+      font-size: 1rem;
+      padding: 1px 2px;
+      background-color: orange;
+      color: white;
+      border-radius: 3px;
+      left: 1rem;
+      top: 2.5rem; }
+
+p:first-of-type::first-letter {
+  color: lightseagreen;
+  font-size: 30px; }
+
+.cell {
+  margin: 0;
+  padding: 5px 10px;
+  display: inline-block;
+  border: 1px solid black; }
+
+.row:nth-of-type() .cell {
+  background-color: orange;
+  color: orange;
+  border: none; }
