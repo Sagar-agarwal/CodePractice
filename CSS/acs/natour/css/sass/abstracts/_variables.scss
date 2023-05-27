@@ -1,0 +1,18 @@
+// Colors
+$color-primary-light: #7ed56f;
+$color-primary-regular: #55c57a;
+$color-primary-dark: #28b485;
+
+$color-white: #eee;
+$color-black: #111;
+
+// Gradients
+$color-gradient-green: linear-gradient(
+	to right bottom,
+	rgba($color-primary-light, 0.8),
+	rgba($color-primary-dark, 0.8)
+);
+
+//  Typography
+$font-family: 'lato', san-serif;
+$font-color-default: #777;

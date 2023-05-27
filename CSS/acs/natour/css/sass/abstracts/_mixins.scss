@@ -1,0 +1,7 @@
+@mixin display-block {
+	display: block;
+}
+
+@mixin backface-visibility {
+	backface-visibility: hidden;
+}
