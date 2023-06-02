@@ -1,6 +1,7 @@
 @import './abstracts/functions';
 @import './abstracts/mixins';
 @import './abstracts/variables';
+@import './abstracts/extends';
 
 @import './base/animations';
 @import './base/typography';
@@ -8,12 +9,15 @@
 @import './base/utilities';
 
 @import './components/buttons';
-@import './components/cards';
+@import './components/card';
 @import './components/form';
+@import './components/composition';
+@import './components/feature-box';
 
 @import './layout/footer';
 @import './layout/header';
 @import './layout/navigation';
+@import './layout/grid';
 
 @import './pages/about';
 @import './pages/contact';

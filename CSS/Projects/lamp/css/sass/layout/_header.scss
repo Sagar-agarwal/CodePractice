@@ -1,0 +1,62 @@
+.section__header {
+	position: relative;
+}
+.header__clip {
+	position: absolute;
+	min-height: 90vh;
+	min-width: 100vw;
+	z-index: var(--z-back);
+	background-color: var(--color-black);
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 65%);
+}
+
+.header__main {
+	display: flex;
+}
+
+.container {
+	position: relative;
+	// flex-basis: 1;
+}
+
+.header__hero-lamp {
+	// position: absolute;
+	// top: 50%;
+	// left: 50%;
+	// transform: translate(-50%);
+}
+
+.header__hero-details {
+	// background-color: white;
+}
+.hero__highlight-text {
+}
+.hero__heading {
+	&-text {
+	}
+}
+
+.hero__call-to-action {
+	&.discover-now {
+	}
+	&.watch-video {
+	}
+}
+
+.hero__statistics {
+	&-product {
+	}
+	&-customer {
+	}
+	&-award {
+	}
+}
+
+.statistics {
+	&.statistics__number {
+		&.statistics__number-plus {
+		}
+	}
+	&.statistics__text {
+	}
+}

@@ -3,7 +3,7 @@
 	background-position: center;
 	background-size: top;
 	height: 95vh;
-	clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 	position: relative;
 
 	& .logo-box {
@@ -12,7 +12,7 @@
 		left: 2rem;
 
 		& .logo {
-			width: 3rem;
+			width: 5rem;
 		}
 	}
 	& .heading {
@@ -21,27 +21,5 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		text-align: center;
-
-		& .heading__primary {
-			color: $color-white;
-			margin-bottom: 2rem;
-			text-transform: uppercase;
-			font-weight: 400;
-
-			& .heading__primary--main {
-				@include display-block;
-				@include backface-visibility;
-				font-size: 5rem;
-				letter-spacing: 0.7rem;
-				animation: moveInLeft 1s ease-out;
-			}
-			& .heading__primary--sub {
-				@include display-block;
-				@include backface-visibility;
-				font-size: 1.7rem;
-				letter-spacing: 0.6rem;
-				animation: moveInRight 1s ease-out;
-			}
-		}
 	}
 }

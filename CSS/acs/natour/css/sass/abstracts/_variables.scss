@@ -3,8 +3,17 @@ $color-primary-light: #7ed56f;
 $color-primary-regular: #55c57a;
 $color-primary-dark: #28b485;
 
+$color-secondary-light: #ffb900;
+// $color-secondary-regular: ;
+$color-secondary-dark: #ff7730;
+
+$color-tertiary-light: #2998ff;
+// $color-tertiary-regular: ;
+$color-tertiary-dark: #5643fa;
+
 $color-white: #eee;
 $color-black: #111;
+$color-grey-light-1: #f7f7f7;
 
 // Gradients
 $color-gradient-green: linear-gradient(
@@ -12,6 +21,18 @@ $color-gradient-green: linear-gradient(
 	rgba($color-primary-light, 0.8),
 	rgba($color-primary-dark, 0.8)
 );
+$color-gradient-secondary: linear-gradient(
+	to right bottom,
+	rgba($color-secondary-light, 0.8),
+	rgba($color-secondary-dark, 0.8)
+);
+
+$color-gradient-tertiary: linear-gradient(
+	to right bottom,
+	rgba($color-tertiary-light, 0.8),
+	rgba($color-tertiary-dark, 0.8)
+);
+$color-gradient-l-to-r: linear-gradient(to right, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8));
 
 //  Typography
 $font-family: 'lato', san-serif;

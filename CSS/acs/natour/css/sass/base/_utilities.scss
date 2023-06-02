@@ -1,0 +1,34 @@
+.u-center-text {
+	text-align: center;
+}
+
+.backface-visibility {
+	backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+}
+
+// margin and padding utility class creator
+$sizes: 1rem, 2rem, 3rem, 4rem, 5rem, 6rem, 7rem, 8rem, 9rem, 10rem;
+$box-elements: (
+	'm': 'margin',
+	'p': 'padding',
+);
+$box-sides: (
+	't': 'top',
+	'r': 'right',
+	'b': 'bottom',
+	'l': 'left',
+);
+
+@each $ele-short, $ele-long in $box-elements {
+	@each $side-short, $side-long in $box-sides {
+		$index-for-sizes: 0;
+		@each $size in $sizes {
+			$index-for-sizes: $index-for-sizes + 1;
+			.u-#{$ele-short}-#{$side-short}-#{$index-for-sizes} {
+				#{$ele-long}-#{$side-long}: #{$size};
+			}
+		}
+	}
+}

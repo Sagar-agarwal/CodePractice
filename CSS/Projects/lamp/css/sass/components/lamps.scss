@@ -1,0 +1,29 @@
+.lamp__primary {
+	border-radius: 50% 50% 0 0;
+	background: var(--color-gradient-second);
+	padding: 0.5rem;
+
+	& .lamp__container {
+		border-radius: 50% 50% 0 0;
+		background: var(--color-gradient-first);
+
+		& .lamp__img {
+			width: 40rem;
+		}
+		& .lamp__text {
+			text-align: center;
+			font-size: var(--font-size-biggest);
+			text-transform: uppercase;
+			background-color: var(--color-primary-light);
+			background-image: var(--color-gradient-second);
+			background-size: 100%;
+			-webkit-background-clip: text;
+			-moz-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			-moz-text-fill-color: transparent;
+		}
+	}
+}
+
+.lamp__buy {
+}

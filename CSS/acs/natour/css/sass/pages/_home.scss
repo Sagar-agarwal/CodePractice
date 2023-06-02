@@ -1,0 +1,27 @@
+.section__about {
+	background-color: $color-grey-light-1;
+	margin-top: -20vh;
+	padding-top: 25rem;
+	padding-bottom: 25rem;
+}
+.about__content {
+	padding: 0 2rem;
+}
+
+.section__features {
+	background-image: $color-gradient-green, url('../../../img/nat-4.jpg');
+	transform: skewY(-7deg);
+	background-size: cover;
+	margin-top: -15rem;
+	position: relative;
+	// @extend %clear-fix;
+
+	& > * {
+		transform: skewY(7deg);
+		// position: absolute;
+	}
+}
+
+.section__tours {
+	@extend .u-m-t-10;
+}

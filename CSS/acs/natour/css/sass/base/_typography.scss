@@ -1,0 +1,51 @@
+.heading__primary {
+	color: $color-white;
+	margin-bottom: 3rem;
+	text-transform: uppercase;
+	font-weight: 400;
+
+	& .heading__primary--main {
+		@include display-block;
+		@include backface-visibility;
+		font-size: 8rem;
+		letter-spacing: 1rem;
+		animation: moveInLeft 1s ease-out;
+	}
+	& .heading__primary--sub {
+		@include display-block;
+		@include backface-visibility;
+		font-size: 3rem;
+		letter-spacing: 0.9rem;
+		animation: moveInRight 1s ease-out;
+	}
+}
+
+.heading__secondary {
+	font-size: 3rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: transparent;
+	-webkit-background-clip: text;
+	background-clip: text;
+	background-image: $color-gradient-green;
+	display: inline-block;
+	transition: all 0.2s;
+	@include backface-visibility;
+
+	&:hover {
+		transform: skewX(4deg) skewY(2deg) scale(1.1);
+	}
+}
+
+.heading__tertiary {
+	font-weight: 700;
+	font-size: 2rem;
+	text-transform: uppercase;
+}
+
+.block__content {
+	margin-bottom: 2rem;
+}
+.para {
+	font-size: 1.5rem;
+}
