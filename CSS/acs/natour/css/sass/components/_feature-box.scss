@@ -1,0 +1,35 @@
+.feature-box {
+	background-color: rgba($color-grey-light-1, 0.7);
+	border-radius: 5px;
+	margin: 20rem 0;
+	padding: 2rem 1rem;
+	min-height: 30rem;
+	box-shadow: 0 3px 1rem rgba($color-black, 0.3);
+	transition: all 0.2s ease-in-out;
+
+	&__icon,
+	&__heading,
+	&__text {
+		backface-visibility: hidden;
+	}
+
+	&__icon {
+		@extend .u-center-text;
+		@include colored-text($color: $color-gradient-l-to-r);
+		font-size: 4rem;
+	}
+	&__heading {
+		@extend .u-center-text, .u-m-b-2;
+		font-weight: 700;
+	}
+	&__text {
+		font-size: 1.5rem;
+		text-align: center;
+		font-weight: 700;
+	}
+
+	&:hover {
+		transform: translateY(-2rem) scale(1.1);
+		box-shadow: 0 6px 2rem rgba($color-black, 0.3);
+	}
+}
