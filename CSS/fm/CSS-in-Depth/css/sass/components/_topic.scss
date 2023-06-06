@@ -1,0 +1,60 @@
+.topic {
+	&__heading {
+		&-prim {
+			padding: 1rem;
+			font-size: 5rem;
+		}
+
+		&-sec {
+			padding: 2rem;
+			font-size: 4rem;
+		}
+		&-ter {
+			padding: 3rem;
+			font-size: 3rem;
+		}
+	}
+
+	&__list {
+		text-decoration: none;
+		list-style: none;
+		padding-left: 2rem;
+		counter-reset: counter-topic-list 0;
+
+		&-item {
+			counter-increment: counter-topic-list;
+			font-size: 2rem;
+
+			&:before {
+				content: counter(counter-topic-list) ')';
+				padding: 0 0.5rem;
+			}
+		}
+	}
+}
+
+.tip {
+	position: relative;
+	background-color: #f7f7f7;
+	border-radius: 5px;
+	padding: 3rem 2rem 2rem 2rem;
+
+	&__icon {
+		position: absolute;
+		top: 0.5rem;
+		left: 0.5rem;
+		font-size: 1.5rem;
+
+		& [class^='fa'] {
+			@extend .ani-beat;
+		}
+		&-text {
+			margin-left: 0.5rem;
+			font-size: 1.5rem;
+		}
+	}
+
+	&__details {
+		font-size: 2.5rem;
+	}
+}

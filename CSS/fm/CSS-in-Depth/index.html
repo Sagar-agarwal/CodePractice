@@ -4,21 +4,92 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- CSS Links -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
 		<link rel="stylesheet" href="./css/style.css" />
-		<title>Document</title>
+		<title>In Depth CSS</title>
 	</head>
 	<body>
-		<p>
-			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus eos iusto error illum unde
-			aspernatur id, autem ipsam inventore excepturi suscipit quis? Porro eos eveniet quidem voluptates temporibus
-			perspiciatis facere. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi alias magnam ad
-		</p>
-		<p>
-			commodi consectetur ducimus sapiente, facilis aliquam suscipit atque sint, non fuga cupiditate voluptatibus
-			quo? Dolor quibusdam alias doloribus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore iure
-			ipsam tenetur consequatur vero, aliquid est labore sequi aliquam rem ad cupiditate dolorem nisi amet,
-			doloribus, soluta temporibus doloremque. Voluptatum?
-		</p>
+		<main class="main">
+			<section class="section__pseudo-elements">
+				<h1 class="heading__primary">Pseudo Elements</h1>
+				<div class="sections__start">
+					<div class="topic">
+						<h2 class="topic__heading-prim">Types of Pseudo Elements</h2>
+						<blockquote class="tip">
+							<span class="tip__icon">
+								<i class="fa-regular fa-lightbulb"></i><span class="tip__icon-text">Tip</span>
+							</span>
+							<p class="tip__details">
+								You can view all the available pseudo elements from developer tools.
+							</p>
+						</blockquote>
+						<ul class="topic__list topic__sub-topic">
+							<li class="topic__list-item">::first-line</li>
+							<li class="topic__list-item">::first-letter</li>
+							<li class="topic__list-item">::selection</li>
+							<li class="topic__list-item">::before</li>
+							<li class="topic__list-item">::after</li>
+						</ul>
+						<h3 class="topic__heading-sec">Types of Pseudo Elements</h3>
+					</div>
+				</div>
+			</section>
+			<section class="section__generated-content">
+				<h1 class="heading__primary">Generated Content</h1>
+				<div class="section__start">
+					<h2 class="topic__heading-prim">Types of Generated Content</h2>
+					<ul class="topic__list topic__sub-topic">
+						<li class="topic__list-item">Counter</li>
+						<li class="topic__list-item">attr</li>
+						<li class="topic__list-item"></li>
+						<li class="topic__list-item"></li>
+						<li class="topic__list-item"></li>
+					</ul>
+					<h2 class="topic__heading-prim">Details</h2>
+					<div class="card__row">
+						<div class="card__container">
+							<h3 class="card__title">Counter</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">Properties</p>
+								<p>counter-reset:</p>
+								<p>counter-increment:</p>
+								<p>counter-set:</p>
+								<p class="card__details--highlight">Functions</p>
+								<p>Counter()</p>
+							</div>
+						</div>
+						<div class="card__container">
+							<h3 class="card__title">attr</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">Properties</p>
+
+								<p class="card__details--highlight">Functions</p>
+								<p>attr()</p>
+							</div>
+						</div>
+						<div class="card__container">
+							<h3 class="card__title">Quotes</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">Properties</p>
+								<p>quotes:</p>
+								<p>open-quote:</p>
+								<p>close-quote:</p>
+								<p>no-close-quote:</p>
+								<p class="card__details--highlight">Functions</p>
+								<p>attr()</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
 
 		<p class="para"><a href="https://google.com" class="external-link">Google</a></p>
 		<!-- SCRIPT -->

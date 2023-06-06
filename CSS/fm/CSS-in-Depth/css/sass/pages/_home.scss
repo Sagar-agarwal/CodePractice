@@ -1,0 +1,11 @@
+.main {
+	margin: 2rem 5rem;
+}
+
+.section__primary {
+	margin: 1rem;
+}
+
+.section__pseudo_elements {
+	@extend .section__primary;
+}

@@ -1,0 +1,21 @@
+.ani-beat {
+	animation-name: ani-beat;
+	animation-duration: 1.2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+@keyframes ani-beat {
+	0% {
+		opacity: 1;
+	}
+
+	33% {
+		transform: rotate(30deg);
+	}
+	66% {
+		transform: rotate(-30deg);
+	}
+	100% {
+		opacity: 1;
+	}
+}
