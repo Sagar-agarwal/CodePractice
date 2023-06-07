@@ -1,0 +1,13 @@
+.header {
+	background-color: $color-primary-dark;
+	display: flex;
+	flex-direction: column;
+	padding: 2rem 1rem;
+	color: $color-white;
+	border-radius: 5px;
+	text-align: center;
+	justify-content: center;
+	min-height: 10rem;
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+}

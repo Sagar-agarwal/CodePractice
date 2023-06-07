@@ -1,0 +1,32 @@
+.nav {
+	font-size: 2rem;
+
+	&__menu {
+		padding: 2rem 1rem 0.5rem 1rem;
+		list-style: none;
+		text-decoration: none;
+		text-transform: uppercase;
+		display: flex;
+
+		&-item {
+			padding: 0.5rem 1rem;
+			margin-right: 1rem;
+			&:hover {
+				background-color: $color-grey-light;
+			}
+
+			&--link {
+				font-weight: 1.5rem;
+				&:link,
+				&:visited {
+					color: $color-primary-regular;
+				}
+			}
+
+			&--active {
+				background-color: $color-primary-lightest;
+				border-radius: 5px;
+			}
+		}
+	}
+}

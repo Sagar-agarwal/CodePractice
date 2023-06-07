@@ -1,0 +1,52 @@
+[class^='btn'] {
+	position: relative;
+	transform-style: preserve-3d;
+	padding: 0.5rem 1rem;
+	transform: skewX(-20deg);
+	transition: all 0.3s ease;
+	backface-visibility: hidden;
+
+	& > span {
+		display: inline-block;
+		transform: skewX(20deg);
+	}
+
+	&:link,
+	&:visited {
+		transform: skewX(-20deg);
+	}
+
+	&::before {
+		content: '';
+		display: block;
+		transform: translateZ(-1px);
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: 0.5rem;
+		left: 0.5rem;
+		transition: all 0.3s ease;
+	}
+
+	&:hover {
+		transform: skewX(-20deg) translate(-0.2rem, -0.2rem);
+		& > span {
+			transform: skewX(20deg);
+		}
+		&::before {
+			transform: translateZ(-1px) translate(0.5rem, 0.5rem);
+		}
+	}
+}
+
+.btn {
+	&--primary {
+		background-color: $color-primary-dark;
+		color: $color-white;
+		// z-index: 10;
+
+		&::before {
+			background-color: $color-black-light;
+		}
+	}
+}

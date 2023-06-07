@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  padding-left: 1rem;
+  padding-right: 1rem; }
+
+[class^='btn'] {
+  position: relative;
+  transform-style: preserve-3d;
+  padding: 0.5rem 1rem;
+  transform: skewX(-20deg);
+  transition: all 0.3s ease;
+  backface-visibility: hidden; }
+  [class^='btn'] > span {
+    display: inline-block;
+    transform: skewX(20deg); }
+  [class^='btn']:link, [class^='btn']:visited {
+    transform: skewX(-20deg); }
+  [class^='btn']::before {
+    content: '';
+    display: block;
+    transform: translateZ(-1px);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    transition: all 0.3s ease; }
+  [class^='btn']:hover {
+    transform: skewX(-20deg) translate(-0.2rem, -0.2rem); }
+    [class^='btn']:hover > span {
+      transform: skewX(20deg); }
+    [class^='btn']:hover::before {
+      transform: translateZ(-1px) translate(0.5rem, 0.5rem); }
+
+.btn--primary {
+  background-color: #1d267d;
+  color: #efefef; }
+  .btn--primary::before {
+    background-color: #020202; }
+
+.header {
+  background-color: #1d267d;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  color: #efefef;
+  border-radius: 5px;
+  text-align: center;
+  justify-content: center;
+  min-height: 10rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem; }
+
+.nav {
+  font-size: 2rem; }
+  .nav__menu {
+    padding: 2rem 1rem 0.5rem 1rem;
+    list-style: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex; }
+    .nav__menu-item {
+      padding: 0.5rem 1rem;
+      margin-right: 1rem; }
+      .nav__menu-item:hover {
+        background-color: #f7f7f7; }
+      .nav__menu-item--link {
+        font-weight: 1.5rem; }
+        .nav__menu-item--link:link, .nav__menu-item--link:visited {
+          color: #40128b; }
+      .nav__menu-item--active {
+        background-color: #d4adfc;
+        border-radius: 5px; }
+
+.section__challenge {
+  display: flex; }
+
+.challenge__title {
+  font-size: 3rem;
+  margin: 1rem 1rem; }
+
+.challenge__link {
+  align-self: center;
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem; }
