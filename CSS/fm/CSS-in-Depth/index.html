@@ -47,10 +47,10 @@
 					<h2 class="topic__heading-prim">Types of Generated Content</h2>
 					<ul class="topic__list topic__sub-topic">
 						<li class="topic__list-item">Counter</li>
-						<li class="topic__list-item">attr</li>
-						<li class="topic__list-item"></li>
-						<li class="topic__list-item"></li>
-						<li class="topic__list-item"></li>
+						<li class="topic__list-item">Attr</li>
+						<li class="topic__list-item">URL</li>
+						<li class="topic__list-item">Strings</li>
+						<li class="topic__list-item">Accessibility</li>
 					</ul>
 					<h2 class="topic__heading-prim">Details</h2>
 					<div class="card__row">
@@ -86,12 +86,571 @@
 								<p>attr()</p>
 							</div>
 						</div>
+						<div class="card__container">
+							<h3 class="card__title">URL</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">Properties</p>
+								<p class="card__details--highlight">Functions</p>
+								<p>url()</p>
+							</div>
+						</div>
+						<div class="card__container">
+							<h3 class="card__title">Strings</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">Properties</p>
+								<p>content = ''</p>
+								<p class="card__details--highlight">Functions</p>
+								<p></p>
+							</div>
+						</div>
+						<div class="card__container">
+							<h3 class="card__title">Accessibility</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">Properties</p>
+								<p>content = ''</p>
+								<p class="card__details--highlight">Functions</p>
+								<p></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="section__generated-content">
+				<h1 class="heading__primary">Media Queries</h1>
+				<div class="section__start">
+					<h2 class="topic__heading-prim">Types</h2>
+					<ul class="topic__list topic__sub-topic">
+						<li class="topic__list-item">Queries</li>
+						<li class="topic__list-item">Supports</li>
+						<li class="topic__list-item">ViewPort</li>
+						<li class="topic__list-item"></li>
+						<li class="topic__list-item"></li>
+					</ul>
+					<h2 class="topic__heading-prim">Media Query Details</h2>
+					<div class="card__row">
+						<div class="card__container">
+							<h3 class="card__title">CSS 1</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">Properties</p>
+								<p>all</p>
+								<p>Aural</p>
+								<p>handheld</p>
+								<p>braille</p>
+								<p>embossed</p>
+								<p>print</p>
+								<p>projection</p>
+								<p>screen</p>
+								<p>tty</p>
+								<p>tv</p>
+							</div>
+						</div>
+						<div class="card__container">
+							<h3 class="card__title">CSS 3</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">Target Devices</p>
+								<p>Wrist watch</p>
+								<p>Smart Phones</p>
+								<p>Tablets</p>
+								<p>Laptop</p>
+								<p>Monitor</p>
+								<p>TV</p>
+								<p class="card__details--highlight">Scapes</p>
+								<p>Landscape</p>
+								<p>portrait</p>
+								<p>resolution</p>
+							</div>
+						</div>
+						<div class="card__container">
+							<h3 class="card__title">Media Queries to use</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">Properties</p>
+								<p>@ (min/max)-width: viewport width</p>
+								<p>@ (min/max)-height: viewport height</p>
+								<p>@ orientation: portrait(h>w) | landscape (w>h)</p>
+								<p>@ (min/max)-aspect-ratio: width/height</p>
+								<p>@ (min/max)-resolution: 72dpi | 100dpcm</p>
+							</div>
+						</div>
+						<div class="card__container">
+							<h3 class="card__title">Syntax/Punctuation</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">"Only" leaves out older browsers</p>
+								<p>media="only print and (color)"</p>
+								<p class="card__details--highlight">"and" both parts must be true</p>
+								<p>media="only screen and (orientation: portrait)</p>
+								<p class="card__details--highlight">"not" if untrue</p>
+								<p>media="not screen and (color)"</p>
+								<p class="card__details--highlight">Comma separated selectors</p>
+								<p>- Any part can be true</p>
+								<p>media="print, scree and (min-width: 480px)"</p>
+							</div>
+						</div>
+						<div class="card__container">
+							<h3 class="card__title">Capability Detection</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">@supports</p>
+								<p>@supports display:flex</p>
+								<p class="card__details--highlight">Don't Use</p>
+								<p>@media screen and (transform-3d){.transforms{}}</p>
+							</div>
+						</div>
+						<div class="card__container">
+							<h3 class="card__title">Resolution Units</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">Properties</p>
+								<p>> dpi: dots per inch (72, 96)</p>
+								<p>> dpcm: dots per centimeter (1dpcm = 2.54 dpi)</p>
+								<p>> dppx: dots per pixel (1dppx = 96 dpi) (default res of img)</p>
+							</div>
+						</div>
+						<div class="card__container">
+							<h3 class="card__title">High Res Implementations</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">Property</p>
+								<p>const dpi = window.devicePixelRatio;</p>
+								<p class="card__details--highlight">Safari vs Everyone</p>
+								<p>-webkit-min-device-pixel-ratio: 2"</p>
+								<p>min-resolution: 2dppx"</p>
+								<p>min-resolution: 192dpi"</p>
+								<p class="card__details--highlight">dppx Fallback</p>
+								<p>min-resolution: 192dpi</p>
+								<p class="card__details--highlight">Example</p>
+								<p>
+									@media (-webkit-min-device-pixel-ratio: 2)/*Safari*/, (min-resolution:
+									192dpi)/*Everyone else*/
+								</p>
+							</div>
+						</div>
+
+						<div class="card__container">
+							<h3 class="card__title">Stylesheet Examples</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">Properties</p>
+								<p>@media screen and (max-width:480px){}</p>
+								<p>@media screen and (orientation: landscape){}</p>
+								<p>@media screen and (min-device-pixel-ratio:1.5){}</p>
+								<p class="card__details--highlight">Note</p>
+								<p>0 is invalid, 0 != 0 dpi, 0 dpcm or 0 dppx</p>
+							</div>
+						</div>
+						<div class="card__container">
+							<h3 class="card__title">Inline style Examples</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">Screen</p>
+								<p>media="screen and (min-width: 320px) and (max-width:480px)"</p>
+							</div>
+						</div>
+
+						<div class="card__container">
+							<h3 class="card__title">Inline style Examples</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">Screen</p>
+								<p>media="screen and (min-width: 320px) and (max-width:480px)"</p>
+							</div>
+						</div>
+					</div>
+					<h2 class="topic__heading-prim">Supports Details</h2>
+					<div class="card__row">
+						<div class="card__container">
+							<h3 class="card__title">Capability Detection</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">@supports</p>
+								<p>@supports display:flex</p>
+								<p class="card__details--highlight">Don't Use</p>
+								<p>@media screen and (transform-3d){.transforms{}}</p>
+							</div>
+						</div>
+					</div>
+					<h2 class="topic__heading-prim">Viewport Details</h2>
+					<div class="card__row">
+						<div class="card__container">
+							<h3 class="card__title">Usage</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">Always Use</p>
+								<p>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</p>
+								<p class="card__details--highlight">CSS Usage</p>
+								<p>@viewport{width:device-width; zoom:0.5;}</p>
+							</div>
+						</div>
+						<div class="card__container">
+							<h3 class="card__title">Notes:</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">Meta Zoom disabled</p>
+								<p>if &lt;meta&gt; is set to disabled zoom,no delay on onClick events</p>
+								<p class="card__details--highlight">CSS Usage</p>
+								<p>@viewport{width:device-width; zoom:0.5;}</p>
+							</div>
+						</div>
+					</div>
+					<h2 class="topic__heading-prim">Others</h2>
+					<div class="card__row">
+						<div class="card__container">
+							<h3 class="card__title">Columns</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">Properties</p>
+								<p>column-count: 1</p>
+								<p>column-width: 10em</p>
+								<p>column-rule: 1px solid black;</p>
+								<p>column-gap: 2em</p>
+								<p>column-span: all</p>
+								<p class="card__details--highlight">Usage</p>
+								<p>-- p {columns: 18em 3;}</p>
+								<p>/* min 18em width, max 3 columns */</p>
+								<p>-- h3{column-span: all;}</p>
+								<p>/* allow to expand/span element across columns */</p>
+								<p class="card__details--highlight">Notes:</p>
+								<p>Column-width value is the minimum value, not exact value</p>
+							</div>
+						</div>
+
+						<div class="card__container">
+							<h3 class="card__title">Hyphenation</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">property</p>
+								<p>hyphen:</p>
+								<p class="card__details--highlight">Usage</p>
+								<p>hyphen: auto;</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="section__generated-content">
+				<h1 class="heading__primary">Colors</h1>
+				<div class="section__start">
+					<h2 class="topic__heading-prim">Types</h2>
+					<ul class="topic__list topic__sub-topic">
+						<li class="topic__list-item">Queries</li>
+						<li class="topic__list-item">Supports</li>
+						<li class="topic__list-item">ViewPort</li>
+						<li class="topic__list-item"></li>
+						<li class="topic__list-item"></li>
+					</ul>
+				</div>
+				<h2 class="topic__heading-prim">Colors Details</h2>
+				<div class="card__row">
+					<div class="card__container">
+						<h3 class="card__title">Syntax / Punctuation</h3>
+						<div class="card__details">
+							<p class="card__details--highlight">All valid color values</p>
+							<p>color: white</p>
+							<p>color: #def</p>
+							<p>color: #ddeeff</p>
+							<p>color: #ffffffaa</p>
+							<p>color: rgb(255, 255, 255);</p>
+							<p>color: rgb(255, 255, 255, 1);</p>
+							<p>color: rgba(100%, 100%, 100%, 1)</p>
+							<p>color: hsl(0, 100%, 100%)</p>
+							<p>color: hsla(0, 100%, 100%, 1)</p>
+							<p>color: transparent</p>
+							<p>color: currentColor</p>
+						</div>
+					</div>
+					<div class="card__container">
+						<h3 class="card__title">Hex color notations</h3>
+						<div class="card__details">
+							<p class="card__details--highlight"></p>
+							<span class="display-block"
+								><p>100% - FF</p>
+								<p>95% - F2</p></span
+							>
+							<span class="display-block"
+								><p>90% - E6</p>
+								<p>85% - D9</p></span
+							>
+							<span class="display-block"
+								><p>80% - CC</p>
+								<p>75% - BF</p></span
+							>
+							<span class="display-block"
+								><p>70% - B3</p>
+								<p>65% - A6</p></span
+							>
+							<span class="display-block"
+								><p>60% - 99</p>
+								<p>55% - 8C</p></span
+							>
+							<span class="display-block"
+								><p>50% - 80</p>
+								<p>45% - 73</p></span
+							>
+							<span class="display-block"
+								><p>40% - 66</p>
+								<p>35% - 59</p></span
+							>
+							<span class="display-block"
+								><p>30% - 4D</p>
+								<p>25% - 40</p></span
+							>
+							<span class="display-block"
+								><p>20% - 33</p>
+								<p>15% - 26</p></span
+							>
+							<span class="display-block"
+								><p>10% - 1A</p>
+								<p>5% - 0D</p></span
+							>
+							<span class="display-block"><p>0% - 00</p> </span>
+						</div>
+					</div>
+					<div class="card__container">
+						<h3 class="card__title">Tips</h3>
+						<div class="card__details">
+							<p class="card__details--highlight">Transparent</p>
+							<p>transparent = rgba(0,0,0,0)</p>
+							<p class="card__details--highlight">currentColor</p>
+							<p>currentColor = current text color</p>
+							<p class="card__details--highlight">Accessibility</p>
+							<p>Color is not the only visual representation</p>
+							<p class="card__details--highlight">Appearance</p>
+							<p>Change the appearance of button and other controls to represent native ui</p>
+							<p></p>
+							<p></p>
+							<p class="card__details--highlight"></p>
+							<p></p>
+							<p></p>
+							<p></p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="section__generated-content">
+				<h1 class="heading__primary">Flexbox</h1>
+				<div class="section__start">
+					<h2 class="topic__heading-prim">Major Properties</h2>
+					<ul class="topic__list topic__sub-topic">
+						<li class="topic__list-item">Creation: flex</li>
+						<li class="topic__list-item">Direction: flex-flow (flex-direction, flex-wrap)</li>
+						<li class="topic__list-item">
+							Alignment: justify-content, align-items, align-self, align-content
+						</li>
+						<li class="topic__list-item">Ordering: order</li>
+						<li class="topic__list-item">Flexibility: flex (flex-grow, flex-shrink, flex-basis)</li>
+					</ul>
+				</div>
+				<h2 class="topic__heading-prim">Details</h2>
+				<div class="card__row">
+					<div class="card__container">
+						<h3 class="card__title">What is a Flex Item?</h3>
+						<div class="card__details">
+							<p class="card__details--highlight">Flex items</p>
+							<p>All <span class="text-italic">non-absolutely</span> position child nodes</p>
+							<p>Generated Content</p>
+							<p>anonymous flex items > non-empty text nodes</p>
+							<p class="card__details--highlight">Not flex item</p>
+							<p>::first-line & ::first-letter</p>
+							<p>White Space</p>
+							<p class="card__details--highlight">Kind of</p>
+							<p>absolute / Fixed positioned elements</p>
+						</div>
+					</div>
+					<div class="card__container">
+						<h3 class="card__title">Properties impacted by flex</h3>
+						<div class="card__details">
+							<p class="card__details--highlight">Changed properties</p>
+							<p>margin: adjacent flex item margin do not collapse</p>
+							<p>min-width & min-height: default is auto not 0</p>
+							<p>visibility: collapsed</p>
+							<p class="card__details--highlight">Ignored Properties</p>
+							<p>column-* properties</p>
+							<p>float</p>
+							<p>clear</p>
+							<p>vertical-align</p>
+						</div>
+					</div>
+					<div class="card__container">
+						<h3 class="card__title">Accessibility</h3>
+						<div class="card__details">
+							<p class="card__details--highlight"></p>
+							<p>Source order</p>
+							<p>Tab order</p>
+							<p>right to left language</p>
+						</div>
+					</div>
+					<div class="card__container">
+						<h3 class="card__title">Flex Shorthand</h3>
+						<div class="card__details">
+							<p class="card__details--highlight">Usage</p>
+							<p>flex: grow shrink basis;</p>
+							<p class="card__details--highlight">flex-grow</p>
+							<p>How to divide the extra space</p>
+							<p>non-negative number</p>
+							<p>default 1</p>
+							<p class="card__details--highlight">flex-shrink</p>
+							<p>How to shrink if there is not enough room</p>
+							<p>non-negative number</p>
+							<p>default 1</p>
+							<p class="card__details--highlight">flex-basis</p>
+							<p>Starting size before free space is distributed</p>
+							<p>length value, content ot auto</p>
+							<p>if set to auto, sets to flex items main size property</p>
+						</div>
+					</div>
+					<div class="card__container">
+						<h3 class="card__title">Basic</h3>
+						<div class="card__details">
+							<p class="card__details--highlight">Core Implementation</p>
+							<p>display: flex</p>
+							<p>flex-direction: (horizontal / vertical)</p>
+							<p>flex-wrap: (control wrap direction)</p>
+						</div>
+					</div>
+					</div>
+					<h2 class="topic__heading-prim">Flex Property details</h2>
+					<div class="card__row">
+						<div class="card__container">
+							<h3 class="card__title">flex-direction</h3>
+							<div class="card__details">
+							<p class="card__details--highlight">Usage</p>
+							<p>Define direction of flex main and cross axis</p>
+							<p class="card__details--highlight">written as</p>
+							<p>flex-direction: column</p>
+							<p class="card__details--highlight">Property options</p>
+								<p>row (default)</p>
+								<p>row-reverse</p>
+								<p>column</p>
+								<p>colum-reverse</p>
+							</div>
+						</div>
+						<div class="card__container">
+							<h3 class="card__title">flex-wrap</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">Usage</p>
+							<p>Define if items in flex wrap around the screen or not</p>
+							<p class="card__details--highlight">written like</p>
+							<p>flex-wrap: wrap</p>
+							<p class="card__details--highlight">Property options</p>
+								<p>nowrap (default)</p>
+								<p>wrap</p>
+								<p>wrap-reverse</p>
+							</div>
+						</div>
+						<div class="card__container">
+							<h3 class="card__title">flex-flow</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">Usage</p>
+							<p></p>
+							<p class="card__details--highlight">written like</p>
+							<p></p>
+							<p class="card__details--highlight">Property options</p>
+								<p> (default)</p>
+								<p></p>
+								<p></p>
+							</div>
+						</div>
+						<div class="card__container">
+							<h3 class="card__title"></h3>
+							<div class="card__details">
+								<p class="card__details--highlight">Usage</p>
+							<p></p>
+							<p class="card__details--highlight">written like</p>
+							<p></p>
+							<p class="card__details--highlight">Property options</p>
+								<p> (default)</p>
+								<p></p>
+								<p></p>
+							</div>
+						</div>
+					</div>
+					<h2 class="topic__heading-prim">Controlling flex items based on flexed parent</h2>
+					<div class="card__row">
+						<div class="card__container">
+							<h3 class="card__title">justify-content</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">Usage</p>
+							<p>How flex item should be align along main axis. Deals with what to do with space when total width of items is smaller than parent items</p>
+							<p class="card__details--highlight">written like</p>
+							<p>justify-content: center</p>
+							<p class="card__details--highlight">Property options</p>
+								<p>flex-start</p>
+								<p>flex-end</p>
+								<p>center</p>
+								<p>space-between</p>
+								<p>space-around</p>
+								<p>space-evenly</p>
+							</div>
+						</div>
+						<div class="card__container">
+							<h3 class="card__title">align-item</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">Usage</p>
+							<p>aligns flex items along the cross axis</p>
+							<p class="card__details--highlight">written like</p>
+							<p>align-items: center</p>
+							<p class="card__details--highlight">Property options</p>
+								<p>flex-start</p>
+								<p>flex-end</p>
+								<p>center</p>
+								<p>baseline</p>
+								<p>stretch (default)</p>
+							</div>
+						</div>
+						<div class="card__container">
+							<h3 class="card__title">align-content</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">Usage</p>
+							<p>Only applies to multi-line flex container</p>
+							<p class="card__details--highlight">written like</p>
+							<p>align-content: center</p>
+							<p class="card__details--highlight">Property options</p>
+								<p>flex-start</p>
+								<p>flex-end</p>
+								<p>stretch (default)</p>
+								<p>space-between</p>
+								<p>space-evenly</p>
+								<p>space-around</p>
+							</div>
+						</div>
+					</div>
+					<h2 class="topic__heading-prim">Controlling flex items based on Self</h2>
+					<div class="card__row">
+						<div class="card__container">
+							<h3 class="card__title">align-self</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">Usage</p>
+							<p>Overrides the align-items based on the per flex item basis</p>
+							<p class="card__details--highlight">written like</p>
+							<p>align-self: center</p>
+							<p class="card__details--highlight">Property options</p>
+								<p>auto (default)</p>
+								<p>flex-start</p>
+								<p>flex-end</p>
+								<p>center</p>
+								<p>stretch</p>
+								<p>baseline</p>
+							</div>
+						</div>
+						<div class="card__container">
+							<h3 class="card__title">Order</h3>
+							<div class="card__details">
+								<p class="card__details--highlight">Usage</p>
+							<p>Default is 0, any lower value would come before unset and any higher would come after unset</p>
+							<p class="card__details--highlight">written like</p>
+							<p>order: -1</p>
+							<p class="card__details--highlight">Property options</p>
+								<p></p>
+								<p></p>
+								<p></p>
+							</div>
+						</div>
+						<div class="card__container">
+							<h3 class="card__title"></h3>
+							<div class="card__details">
+								<p class="card__details--highlight">Usage</p>
+							<p></p>
+							<p class="card__details--highlight">written like</p>
+							<p></p>
+							<p class="card__details--highlight">Property options</p>
+								<p></p>
+								<p></p>
+								<p></p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
 		</main>
 
-		<p class="para"><a href="https://google.com" class="external-link">Google</a></p>
 		<!-- SCRIPT -->
 		<script src="./js/script.js"></script>
 	</body>

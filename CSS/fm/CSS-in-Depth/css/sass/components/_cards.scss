@@ -1,18 +1,30 @@
 .card {
 	&__row {
 		display: flex;
+		flex-wrap: wrap;
+		position: relative;
 	}
 
 	&__container {
 		flex-grow: 1;
 		min-height: 100%;
-		background-color: beige;
-		border-radius: 3px;
-		max-width: 30%;
-		min-width: 30%;
+		background-image: linear-gradient(to right bottom, cornsilk, bisque);
+		border-radius: 5px;
+		width: 30%;
+		// min-width: 30%;
 		padding: 1rem;
-		margin-right: 3%;
+		margin-right: 2rem;
+		margin-bottom: 2rem;
 		box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+		transition: all 0.5s ease;
+		backface-visibility: hidden;
+
+		&:hover {
+			background-image: linear-gradient(to right bottom, rebeccapurple, midnightblue);
+			color: $color-white;
+			transform: scale(1.05) translateY(-0.5rem);
+			z-index: 10;
+		}
 	}
 
 	&__title {

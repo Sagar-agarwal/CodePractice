@@ -1,0 +1,14 @@
+.display-inline-block {
+	display: inline-block;
+}
+.display-block {
+	display: block;
+
+	& > * {
+		display: inline-block;
+	}
+}
+
+.text-italic {
+	font-style: italic;
+}

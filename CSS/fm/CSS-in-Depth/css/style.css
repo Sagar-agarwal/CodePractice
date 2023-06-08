@@ -65,7 +65,8 @@ p.para .external-link {
 
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  -webkit-font-smoothing: antialiased; }
 
 html {
   font-size: 62.5%; }
@@ -80,19 +81,39 @@ h4,
 h5 {
   font-family: 'Poppins', sans-serif; }
 
+.display-inline-block {
+  display: inline-block; }
+
+.display-block {
+  display: block; }
+  .display-block > * {
+    display: inline-block; }
+
+.text-italic {
+  font-style: italic; }
+
 .card__row {
-  display: flex; }
+  display: flex;
+  flex-wrap: wrap;
+  position: relative; }
 
 .card__container {
   flex-grow: 1;
   min-height: 100%;
-  background-color: beige;
-  border-radius: 3px;
-  max-width: 30%;
-  min-width: 30%;
+  background-image: linear-gradient(to right bottom, cornsilk, bisque);
+  border-radius: 5px;
+  width: 30%;
   padding: 1rem;
-  margin-right: 3%;
-  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2); }
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease;
+  backface-visibility: hidden; }
+  .card__container:hover {
+    background-image: linear-gradient(to right bottom, rebeccapurple, midnightblue);
+    color: #efefef;
+    transform: scale(1.05) translateY(-0.5rem);
+    z-index: 10; }
 
 .card__title {
   font-size: 3rem;
@@ -106,15 +127,15 @@ h5 {
 
 .topic__heading-prim {
   padding: 1rem;
-  font-size: 5rem; }
+  font-size: 4rem; }
 
 .topic__heading-sec {
   padding: 2rem;
-  font-size: 4rem; }
+  font-size: 3rem; }
 
 .topic__heading-ter {
   padding: 3rem;
-  font-size: 3rem; }
+  font-size: 2.5rem; }
 
 .topic__list {
   text-decoration: none;
