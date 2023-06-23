@@ -1,0 +1,11 @@
+.header {
+  background-color: $color-teal;
+  flex-basis: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & [class^='heading'] {
+    color: $color-white;
+  }
+}
