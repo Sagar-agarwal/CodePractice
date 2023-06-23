@@ -23,7 +23,8 @@ const init = () => {
   const startButton = document.querySelector('#button-start');
   const pauseButton = document.querySelector('#button-pause');
   const resetButton = document.querySelector('#button-reset');
-  const Timer = new Timato(duration, startButton, pauseButton, resetButton, {
+  const circle = document.querySelector('.t__circle--outer');
+  const Timer = new Timato(duration, startButton, pauseButton, resetButton, circle, {
     onStart() {
       console.log('Timer Started');
     },
