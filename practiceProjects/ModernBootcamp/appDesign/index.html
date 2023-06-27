@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <section class="hero is-primary is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            Movie Fight
+            <span class="icon">
+              <i class="fas fa-film"></i>
+            </span>
+          </h1>
+        </div>
+      </div>
+    </section>
+    <div class="container">
+      <div class="search">
+        <input type="text" name="search" id="search" placeholder="Enter movie name" class="search__input" />
+        <!-- <button type="submit" id="submit" class="btn-search"><i class="fa-solid fa-search"></i></button> -->
+        <div class="dropdown">
+          <div class="dropdown__list">
+            <!-- sample List Start -->
+            <div class="dropdown__list">
+              <!-- 
+
+                <div class="dropdown__list-item">
+                  <div class="item__img">
+                  <img
+                  src="https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
+                  alt="movie name"
+                  />
+                  <div class="item__movie">
+                    <p class="item__movie--name">The Avengers</p>
+                    <p class="item__movie--year">(2012)</p>
+                  </div>
+                </div>
+              </div>
+              <div class="dropdown__list-item">
+                <div class="item__img">
+                  <img
+                    src="https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
+                    alt="The Avengers"
+                    />
+                    <div class="item__movie">
+                      <div class="item__movie--name">The Avengers</div>
+                      <div class="item__movie--year">(2012)</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="dropdown__list-item">
+                  <div class="item__img">
+                    <img
+                    src="https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg"
+                    alt="Avengers: Infinity War"
+                    />
+                    <div class="item__movie">
+                      <div class="item__movie--name">Avengers: Infinity War</div>
+                      <div class="item__movie--year">(2018)</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="dropdown__list-item">
+                  <div class="item__img">
+                    <img
+                    src="https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_SX300.jpg"
+                    alt="Avengers: Age of Ultron"
+                  />
+                  <div class="item__movie">
+                    <div class="item__movie--name">Avengers: Age of Ultron</div>
+                    <div class="item__movie--year">(2015)</div>
+                  </div>
+                </div>
+              </div>
+              <div class="dropdown__list-item">
+                <div class="item__img">
+                  <img
+                  src="https://m.media-amazon.com/images/M/MV5BYWE1NTdjOWQtYTQ2Ny00Nzc5LWExYzMtNmRlOThmOTE2N2I4XkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg"
+                  alt="The Avengers"
+                  />
+                  <div class="item__movie">
+                    <div class="item__movie--name">The Avengers</div>
+                    <div class="item__movie--year">(1998)</div>
+                  </div>
+                </div>
+              </div>
+              <div class="dropdown__list-item">
+                <div class="item__img">
+                  <img
+                  src="https://m.media-amazon.com/images/M/MV5BYzA4ZjVhYzctZmI0NC00ZmIxLWFmYTgtOGIxMDYxODhmMGQ2XkEyXkFqcGdeQXVyNjExODE1MDc@._V1_SX300.jpg"
+                  alt="The Avengers: Earth's Mightiest Heroes"
+                  />
+                  <div class="item__movie">
+                    <div class="item__movie--name">The Avengers: Earth's Mightiest Heroes</div>
+                    <div class="item__movie--year">(2010–2012)</div>
+                  </div>
+                </div>
+              </div>
+              <div class="dropdown__list-item">
+                <div class="item__img">
+                  <img
+                  src="https://m.media-amazon.com/images/M/MV5BMTYyMjk0NTMwMl5BMl5BanBnXkFtZTgwNzY0NjAwNzE@._V1_SX300.jpg"
+                    alt="Ultimate Avengers: The Movie"
+                  />
+                  <div class="item__movie">
+                    <div class="item__movie--name">Ultimate Avengers: The Movie</div>
+                    <div class="item__movie--year">(2006)</div>
+                  </div>
+                </div>
+              </div>
+              <div class="dropdown__list-item">
+                <div class="item__img">
+                  <img
+                  src="https://m.media-amazon.com/images/M/MV5BZjI3MTI5ZTYtZmNmNy00OGZmLTlhNWMtNjZiYmYzNDhlOGRkL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg"
+                  alt="Ultimate Avengers II"
+                  />
+                  <div class="item__movie">
+                    <div class="item__movie--name">Ultimate Avengers II</div>
+                    <div class="item__movie--year">(2006)</div>
+                  </div>
+                </div>
+              </div>
+              <div class="dropdown__list-item">
+                <div class="item__img">
+                  <img
+                  src="https://m.media-amazon.com/images/M/MV5BZWQwZTdjMDUtNTY1YS00MDI0LWFkNjYtZDA4MDdmZjdlMDRlXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg"
+                  alt="The Avengers"
+                  />
+                  <div class="item__movie">
+                    <div class="item__movie--name">The Avengers</div>
+                    <div class="item__movie--year">(1961–1969)</div>
+                  </div>
+                </div>
+              </div>
+              <div class="dropdown__list-item">
+                <div class="item__img">
+                  <img
+                  src="https://m.media-amazon.com/images/M/MV5BMTY0NTUyMDQwOV5BMl5BanBnXkFtZTgwNjAwMTA0MDE@._V1_SX300.jpg"
+                  alt="Avengers Assemble"
+                  />
+                  <div class="item__movie">
+                    <div class="item__movie--name">Avengers Assemble</div>
+                    <div class="item__movie--year">(2012–2019)</div>
+                  </div>
+                </div>
+              </div>
+            --></div>
+            <!-- sample List End -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="js/script.js"></script>
+  </body>
+</html>

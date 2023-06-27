@@ -1,0 +1,104 @@
+.search {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  &__label {
+  }
+  &__input {
+    flex-grow: 1;
+    border-radius: 5px;
+    font-size: 2rem;
+    // line-height: 2rem;
+    height: 3rem;
+    padding-left: 0.5rem;
+  }
+}
+
+.dropdown {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  // background-color: beige;
+  top: 3.5rem;
+  left: 0;
+  &__list {
+  }
+  &__list {
+    padding: 0.5rem 1rem;
+    max-height: 60vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  &__list-item {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    backface-visibility: hidden;
+    // margin-right: 2rem;
+    // perspective: 1000rem;
+    // transition: all 0.3s ease;
+    // border-radius: 1rem;
+    // transform: perspective(1500px) rotateY(15deg);
+    // box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    // transition: transform 0.5s ease 0s;
+
+    &:hover {
+      // transform: rotateY(30deg);
+      // transform: perspective(3000px) rotateY(5deg);
+    }
+    .item {
+      &__img {
+        align-self: center;
+        position: relative;
+        margin: 1rem 1rem;
+        img {
+          max-width: 12rem;
+          // width: 100%;
+        }
+      }
+      &__movie {
+        background: linear-gradient(to bottom, transparent 0%, rgba($color-white, 0.6) 15%, rgba($color-white, 1) 50%);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 0.5rem 0.5rem 0.5rem;
+        font-size: 1rem;
+        flex-wrap: wrap;
+        min-width: 100%;
+        &--name {
+          font-weight: bold;
+          text-align: center;
+        }
+        &--year {
+          text-align: center;
+          color: $color-grey-light;
+        }
+      }
+    }
+  }
+}
+
+[class^='btn-'] {
+  width: 3rem;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.btn {
+  &-search {
+    margin: 5px 5px 5px -3.3rem;
+    background-color: $color-grey-dark;
+    color: $color-orange;
+
+    &:hover {
+      color: $color-yellow-dark;
+      background-color: $color-teal;
+    }
+  }
+}

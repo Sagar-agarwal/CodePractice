@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": false,
+    "target": "ES6",
+    "outDir": "src/js",
+    "moduleResolution": "node16",
+    "resolveJsonModule": true,
+    "rootDir": "js/ts"
+  },
+  "exclude": ["src"],
+  "include": ["js/ts/*.*"]
+}
