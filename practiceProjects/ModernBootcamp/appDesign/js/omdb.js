@@ -15,21 +15,30 @@ export default class OMDB {
     // this.init();
   }
 
+  getResult = (res) => {
+    const result = {
+      hasData: res.hasData,
+      error: Object.hasOwn(res.data, 'Error') ? res.data.Error : '',
+      data: Object.hasOwn(res.data, 'Search') ? res.data.Search.slice(0, 9) : res.data,
+    };
+
+    return result;
+  };
+
   searchMovies = async (q) => {
     const movies = await this.fetchData({ apikey: this.key, s: q });
-    return movies.hasData ? movies.data.Search.slice(0, 9) : movies.data.Error;
+    return this.getResult(movies);
   };
 
   searchTitle = async (id) => {
     const title = await this.fetchData({ apikey: this.key, i: id });
-    return title.hasData ? title.data.Search : title.data.Error;
+    return this.getResult(title);
   };
 
   fetchData = async (params) => {
     const result = {};
     const res = await axios.get(this.baseURL, { params });
 
-    // console.log(res);
     result.hasData = res.data.Response === 'True';
     result.data = res.data;
 

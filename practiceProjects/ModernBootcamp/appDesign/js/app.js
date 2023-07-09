@@ -1,11 +1,14 @@
 import OMDB from './omdb.js';
+import TMDB from './tmdb.js';
 
 export default class App {
-  constructor(input, dropdownList) {
+  constructor(input, resultsList, movie) {
     this.input = input;
-    this.dropdownList = dropdownList;
+    this.resultsList = resultsList;
+    this.movie = movie;
 
     this.debounceID = '';
+    this.movieTitle = '';
 
     this.OMDB = new OMDB();
     // Initialize
@@ -29,22 +32,57 @@ export default class App {
     return result;
   };
 
+  errorHandler(err) {
+    this.resultsList.innerHTML = '';
+    const div = document.createElement('div');
+    div.classList = 'results__error';
+    const error = document.createElement('h3');
+    error.textContent = err.error;
+    div.appendChild(error);
+    this.resultsList.appendChild(div);
+  }
+
+  restPage = () => {
+    this.movie.innerHTML = '';
+    this.resultsList.innerHTML = '';
+  };
+
   getMovies = async (event) => {
-    this.dropdownList.innerHTML = '';
+    this.restPage();
     if (event.target.value) {
       const movies = await this.OMDB.searchMovies(event.target.value);
-      console.log(movies);
-      const self = this;
-      movies.forEach((movie) => {
-        const listItem = self.getDropDownListElement(movie);
-        this.dropdownList.appendChild(listItem);
-      });
+      if (movies.hasData) {
+        const self = this;
+        movies.data.forEach((movie) => {
+          const listItem = self.getResultsListElements(movie);
+          this.resultsList.appendChild(listItem);
+        });
+      } else {
+        this.errorHandler(movies);
+      }
     }
   };
 
-  getDropDownListElement = (movie) => {
+  getMovieTitle = async (movieID) => {
+    this.restPage();
+    if (movieID) {
+      const movie = await this.OMDB.searchTitle(movieID);
+      console.log(movie);
+      if (movie.hasData) {
+        console.log(movie.data);
+      } else {
+        this.errorHandler(movie.error);
+      }
+    }
+  };
+
+  getResultsListElements = (movie) => {
     const listItem = document.createElement('div');
-    listItem.classList = 'dropdown__list-item';
+    listItem.classList = 'results__list-item';
+
+    listItem.addEventListener('click', (e) => {
+      this.getMovieTitle(movie.imdbID);
+    });
 
     const imageDiv = document.createElement('div');
     imageDiv.classList = 'item__img';
@@ -52,6 +90,7 @@ export default class App {
     titleImg.setAttribute('src', movie.Poster);
     titleImg.setAttribute('alt', movie.Title);
     imageDiv.appendChild(titleImg);
+    listItem.appendChild(imageDiv);
 
     const titleDetails = document.createElement('div');
     titleDetails.classList = 'item__movie';
@@ -64,9 +103,7 @@ export default class App {
     movieYear.textContent = '(' + movie.Year + ')';
     titleDetails.appendChild(movieYear);
 
-    imageDiv.appendChild(titleDetails);
-    listItem.appendChild(imageDiv);
-
+    listItem.appendChild(titleDetails);
     return listItem;
   };
 }
