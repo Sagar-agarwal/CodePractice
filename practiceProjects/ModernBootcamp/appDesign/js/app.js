@@ -1,22 +1,22 @@
 import OMDB from './omdb.js';
 import TMDB from './tmdb.js';
+import displayMovie from './movie.js';
 
 export default class App {
-  constructor(input, resultsList, movie) {
-    this.input = input;
-    this.resultsList = resultsList;
-    this.movie = movie;
+  constructor(root, dropDown, results) {
+    this.root = root;
+    this.dropDown = dropDown;
+    this.results = results;
 
     this.debounceID = '';
     this.movieTitle = '';
 
     this.OMDB = new OMDB();
-    // Initialize
     this.init();
   }
 
   init = () => {
-    this.input.addEventListener('input', this.debounce(this.getMovies));
+    this.root.addEventListener('input', this.debounce(this.getMovies));
   };
 
   debounce = (func) => {
@@ -33,18 +33,18 @@ export default class App {
   };
 
   errorHandler(err) {
-    this.resultsList.innerHTML = '';
+    this.dropDown.innerHTML = '';
     const div = document.createElement('div');
     div.classList = 'results__error';
     const error = document.createElement('h3');
     error.textContent = err.error;
     div.appendChild(error);
-    this.resultsList.appendChild(div);
+    this.dropDown.appendChild(div);
   }
 
   restPage = () => {
-    this.movie.innerHTML = '';
-    this.resultsList.innerHTML = '';
+    this.results.innerHTML = '';
+    this.dropDown.innerHTML = '';
   };
 
   getMovies = async (event) => {
@@ -55,12 +55,31 @@ export default class App {
         const self = this;
         movies.data.forEach((movie) => {
           const listItem = self.getResultsListElements(movie);
-          this.resultsList.appendChild(listItem);
+          this.dropDown.appendChild(listItem);
         });
       } else {
         this.errorHandler(movies);
       }
     }
+  };
+
+  getCollectionInMillions = (amountInString) => {
+    console.log(amountInString);
+    if (amountInString == 'N/A') {
+      return 'N/A';
+    }
+    let amount = amountInString.replace('$', '').replaceAll(',', '');
+    amount = parseInt(amount, 10);
+    amount /= 1000000;
+    amount = Math.round(amount);
+    if (amount > 1000) {
+      amount /= 1000;
+      amount = Math.round(amount);
+      amount = `$${amount}B`;
+    } else {
+      amount = `$${amount}M`;
+    }
+    return amount;
   };
 
   getMovieTitle = async (movieID) => {
@@ -69,7 +88,15 @@ export default class App {
       const movie = await this.OMDB.searchTitle(movieID);
       console.log(movie);
       if (movie.hasData) {
-        console.log(movie.data);
+        displayMovie(this.results, {
+          title: movie.data.Title,
+          image: movie.data.Poster,
+          genres: movie.data.Genre.split(','),
+          directors: movie.data.Director,
+          releaseDate: movie.data.Released,
+          collection: this.getCollectionInMillions(movie.data.BoxOffice),
+          runTime: movie.data.Runtime,
+        });
       } else {
         this.errorHandler(movie.error);
       }

@@ -1,4 +1,5 @@
 import App from './app.js';
+import AutoComplete from './autocomplete.js';
 import TMDB from './tmdb.js';
 
 const init = () => {
@@ -6,7 +7,7 @@ const init = () => {
   const dropdownList = document.querySelector('.results__list');
   const movie = document.querySelector('.movie');
 
-  const app = new App(search, dropdownList, movie);
+  const autocomplete = new App(search, dropdownList, movie);
 
   // const t = new TMDB();
 };
