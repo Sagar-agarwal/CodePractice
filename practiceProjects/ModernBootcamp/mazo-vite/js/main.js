@@ -1,26 +1,31 @@
 import '../css/style.css';
 
-import { Engine, World, Render, Runner, Bodies } from 'matter-js';
-import Borders from './shapes/borders';
+import { Engine, World, Render, Runner, Bodies, MouseConstraint, Mouse } from 'matter-js';
+import Shapes from './shapes/shapes.js';
 
 const engine = Engine.create();
 const { world } = engine;
-const Border = new Borders();
 
 const render = Render.create({
   element: document.querySelector('#app'),
   engine,
-  option: {
-    width: 1000,
-    height: 1000,
+  options: {
+    wireframes: false,
+    width: 800,
+    height: 800,
   },
 });
 
+console.log('render: ', render);
+
 Render.run(render);
 Runner.run(Runner.create(), engine);
+World.add(world, MouseConstraint.create(engine, { mouse: Mouse.create(render.canvas) }));
 
+const shapes = new Shapes(render, world);
 // Add borders to the world
-Border.addAllBorders(render, world);
+shapes.addWalls();
 
-const rect = Bodies.rectangle(300, 300, 50, 50, { isStatic: false });
-World.add(world, rect);
+// Add random shapes to the world
+const randomShapes = shapes.getRandomShapes(20);
+World.add(world, randomShapes);
