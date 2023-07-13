@@ -19,9 +19,9 @@ export default class MazeGenerator {
     this.grid = Array(this.gridDimension)
       .fill(null)
       .map(() => Array(this.gridDimension).fill(false));
-    this.vertical = Array(this.gridDimension - 1)
+    this.vertical = Array(this.gridDimension)
       .fill(null)
-      .map(() => Array(this.gridDimension).fill(false));
+      .map(() => Array(this.gridDimension - 1).fill(false));
     this.horizontal = Array(this.gridDimension - 1)
       .fill(null)
       .map(() => Array(this.gridDimension).fill(false));
@@ -41,6 +41,36 @@ export default class MazeGenerator {
       .fill(null)
       .map(() => Array(dimension).fill(false));
 
+  shuffleArray = (arr) => {
+    let currentIndex = arr.length;
+    let randomIndex;
+
+    while (currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      [arr[currentIndex], arr[randomIndex]] = [arr[randomIndex], arr[currentIndex]];
+    }
+
+    return arr;
+  };
+
+  updateVertices = (origCell, newCell) => {
+    const [row, col] = origCell;
+    const [nextRow, nextCol] = newCell;
+
+    // Moved horizontally
+    if (col !== nextCol) {
+      const verticalCol = nextCol < col ? nextCol : col;
+      this.vertical[row][verticalCol] = true;
+    }
+    // Moved Vertically
+    if (row !== nextRow) {
+      const horizontalRow = nextRow < row ? nextRow : row;
+      this.horizontal[horizontalRow][col] = true;
+    }
+  };
+
   stepThrough(row, col) {
     // If I have visited the cell [row, col], then return
     if (this.grid[row][col]) {
@@ -49,20 +79,33 @@ export default class MazeGenerator {
 
     // Mark this cell as visited
     this.grid[row][col] = true;
-    // Assemble randomly ordered list of neighbors
-    const neighbors = this.getValidNeighbors(row, col);
+    console.log('Orig: ', [row, col]);
+    const copy = [...this.grid];
+    console.log('Grid at start: ', copy);
+
+    // get All Valid Neighbors
     // For each neighbor
     // Check if neighbor is out of bound
-    // If neighbor is already visited then continue to next neighbor
+    // Assemble randomly ordered list of neighbors
+    const neighbors = this.shuffleArray(this.getValidNeighbors(row, col));
+
+    if (neighbors.length === 0) {
+      return;
+    }
+
+    const nextCell = neighbors[this.getRandom(neighbors.length - 1)];
+    const [nextRow, nextCol] = nextCell;
     // Remove a wall from either horizontal or vertical
+    this.updateVertices([row, col], nextCell);
+
     // visit that cell next
-    console.log('MazeGenerator Construct: ', this.grid, this.vertical, this.horizontal);
+    this.stepThrough(nextRow, nextCol);
   }
 
   getValidNeighbors(row, col) {
     const top = col - 1 >= 0 ? [row, col - 1] : false;
-    const right = row + 1 <= this.gridDimension ? [row + 1, col] : false;
-    const bottom = col + 1 <= this.gridDimension ? [row, col + 1] : false;
+    const right = row + 1 < this.gridDimension ? [row + 1, col] : false;
+    const bottom = col + 1 < this.gridDimension ? [row, col + 1] : false;
     const left = row - 1 >= 0 ? [row - 1, col] : false;
 
     const neighbors = [top, right, bottom, left].filter((neighbor) => neighbor);

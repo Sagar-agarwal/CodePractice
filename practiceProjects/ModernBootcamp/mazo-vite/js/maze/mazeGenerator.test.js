@@ -106,3 +106,44 @@ test('Generate Valid Neighbors: 2 Neighbors / top mid / left outbound / center v
   ];
   expect(maze.getValidNeighbors(currentRow, currentCol)).toEqual(output);
 });
+
+// Shuffle Method
+test('Shuffle an Array successfully | Array of numbers', () => {
+  const maze = new MazeGenerator(3);
+  const testArr = [1, 2, 3, 4, 5, 6];
+  const comparison = [1, 2, 3, 4, 5, 6];
+
+  expect(maze.shuffleArray(testArr)).not.toEqual(comparison);
+});
+
+// Shuffle Method
+test('Shuffle an Array successfully | Array of alphabets', () => {
+  const maze = new MazeGenerator(3);
+  const testArr = ['a', 'b', 'c', 'd', 'e', 'f'];
+  const comparison = ['a', 'b', 'c', 'd', 'e', 'f'];
+
+  expect(maze.shuffleArray(testArr)).not.toEqual(comparison);
+});
+
+// Shuffle Method
+test('Shuffle an Array successfully | Array of Arrays', () => {
+  const maze = new MazeGenerator(3);
+  const testArr = [
+    [1, 2],
+    [3, 4],
+    [5, 6],
+    ['a', 'b'],
+    ['c', 'd'],
+    ['e', 'f'],
+  ];
+  const comparison = [
+    [1, 2],
+    [3, 4],
+    [5, 6],
+    ['a', 'b'],
+    ['c', 'd'],
+    ['e', 'f'],
+  ];
+
+  expect(maze.shuffleArray(testArr)).not.toEqual(comparison);
+});

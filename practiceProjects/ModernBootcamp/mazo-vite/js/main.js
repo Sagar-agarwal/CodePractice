@@ -23,5 +23,6 @@ Runner.run(Runner.create(), engine);
 const shapes = new Shapes(render, world);
 shapes.addWalls();
 
-const mazeGridSize = 3;
-const Maze = new MazeGenerator(mazeGridSize); ///
+const mazeGridSize = 10;
+const Maze = new MazeGenerator(mazeGridSize);
+Maze.generateRandomMaze();
