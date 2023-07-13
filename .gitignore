@@ -1,29 +1,51 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Excluded Directories
 **/node_modules/
+**/coverage/
+**/resource/
+**/dist
+**/dist-ssr
 **/db/
+
+
+# Excluded file Extensions
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Excluded files
 **/keys.js
-someObj.js
-Core/wdb/07/resource/
-Core/wdb/07/resource.txt
-Core/wdb/07/resource/
-Core/wdb/14/cardGame/resources/
-/resources/
-Core/wdb/15/resources/
-Core/wdb/17/resources/
+**/someObj.js
+
+
+# --- Others ---
 Core/wdb/17/index.html
 Core/wdb/17/index.html
 Core/wdb/17/script.js
 Core/wdb/17/style.css
 CSS/acs/DTour/img/
-CSS/acs/DTour/node_modules/
 **/site02/img/
 learnAngular/pluralSight/02 fundamentals/projectFiles/
-learnAngular/pluralSight/02 fundamentals/node_modules/
 BoilerPlate_setUp/
 learnAngular/la/src/libs/
 tools/chromeDev/mastering-chrome-devtools/
 material/mdc/material-components-web-codelabs/
-Node/cndc_2/notes-node/node_modules/
-Node/cndc_2/wApp/node_modules/
-JS/fmDS_algo/node_modules/
 Node/FM_introToNode/gitRepoClone
 
