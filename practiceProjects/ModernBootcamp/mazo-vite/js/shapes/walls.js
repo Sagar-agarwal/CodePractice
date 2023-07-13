@@ -7,7 +7,7 @@ export default class Walls {
     this.world = world;
     this.width = this.render.options.width;
     this.height = this.render.options.height;
-    this.wallThickness = 30;
+    this.wallThickness = 20;
   }
 
   createWall(placement, width, height) {
