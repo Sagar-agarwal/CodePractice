@@ -1,4 +1,4 @@
-import { Bodies } from 'matter-js';
+import { Bodies, World } from 'matter-js';
 import Walls from './walls';
 
 export default class Shapes {
@@ -15,6 +15,10 @@ export default class Shapes {
     this.defaultShapeHeightMax = Math.floor(this.canvasHeight / 10);
     this.defaultShapeMinWidthOrHeight = Math.floor(this.canvasHeight / 15);
     this.defaultSlopeMax = 3;
+  }
+
+  addShapeToWorld(shape) {
+    World.add(this.world, shape);
   }
 
   getRandom(max, min = 1) {
@@ -48,6 +52,10 @@ export default class Shapes {
     return Bodies.rectangle(x, y, width, height, { render: { fillStyle: '#E0A458' } });
   };
 
+  rectangle = (x, y, w, h, isStatic = true, fillStyle = '#ddd') => {
+    return Bodies.rectangle(x, y, w, h, { isStatic, render: { fillStyle } });
+  };
+
   trapezoidRandom = (x, y) => {
     const width = this.getRandom(this.defaultShapeWidthMax / 2, this.defaultShapeMinWidthOrHeight);
     const height = this.getRandom(this.defaultShapeHeightMax, this.defaultShapeMinWidthOrHeight);
@@ -79,5 +87,25 @@ export default class Shapes {
 
   addWalls() {
     return new Walls(this.render, this.world).addWalls();
+  }
+
+  get width() {
+    return this.canvasWidth;
+  }
+
+  set width(width) {
+    this.canvasWidth = width;
+  }
+
+  get height() {
+    return this.canvasHeight;
+  }
+
+  set height(height) {
+    this.canvasHeight = height;
+  }
+
+  get borderWidth() {
+    return new Walls(this.render, this.world).thickness;
   }
 }

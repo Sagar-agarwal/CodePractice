@@ -1,13 +1,20 @@
 import { World, Bodies } from 'matter-js';
 
 export default class Walls {
-  constructor(render, world) {
+  constructor(render, world, thickness = 20) {
     this.Bodies = Bodies;
     this.render = render;
     this.world = world;
     this.width = this.render.options.width;
     this.height = this.render.options.height;
-    this.wallThickness = 20;
+    this.wallThickness = thickness;
+  }
+
+  get thickness() {
+    return this.wallThickness;
+  }
+  set thickness(thickness) {
+    this.wallThickness = thickness;
   }
 
   createWall(placement, width, height) {

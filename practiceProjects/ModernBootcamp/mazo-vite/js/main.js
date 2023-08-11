@@ -12,8 +12,8 @@ const render = Render.create({
   engine,
   options: {
     wireframes: false,
-    width: 650,
-    height: 650,
+    width: 840,
+    height: 840,
   },
 });
 
@@ -25,4 +25,4 @@ shapes.addWalls();
 
 const mazeGridSize = 10;
 const Maze = new MazeGenerator(mazeGridSize);
-Maze.generateRandomMaze();
+Maze.generateRandomMaze(render, world);
