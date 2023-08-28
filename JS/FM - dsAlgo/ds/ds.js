@@ -1,3 +1,3 @@
-import { singleLinkedList } from './lists/lists';
+import { singleLinkedList, stack } from './lists/lists';
 
-export { singleLinkedList } from './lists/lists';
+export { singleLinkedList, stack } from './lists/lists';
