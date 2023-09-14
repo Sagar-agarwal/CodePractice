@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.0/css/materialize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Secre</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="valign-wrapper">
+          <div class="col s8 offset-s2">
+            <div class="card-panel hoverable section-secret-msg m-t-8">
+              <form action="#">
+                <label for="secret-msg">Create your secret message.</label>
+                <input type="text" name="secret-message" id="secret-msg" value="" />
+                <button class="btn purple darken-3">Create Secret Messages</button>
+              </form>
+            </div>
+            <div class="section-share-msg m-t-8 hide">
+              <label for="share-msg">Share the URL with Friend.</label>
+              <input type="text" name="share-message" id="share-msg" value="" />
+
+              <button class="waves-effect waves-purple btn-flat">
+                <i class="fa-regular fa-copy" onClick="copyContent('share-msg')"></i>
+              </button>
+            </div>
+            <div class="section-display-msg m-t-8 hide">
+              <h3 class="green-text text-darken-4 display-msg-text"></h3>
+
+              <button class="btn-flat blue-text text-darken-3 reload-btn">
+                Create new secret message
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="./js/app.js"></script>
+  </body>
+</html>
